@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portail Physique-Chimie — Pr. IGHIRANE ABDELLATIF</title>
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=gnNOqSBVg4PJGXccPTpTKa0bXq7KCqHKJYlhXeBkUji90NnZq_8mg80V7Z_rM31zdqMres0_jNimM24Tlrfm83GOMQ86gCVTXDCNada0LhaHNqDD2TIPQsBoklxDqvuMmDIg2gxt4thP8rqbhhCEhWHMtk9EIu_SX6In6PlErA_rRiG1mLsLebMjl0dzP_9oC6OhpFoUaTOPJQXO4VT0zCHe9DE8JNvRVqsosJmCyUyqB2RxhPW2JfxowA2B38phyIYM-KlvIxbfl3eZxMvYl3drkYSsz54x47oCVB6y6dM_9t8ne5wVPRsr7Zebnjn0" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBeVkySTFOelptT1RSaVpHUTRNall5TURBd05qWXdOR1psWlRJMU1UZzJaVEF5TWpjNU5tTmhOalF4WVRKall6SVNDeElIRUxERThwek1BeGdCJmZpbGVuYW1lPWluZGV4X3Y4Lmh0bWwmb3BpPTEwMzEzNTA1MA"/><script>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=wpdnT-LFNMlksf0rKTb7ugUk4stj2OtRHd00aFabpmXQgz_FQqTW-9Dy3x-ZRUy50K8FV6M0g0pAdsZVSvKEDVSAF4sqv24Kn7b_0raItZshY-LRfp-tJGMbpZR2V2KSI-KSxEIZuaqNn0A0uo--1B2Pp9LfzT8EbRSGydVup2zWXUb9kQlPEelQgcPTd-ryAb--qM3Jqw1FPN4dzS9UyXO958tsSTFR_stWqTLhimmm759t71j4odpAhf6ttkuqFYxOThPo2jc718wDVWNvnLDkfz0dAi354jsYEzcqfJsVkqveS-t7LroZIf2zIF7l" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBeVpEYzJZbUkwT1RFeE9XUmlaRE5sTURBd05qWXdOVFpoWXprM1lXWXpaakEwWVRRMU5qYzNNekl3WlROaVltTVNDeElIRUxERThwek1BeGdCJmZpbGVuYW1lPWluZGV4Lmh0bWwmb3BpPTEwMzEzNTA1MA"/><script>
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -540,7 +540,7 @@
       <div id="quizCard" class="qcm-card">
         <div id="qcmLayout" class="qcm-layout">
           <div id="imgBox" class="img-container" style="display:none;">
-            <img id="qImg" src="" alt="Schéma"
+            <img id="qImg" alt="Schéma"
                  onload="onImageLoadSuccess();"
                  onerror="handleImageFallback(this);">
             <div id="imgMissingMsg" class="img-missing-msg"></div>
@@ -700,7 +700,12 @@
     }
 
     function handleImageFallback(imgEl) {
-      const orig = imgEl.dataset.orig || '';
+      const orig = (imgEl.dataset.orig || '').trim();
+      if (!orig) {
+        document.getElementById('imgBox').style.display = 'none';
+        document.getElementById('qcmLayout').classList.remove('has-image');
+        return;
+      }
       const base = orig.replace(/\.png$/i, '');
       const candidates = [
         orig + '.png',
@@ -920,6 +925,8 @@
         qImg.dataset.orig = cleanName;
         qImg.src = cleanName;
       } else {
+        qImg.dataset.orig = '';
+        qImg.removeAttribute('src');
         imgBox.style.display = 'none';
         layout.classList.remove('has-image');
       }
