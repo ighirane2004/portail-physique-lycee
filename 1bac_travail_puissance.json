@@ -344,69 +344,257 @@
   "exercices": [
     {
       "niveau": "Soutien",
-      "titre": "Exercice 1 : Travail et puissance sur un trajet horizontal et incliné",
-      "enonce": "Un ouvrier tire une caisse de masse $m = 20\\text{ kg}$ sur un sol horizontal rectiligne de longueur $AB = 10\\text{ m}$ à l'aide d'un câble exerçant une force constante $\\vec{F}$ d'intensité $F = 100\\text{ N}$, inclinée d'un angle $\\alpha = 60^\\circ$ par rapport au vecteur déplacement $\\overrightarrow{AB}$. Les frottements sur le sol sont modélisés par une force constante $\\vec{f}$ opposée au mouvement d'intensité $f = 30\\text{ N}$. Le déplacement $AB$ dure $\\Delta t = 5\\text{ s}$. On donne $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$ et $\\cos 60^\\circ = 0,5$.",
+      "titre": "Exercice 1 : Définitions fondamentales du cours",
+      "enonce": "<strong>Données & Rappels :</strong> On considère un corps solide en mouvement de translation rectiligne entre deux points $A$ et $B$, ou en mouvement de rotation autour d'un axe fixe $(\\Delta)$ pendant une durée $\\Delta t$.<br>Donner la définition physique et l'expression mathématique de chacune des grandeurs suivantes :",
       "questions": [
         {
-          "q": "1. Donner la valeur du travail du poids $W_{AB}(\\vec{P})$ et du travail de la réaction normale $W_{AB}(\\vec{R}_N)$ lors du déplacement horizontal $AB$. Justifier.",
-          "indice": "Comparez la direction des vecteurs $\\vec{P}$ et $\\vec{R}_N$ à celle du déplacement horizontal $\\overrightarrow{AB}$.",
-          "corrige": "Le déplacement $AB$ étant horizontal, les vecteurs $\\vec{P}$ et $\\vec{R}_N$ sont verticaux, donc perpendiculaires à $\\overrightarrow{AB}$ ($\\cos 90^\\circ = 0$).<br>On a donc : $$W_{AB}(\\vec{P}) = 0\\text{ J} \\quad \\text{et} \\quad W_{AB}(\\vec{R}_N) = 0\\text{ J}$$"
+          "q": "1. Définir le travail d'une force constante $\\vec{F}$ lors d'un déplacement rectiligne $\\overrightarrow{AB}$.",
+          "indice": "Exprimez le produit scalaire du vecteur force $\\vec{F}$ par le vecteur déplacement $\\overrightarrow{AB}$ en faisant intervenir l'angle $\\alpha = (\\widehat{\\vec{F}, \\overrightarrow{AB}})$.",
+          "corrige": "Le travail d'une force constante $\\vec{F}$ pour un déplacement rectiligne $\\overrightarrow{AB}$ est égal au produit scalaire du vecteur force $\\vec{F}$ par le vecteur déplacement $\\overrightarrow{AB}$ :<br>$$W_{A\\to B}(\\vec{F}) = \\vec{F} \\cdot \\overrightarrow{AB} = F \\cdot AB \\cdot \\cos(\\alpha)$$<br>avec $W_{A\\to B}(\\vec{F})$ en Joules ($\\text{J}$), $F$ en Newtons ($\\text{N}$) et $AB$ en mètres ($\\text{m}$)."
         },
         {
-          "q": "2. Calculer le travail $W_{AB}(\\vec{F})$ de la force de traction et le travail $W_{AB}(\\vec{f})$ de la force de frottement. Préciser la nature de chacun de ces travaux.",
-          "indice": "Appliquez $W_{AB}(\\vec{F}) = F \\cdot AB \\cdot \\cos\\alpha$ et $W_{AB}(\\vec{f}) = - f \\cdot AB$.",
-          "corrige": "• Travail de la force $\\vec{F}$ :<br>$W_{AB}(\\vec{F}) = F \\cdot AB \\cdot \\cos(60^\\circ) = 100 \\times 10 \\times 0,5 = +500\\text{ J} > 0$ (travail <strong>moteur</strong>).<br>• Travail de la force de frottement $\\vec{f}$ :<br>$W_{AB}(\\vec{f}) = - f \\cdot AB = - 30 \\times 10 = -300\\text{ J} < 0$ (travail <strong>résistant</strong>)."
+          "q": "2. Définir le travail d'un ensemble de forces constantes $(\\vec{F}_1, \\vec{F}_2, \\dots, \\vec{F}_n)$ appliquées à un solide en translation.",
+          "indice": "Utilisez la résultante des forces $\\vec{R} = \\sum \\vec{F}_i$ et la linéarité du produit scalaire.",
+          "corrige": "Le travail d'un ensemble de forces constantes lors d'un déplacement $\\overrightarrow{AB}$ est égal à la somme algébrique des travaux de chacune de ces forces, soit le travail de leur résultante $\\vec{F}_{\\text{ext}} = \\sum \\vec{F}_i$ :<br>$$W_{A\\to B}\\left(\\sum \\vec{F}_i\\right) = \\left(\\sum \\vec{F}_i\\right) \\cdot \\overrightarrow{AB} = \\sum W_{A\\to B}(\\vec{F}_i)$$"
         },
         {
-          "q": "3. Calculer la puissance moyenne $P_m(\\vec{F})$ développée par la force $\\vec{F}$ sur le trajet $AB$.",
-          "indice": "Utilisez la relation $P_m = \\frac{W_{AB}(\\vec{F})}{\\Delta t}$.",
-          "corrige": "La puissance moyenne vaut :<br>$$P_m(\\vec{F}) = \\frac{W_{AB}(\\vec{F})}{\\Delta t} = \\frac{500}{5} = 100\\text{ W}$$"
+          "q": "3. Définir le travail d'une force de moment constant $\\mathcal{M}_\\Delta(\\vec{F})$ appliquée à un solide en rotation autour d'un axe fixe $(\\Delta)$.",
+          "indice": "Reliez le travail au moment constant $\\mathcal{M}_\\Delta(\\vec{F})$ et à l'angle de rotation $\\Delta \\theta$ exprimé en radians.",
+          "corrige": "Le travail d'une force de moment constant $\\mathcal{M}_\\Delta(\\vec{F})$ par rapport à un axe fixe $(\\Delta)$, lorsque le solide tourne d'un angle $\\Delta \\theta$, est égal au produit de son moment par l'angle de rotation :<br>$$W(\\vec{F}) = \\mathcal{M}_\\Delta(\\vec{F}) \\cdot \\Delta \\theta$$<br>avec $\\mathcal{M}_\\Delta(\\vec{F})$ en $\\text{N}\\cdot\\text{m}$ et $\\Delta \\theta$ en radians ($\\text{rad}$)."
+        },
+        {
+          "q": "4. Définir la puissance moyenne $P_m$ d'une force constante.",
+          "indice": "Exprimez le quotient du travail $W$ effectué par la durée $\\Delta t$ mise pour l'accomplir.",
+          "corrige": "La puissance moyenne $P_m$ d'une force sur une durée $\\Delta t$ est égale au quotient du travail $W$ effectué par cette force par la durée $\\Delta t$ du déplacement :<br>$$P_m = \\frac{W}{\\Delta t}$$<br>Elle s'exprime en Watts ($\\text{W}$), avec $W$ en Joules ($\\text{J}$) et $\\Delta t$ en secondes ($\\text{s}$)."
+        },
+        {
+          "q": "5. Définir la puissance instantanée $P$ d'une force constante (en translation puis en rotation).",
+          "indice": "En translation, utilisez le vecteur vitesse instantanée $\\vec{v}$ ; en rotation, utilisez la vitesse angulaire $\\omega$.",
+          "corrige": "• En <strong>translation</strong>, la puissance instantanée est égale au produit scalaire du vecteur force $\\vec{F}$ par le vecteur vitesse instantanée $\\vec{v}$ du point d'application :<br>$$P = \\vec{F} \\cdot \\vec{v} = F \\cdot v \\cdot \\cos(\\alpha)$$<br>• En <strong>rotation</strong> autour d'un axe fixe $(\\Delta)$, elle est égale au produit du moment $\\mathcal{M}_\\Delta(\\vec{F})$ par la vitesse angulaire instantanée $\\omega$ :<br>$$P = \\mathcal{M}_\\Delta(\\vec{F}) \\cdot \\omega$$"
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 2 : Vrai ou Faux ? (Nature du travail d'une force)",
+      "enonce": "<strong>Données :</strong> Une force constante $\\vec{F}$ s'exerce sur un solide en déplacement rectiligne de $A$ vers $B$. On note $\\alpha = (\\widehat{\\vec{F}, \\overrightarrow{AB}})$ l'angle compris entre $0$ et $\\pi\\text{ rad}$ ($0^\\circ \\le \\alpha \\le 180^\\circ$).<br>Les propositions suivantes sont-elles exactes ? Rectifier celles qui sont fausses.",
+      "questions": [
+        {
+          "q": "1. Proposition A : « Le travail est maximal lorsque la force est perpendiculaire à la trajectoire. »",
+          "indice": "Que vaut $\\cos(\\alpha)$ lorsque $\\alpha = 90^\\circ = \\frac{\\pi}{2}$ ? Pour quel angle a-t-on $\\cos(\\alpha) = +1$ ?",
+          "corrige": "<strong>Faux.</strong><br>Rectification : Lorsque la force est perpendiculaire à la trajectoire ($\\alpha = \\frac{\\pi}{2}$), son travail est <strong>nul</strong> ($\\cos\\frac{\\pi}{2} = 0$). Le travail moteur est maximal lorsque la force est parallèle (colinéaire) et de même sens que le vecteur déplacement ($\\alpha = 0$, soit $\\cos 0 = 1$ et $W_{A\\to B}(\\vec{F}) = F \\cdot AB$)."
+        },
+        {
+          "q": "2. Proposition B : « Le travail est nul lorsque la force est parallèle à la trajectoire. »",
+          "indice": "Si $\\vec{F}$ est parallèle à la trajectoire, $\\alpha = 0$ ou $\\alpha = \\pi$. Pour quel angle $\\alpha$ le travail est-il réellement nul ?",
+          "corrige": "<strong>Faux.</strong><br>Rectification : Le travail est nul lorsque la force est <strong>perpendiculaire</strong> à la trajectoire ($\\alpha = \\frac{\\pi}{2}\\text{ rad} = 90^\\circ$). Lorsqu'elle est parallèle à la trajectoire, le travail vaut $+F \\cdot AB$ (si même sens) ou $-F \\cdot AB$ (si sens opposé)."
+        },
+        {
+          "q": "3. Proposition C : « Le travail est moteur lorsque $0 < \\alpha \\le \\frac{\\pi}{2}$. »",
+          "indice": "Vérifiez les bornes de l'encadrement : que se passe-t-il pour $\\alpha = 0$ et pour $\\alpha = \\frac{\\pi}{2}$ ?",
+          "corrige": "<strong>Faux</strong> (aux bornes de l'intervalle).<br>Rectification : Pour que le travail soit strictement moteur ($W > 0$, soit $\\cos\\alpha > 0$), il faut inclure $\\alpha = 0$ et exclure $\\alpha = \\frac{\\pi}{2}$ (où le travail est nul) :<br>$$0 \\le \\alpha < \\frac{\\pi}{2}$$"
+        },
+        {
+          "q": "4. Proposition D : « Le travail est résistant lorsque $\\frac{\\pi}{2} \\le \\alpha \\le \\pi$. »",
+          "indice": "Pour $\\alpha = \\frac{\\pi}{2}$, le travail est-il résistant ($<0$) ou nul ($=0$) ?",
+          "corrige": "<strong>Faux</strong> (pour la borne $\\frac{\\pi}{2}$).<br>Rectification : Pour $\\alpha = \\frac{\\pi}{2}$, le travail est nul ($W = 0$). Le travail est strictement résistant ($W < 0$, soit $\\cos\\alpha < 0$) lorsque :<br>$$\\frac{\\pi}{2} < \\alpha \\le \\pi$$"
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 3 : Vrai ou Faux ? (Travail du poids d'un corps)",
+      "enonce": "<strong>Données :</strong> On considère un corps solide de masse $m$ se déplaçant dans le champ de pesanteur uniforme $\\vec{g}$ entre une position initiale de cote $z_1$ et une position finale de cote $z_2$ sur un axe vertical $Oz$ orienté vers le haut.<br>Les propositions suivantes sont-elles exactes ? Rectifier celles qui sont fausses.",
+      "questions": [
+        {
+          "q": "1. Proposition A : « On exprime le travail du poids d'un corps par la relation $W = - m g (z_2 - z_1)$, et toujours $W = - m g h$. »",
+          "indice": "La relation $W = -mg(z_2 - z_1) = mg(z_1 - z_2)$ est-elle générale ? L'écriture $W = -mgh$ est-elle vraie lors d'une descente ?",
+          "corrige": "<strong>Partiellement faux pour $W = -mgh$</strong>.<br>Rectification : Sur un axe $Oz$ orienté vers le haut, la relation algébrique générale est bien $W_{1\\to 2}(\\vec{P}) = m g (z_1 - z_2) = - m g (z_2 - z_1)$. En revanche, en posant la hauteur $h = |z_2 - z_1| > 0$, on a :<br>• $W = - m g h$ uniquement lors d'une <strong>montée</strong> ($z_2 > z_1$) ;<br>• $W = + m g h$ lors d'une <strong>descente</strong> ($z_1 > z_2$). On écrit donc en général $W(\\vec{P}) = \\pm m g h$."
+        },
+        {
+          "q": "2. Proposition B : « Le travail du poids d'un corps dépend de la trajectoire suivie par le corps solide. »",
+          "indice": "Le poids est une force conservative : de quels paramètres dépend uniquement $W_{A\\to B}(\\vec{P})$ ?",
+          "corrige": "<strong>Faux.</strong><br>Rectification : Le travail du poids d'un corps est <strong>indépendant du chemin (de la trajectoire) suivi</strong>. Il ne dépend que de la masse $m$, de l'intensité de la pesanteur $g$ et de la dénivellation $z_A - z_B$ entre le point de départ et le point d'arrivée."
+        },
+        {
+          "q": "3. Proposition C : « Le travail du poids d'un corps solide en mouvement vers le sol est moteur. »",
+          "indice": "Lorsqu'un corps descend vers le sol, le poids $\\vec{P}$ favorise-t-il ou s'oppose-t-il au mouvement ?",
+          "corrige": "<strong>Vrai.</strong><br>Lorsqu'un corps solide descend vers le sol ($z_1 > z_2$), son poids $\\vec{P}$ (vertical vers le bas) favorise le déplacement : le travail du poids est positif ($W(\\vec{P}) = + m g h > 0$), il est donc <strong>moteur</strong>."
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 4 : Vrai ou Faux ? (Expressions du travail et de la puissance)",
+      "enonce": "<strong>Données :</strong> On note $\\mathcal{M}_\\Delta$ le moment constant d'une force par rapport à un axe fixe $(\\Delta)$, $\\Delta \\theta$ l'angle de rotation, $\\omega$ la vitesse angulaire et $\\alpha = (\\widehat{\\vec{F}, \\vec{v}})$.<br>Les propositions suivantes sont-elles exactes ? Rectifier celles qui sont fausses.",
+      "questions": [
+        {
+          "q": "1. Proposition A : « On exprime le travail d'une force de moment constant par : $W = \\mathcal{M}_\\Delta \\cdot \\Delta \\theta$. »",
+          "indice": "Vérifiez la relation du cours pour un solide en rotation autour d'un axe fixe $(\\Delta)$.",
+          "corrige": "<strong>Vrai.</strong><br>Pour une force de moment constant $\\mathcal{M}_\\Delta$ autour d'un axe fixe $(\\Delta)$, le travail vaut bien $W = \\mathcal{M}_\\Delta \\cdot \\Delta \\theta$ (avec $\\Delta \\theta$ en radians)."
+        },
+        {
+          "q": "2. Proposition B : « On exprime la puissance moyenne d'une force constante par : $P_m = \\frac{W}{\\Delta t}$. »",
+          "indice": "Rappelez la définition de la puissance moyenne sur une durée $\\Delta t$.",
+          "corrige": "<strong>Vrai.</strong><br>La puissance moyenne est bien le rapport du travail $W$ effectué par la durée $\\Delta t$ correspondante : $P_m = \\frac{W}{\\Delta t}$."
+        },
+        {
+          "q": "3. Proposition C : « On exprime la puissance instantanée par la relation : $P = F \\cdot v \\cdot \\sin(\\alpha)$. »",
+          "indice": "Le produit scalaire $\\vec{F} \\cdot \\vec{v}$ fait-il intervenir $\\sin(\\alpha)$ ou $\\cos(\\alpha)$ ?",
+          "corrige": "<strong>Faux.</strong><br>Rectification : La puissance instantanée est le produit scalaire $P = \\vec{F} \\cdot \\vec{v}$. Elle s'exprime donc avec le <strong>cosinus</strong> de l'angle $\\alpha = (\\widehat{\\vec{F}, \\vec{v}})$ :<br>$$P = F \\cdot v \\cdot \\cos(\\alpha)$$"
+        },
+        {
+          "q": "4. Proposition D : « On exprime la puissance instantanée d'une force de moment constant par : $P = \\mathcal{M}_\\Delta \\cdot \\omega$. »",
+          "indice": "En dérivant ou en divisant $W = \\mathcal{M}_\\Delta \\cdot \\Delta \\theta$ par $\\Delta t$, quelle grandeur apparaît ?",
+          "corrige": "<strong>Vrai.</strong><br>En rotation autour d'un axe fixe $(\\Delta)$, la puissance instantanée d'une force de moment $\\mathcal{M}_\\Delta$ est bien $P = \\mathcal{M}_\\Delta \\cdot \\omega$ (avec $\\omega$ en $\\text{rad}\\cdot\\text{s}^{-1}$)."
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 5 : Vrai ou Faux ? (Unités du Système International)",
+      "enonce": "<strong>Données :</strong> Rappels sur les unités légales du Système International (SI) des grandeurs mécaniques.<br>Les propositions suivantes sont-elles exactes ? Rectifier celles qui sont fausses.",
+      "questions": [
+        {
+          "q": "1. Proposition A : « L'unité du moment d'une force est le Newton-mètre ($\\text{N}\\cdot\\text{m}$). »",
+          "indice": "Le moment étant le produit d'une force par une distance ($\\mathcal{M}_\\Delta = \\pm F \\cdot d$), vérifiez son unité SI.",
+          "corrige": "<strong>Vrai.</strong><br>Dans le Système International, l'intensité de la force s'exprime en Newtons ($\\text{N}$) et le bras de levier $d$ en mètres ($\\text{m}$), donc l'unité du moment de force est bien le $\\text{N}\\cdot\\text{m}$."
+        },
+        {
+          "q": "2. Proposition B : « L'unité de travail dans le Système International est le Joule ($\\text{J}$). »",
+          "indice": "En quelle unité s'exprime un transfert d'énergie mécanique dans le SI ?",
+          "corrige": "<strong>Vrai.</strong><br>L'unité légale du travail dans le Système International est bien le <strong>Joule ($\\text{J}$)</strong>, avec $1\\text{ J} = 1\\text{ N}\\cdot\\text{m}$."
+        },
+        {
+          "q": "3. Proposition C : « L'unité de la puissance dans le Système International est le kilowatt ($\\text{kW}$). »",
+          "indice": "Le kilowatt est un multiple ($10^3$). Quelle est l'unité de base SI de la puissance ?",
+          "corrige": "<strong>Faux.</strong><br>Rectification : L'unité de la puissance dans le Système International est le <strong>Watt ($\\text{W}$)</strong> ($1\\text{ W} = 1\\text{ J}\\cdot\\text{s}^{-1}$). Le kilowatt ($\\text{kW}$) est un multiple du Watt ($1\\text{ kW} = 1000\\text{ W}$)."
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 6 : Calcul du travail d'une force constante selon l'angle α",
+      "enonce": "<strong>Données :</strong><br>• Intensité de la force constante : $F = 5\\text{ N}$<br>• Longueur du trajet rectiligne : $AB = d = 2\\text{ m}$<br><br>On exerce la force constante $\\vec{F}$ sur un corps solide le long du trajet rectiligne $AB$.",
+      "questions": [
+        {
+          "q": "1. Calculer le travail $W_{A\\to B}(\\vec{F})$ et préciser sa nature (moteur, résistant ou nul) pour chacun des cas : $\\alpha = 0^\\circ$ ; $\\alpha = 60^\\circ$ ; $\\alpha = 90^\\circ$ ; $\\alpha = 120^\\circ$ ; $\\alpha = 180^\\circ$.",
+          "indice": "Appliquez la relation $W_{A\\to B}(\\vec{F}) = F \\cdot d \\cdot \\cos(\\alpha)$ avec $\\cos 0^\\circ = 1$, $\\cos 60^\\circ = 0,5$, $\\cos 90^\\circ = 0$, $\\cos 120^\\circ = -0,5$ et $\\cos 180^\\circ = -1$.",
+          "corrige": "Appliquons la relation : $$W_{A\\to B}(\\vec{F}) = F \\cdot d \\cdot \\cos(\\alpha)$$<br>• <strong>Cas 1 ($\\alpha = 0^\\circ$) :</strong> $W_{A\\to B}(\\vec{F}) = 5 \\times 2 \\times \\cos(0^\\circ) = 10\\text{ J}$ $\\rightarrow$ <strong>Travail moteur</strong> ($W > 0$).<br>• <strong>Cas 2 ($\\alpha = 60^\\circ$) :</strong> $W_{A\\to B}(\\vec{F}) = 5 \\times 2 \\times \\cos(60^\\circ) = 10 \\times 0,5 = 5\\text{ J}$ $\\rightarrow$ <strong>Travail moteur</strong> ($W > 0$).<br>• <strong>Cas 3 ($\\alpha = 90^\\circ$) :</strong> $W_{A\\to B}(\\vec{F}) = 5 \\times 2 \\times \\cos(90^\\circ) = 0\\text{ J}$ $\\rightarrow$ <strong>Travail nul</strong> ($W = 0$).<br>• <strong>Cas 4 ($\\alpha = 120^\\circ$) :</strong> $W_{A\\to B}(\\vec{F}) = 5 \\times 2 \\times \\cos(120^\\circ) = 10 \\times (-0,5) = -5\\text{ J}$ $\\rightarrow$ <strong>Travail résistant</strong> ($W < 0$).<br>• <strong>Cas 5 ($\\alpha = 180^\\circ$) :</strong> $W_{A\\to B}(\\vec{F}) = 5 \\times 2 \\times \\cos(180^\\circ) = 10 \\times (-1) = -10\\text{ J}$ $\\rightarrow$ <strong>Travail résistant</strong> ($W < 0$)."
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 7 : Travail du poids d'un solide en chute",
+      "enonce": "<strong>Données :</strong><br>• Masse du solide : $m = 5\\text{ kg}$<br>• Hauteur de chute : $h = 10\\text{ m}$<br>• Intensité de la pesanteur : $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$<br><br>Un solide de masse $m = 5\\text{ kg}$ est en chute vers le sol d'une hauteur $h = 10\\text{ m}$.",
+      "questions": [
+        {
+          "q": "1. Calculer le travail de son poids $W(\\vec{P})$ au cours de cette chute en précisant sa nature (moteur ou résistant).",
+          "indice": "Le solide descend vers le sol : utilisez la relation $W(\\vec{P}) = + m \\cdot g \\cdot h$.",
+          "corrige": "Le solide descend vers le sol, son poids favorise le mouvement. On applique donc la relation :<br>$$W(\\vec{P}) = + m \\cdot g \\cdot h$$<br>Application numérique :<br>$$W(\\vec{P}) = 5 \\times 10 \\times 10 = 500\\text{ J}$$<br>Comme $W(\\vec{P}) > 0$, c'est un <strong>travail moteur</strong>."
         }
       ]
     },
     {
       "niveau": "Standard",
-      "titre": "Exercice 2 : Montée à vitesse constante et piste circulaire",
-      "enonce": "Un solide $(S)$ de masse $m = 50\\text{ kg}$ est tiré à <strong>vitesse constante</strong> $v = 18\\text{ km}\\cdot\\text{h}^{-1}$ le long d'un plan incliné d'un angle $\\alpha = 30^\\circ$ par rapport à l'horizontale entre deux points $A$ et $B$ distants de $AB = 20\\text{ m}$ (montée de $A$ vers $B$). Le câble de traction est parallèle à la ligne de plus grande pente du plan incliné et exerce une force constante $\\vec{F}$. Les frottements équivalent à une force constante $\\vec{f}$ d'intensité $f = 50\\text{ N}$ opposée au mouvement. On donne $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$ et $\\sin 30^\\circ = 0,5$.",
+      "titre": "Exercice 8 : Un corps solide lancé entre deux cotes (altitudes)",
+      "enonce": "<strong>Données :</strong><br>• Masse du solide $(S)$ : $m = 500\\text{ g} = 0,5\\text{ kg}$<br>• Altitude de départ : $z_A = 3\\text{ m}$<br>• Altitude d'arrêt : $z_B = 9\\text{ m}$<br>• Intensité de la pesanteur : $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$<br><br>Un solide $(S)$ de masse $m = 500\\text{ g}$ est lancé vers le haut depuis une position $A$ située à l'altitude $z_A = 3\\text{ m}$ du sol. Il s'arrête en une position $B$ située à l'altitude $z_B = 9\\text{ m}$ du sol.",
       "questions": [
         {
-          "q": "1. Calculer le travail du poids $W_{AB}(\\vec{P})$ et le travail de la réaction du plan $W_{AB}(\\vec{R})$ lors de la montée de $A$ vers $B$.",
-          "indice": "Lors d'une montée, $W_{AB}(\\vec{P}) = - m g AB \\sin\\alpha$ et $W_{AB}(\\vec{R}) = W_{AB}(\\vec{f}) = - f \\cdot AB$.",
-          "corrige": "• Dénivellation : $h = AB \\sin(30^\\circ) = 20 \\times 0,5 = 10\\text{ m}$.<br>Comme le solide monte ($z_B > z_A$), le travail du poids est résistant :<br>$$W_{AB}(\\vec{P}) = - m \\cdot g \\cdot h = - 50 \\times 10 \\times 10 = -5000\\text{ J}$$<br>• Travail de la réaction du plan :<br>$$W_{AB}(\\vec{R}) = W_{AB}(\\vec{f}) = - f \\cdot AB = - 50 \\times 20 = -1000\\text{ J}$$"
+          "q": "1. Calculer le travail de son poids $W_{A\\to B}(\\vec{P})$ au cours de ce déplacement en précisant sa nature.",
+          "indice": "Convertissez d'abord la masse $m$ en kilogrammes ($\\text{kg}$), puis appliquez $W_{A\\to B}(\\vec{P}) = - m \\cdot g \\cdot (z_B - z_A)$ sur un axe $Oz$ orienté vers le haut.",
+          "corrige": "Considérons l'axe vertical $Oz$ orienté vers le haut dont l'origine appartient au sol : $z_A = 3\\text{ m}$ et $z_B = 9\\text{ m}$.<br>Appliquons la relation :<br>$$W_{A\\to B}(\\vec{P}) = - m \\cdot g \\cdot (z_B - z_A)$$<br>Application numérique (avec $m = 500\\text{ g} = 0,5\\text{ kg}$) :<br>$$W_{A\\to B}(\\vec{P}) = - 0,5 \\times 10 \\times (9 - 3) = - 5 \\times 6 = -30\\text{ J}$$<br>Comme $W_{A\\to B}(\\vec{P}) < 0$, c'est un <strong>travail résistant</strong>."
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 9 : Travaux des forces sur plan incliné sans frottement",
+      "enonce": "<strong>Données :</strong><br>• Masse du solide $(S)$ : $m = 2\\text{ kg}$<br>• Angle d'inclinaison : $\\alpha = 30^\\circ$ ($\\sin 30^\\circ = 0,5$)<br>• Distance parcourue en descente : $AB = d = 1\\text{ m}$<br>• Intensité de la pesanteur : $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$<br><br>On abandonne un corps solide $(S)$ de masse $m = 2\\text{ kg}$ sur un plan incliné d'un angle $\\alpha = 30^\\circ$ par rapport à l'horizontale. Il se déplace vers le bas, <strong>sans frottement</strong>, sur une distance $AB = d = 1\\text{ m}$.<img src=\"exo9_plan_lisse.png\" alt=\"Schéma Exercice 9\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">",
+      "questions": [
+        {
+          "q": "1. Calculer le travail de chacune des forces appliquées sur le corps solide $(S)$ au cours du déplacement $AB$.",
+          "indice": "Faites le bilan des forces ($\\vec{P}$ et $\\vec{R}$). Exprimez $h = d \\sin\\alpha$ pour le poids, et utilisez le fait que $\\vec{R} \\perp \\overrightarrow{AB}$ sans frottement.",
+          "corrige": "<img src=\"exo9_plan_lisse.png\" alt=\"Bilan des forces Exercice 9\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">Au cours de son déplacement, le solide $(S)$ est soumis à deux forces : son poids $\\vec{P}$ et la réaction du plan incliné $\\vec{R}$.<br>• <strong>Travail du poids $\\vec{P}$ :</strong> Le solide descend, donc $W_{A\\to B}(\\vec{P}) = + m \\cdot g \\cdot h$ avec $h = AB \\sin\\alpha = d \\sin\\alpha$.<br>$$W_{A\\to B}(\\vec{P}) = m \\cdot g \\cdot d \\cdot \\sin(\\alpha) = 2 \\times 10 \\times 1 \\times \\sin(30^\\circ) = 20 \\times 0,5 = +10\\text{ J}$$<br>• <strong>Travail de la réaction $\\vec{R}$ :</strong> Le déplacement se fait sans frottement, donc $\\vec{R}$ est perpendiculaire au plan incliné :<br>$$W_{A\\to B}(\\vec{R}) = R \\cdot d \\cdot \\cos\\left(\\frac{\\pi}{2}\\right) = 0\\text{ J}$$",
+          "img_corrige": "exo9_plan_lisse.png"
         },
         {
-          "q": "2. Sachant que le mouvement est rectiligne uniforme ($v = \\text{cte}$), déduire le travail $W_{AB}(\\vec{F})$ de la force de traction puis son intensité $F$.",
-          "indice": "D'après le principe d'inertie, $\\sum \\vec{F}_{\\text{ext}} = \\vec{0}$, donc la somme algébrique des travaux de toutes les forces est nulle.",
-          "corrige": "Le mouvement étant rectiligne uniforme, d'après le principe d'inertie : $\\vec{P} + \\vec{R} + \\vec{F} = \\vec{0}$, d'où :<br>$$W_{AB}(\\vec{P}) + W_{AB}(\\vec{R}) + W_{AB}(\\vec{F}) = 0$$<br>$$W_{AB}(\\vec{F}) = - W_{AB}(\\vec{P}) - W_{AB}(\\vec{R}) = 5000 + 1000 = +6000\\text{ J}$$<br>Comme $\\vec{F}$ est parallèle et de même sens que $\\overrightarrow{AB}$ : $F = \\frac{W_{AB}(\\vec{F})}{AB} = \\frac{6000}{20} = 300\\text{ N}$."
+          "q": "2. Trouver la somme algébrique $W_{A\\to B}$ des travaux de ces forces.",
+          "indice": "Calculez $W_{A\\to B} = W_{A\\to B}(\\vec{P}) + W_{A\\to B}(\\vec{R})$.",
+          "corrige": "Posons la somme algébrique des travaux :<br>$$W_{A\\to B} = W_{A\\to B}(\\vec{P}) + W_{A\\to B}(\\vec{R}) = 10 + 0 = +10\\text{ J}$$"
+        }
+      ],
+      "img_enonce": "exo9_plan_lisse.png"
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 10 : Travaux des forces sur plan incliné avec frottement",
+      "enonce": "<strong>Données :</strong><br>• Masse du solide $(S)$ : $m = 1\\text{ kg}$<br>• Angle d'inclinaison : $\\alpha = 30^\\circ$ ($\\sin 30^\\circ = 0,5$)<br>• Distance parcourue en montée : $AB = 1,5\\text{ m}$<br>• Intensité de la force de frottement : $f = 3\\text{ N}$<br>• Intensité de la pesanteur : $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$<br><br>On lance un corps solide $(S)$ de masse $m = 1\\text{ kg}$ vers le haut sur un plan incliné d'un angle $\\alpha = 30^\\circ$ par rapport au plan horizontal. Il parcourt une distance $AB = 1,5\\text{ m}$ avant de s'arrêter. Le mouvement se fait avec des frottements équivalents à une force $\\vec{f}$ d'intensité $f = 3\\text{ N}$ opposée au déplacement.<img src=\"exo10_plan_frottement.png\" alt=\"Schéma Exercice 10\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">",
+      "questions": [
+        {
+          "q": "1. Calculer le travail du poids $W_{A\\to B}(\\vec{P})$, le travail de la réaction $W_{A\\to B}(\\vec{R})$ et en déduire la somme algébrique des travaux des forces appliquées sur le solide $(S)$.",
+          "indice": "Le solide monte, donc $W_{A\\to B}(\\vec{P}) = - m g AB \\sin\\alpha$. Avec frottement, $W_{A\\to B}(\\vec{R}) = W_{A\\to B}(\\vec{f}) = - f \\cdot AB$.",
+          "corrige": "<img src=\"exo10_plan_frottement.png\" alt=\"Bilan des forces Exercice 10\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">Le solide $(S)$ est soumis à son poids $\\vec{P}$ et à la réaction du plan incliné $\\vec{R}$.<br>• <strong>Calcul de $W_{A\\to B}(\\vec{P})$ :</strong> Le solide monte sur le plan incliné, donc $W_{A\\to B}(\\vec{P}) = - m g h = - m g AB \\sin(\\alpha)$.<br>$$W_{A\\to B}(\\vec{P}) = - 1 \\times 10 \\times 1,5 \\times \\sin(30^\\circ) = - 15 \\times 0,5 = -7,5\\text{ J}$$<br>• <strong>Calcul de $W_{A\\to B}(\\vec{R})$ :</strong> Le mouvement se fait avec frottement ($W_{A\\to B}(\\vec{R}_N) = 0$) :<br>$$W_{A\\to B}(\\vec{R}) = f \\cdot AB \\cdot \\cos(\\pi) = - f \\cdot AB = - 3 \\times 1,5 = -4,5\\text{ J}$$<br>• <strong>Somme algébrique des travaux :</strong><br>$$W_{A\\to B} = W_{A\\to B}(\\vec{P}) + W_{A\\to B}(\\vec{R}) = -7,5 - 4,5 = -12\\text{ J}$$",
+          "img_corrige": "exo10_plan_frottement.png"
+        }
+      ],
+      "img_enonce": "exo10_plan_frottement.png"
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 11 : Somme algébrique des travaux lors d'un levage vertical",
+      "enonce": "<strong>Données :</strong><br>• Masse du solide : $m = 1\\text{ kg}$<br>• Intensité de la force de traction verticale : $F = 12\\text{ N}$<br>• Hauteur de montée : $h = 2\\text{ m}$<br>• Intensité de la pesanteur : $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$<br><br>À l'aide d'un fil inextensible et de masse négligeable, on tire verticalement vers le haut un corps solide de masse $m = 1\\text{ kg}$, en appliquant une force constante $\\vec{F}$ d'intensité $F = 12\\text{ N}$, d'une hauteur $h = 2\\text{ m}$.",
+      "questions": [
+        {
+          "q": "1. Calculer le travail de chacune des deux forces $\\vec{F}$ et $\\vec{P}$ (poids du corps) au cours de ce déplacement.",
+          "indice": "Pour $\\vec{F}$ orientée vers le haut comme le déplacement, $\\alpha = 0^\\circ$. Pour $\\vec{P}$ lors d'une montée, $W(\\vec{P}) = - m g h$.",
+          "corrige": "• <strong>Travail de la force $\\vec{F}$ :</strong> Comme $\\vec{F}$ a même direction et même sens que le déplacement ($\\alpha = 0^\\circ$) :<br>$$W_{A\\to B}(\\vec{F}) = F \\cdot h \\cdot \\cos(0^\\circ) = F \\cdot h = 12 \\times 2 = +24\\text{ J}$$<br>• <strong>Travail du poids $\\vec{P}$ :</strong> Le corps se déplace vers le haut (montée) :<br>$$W_{A\\to B}(\\vec{P}) = - m \\cdot g \\cdot h = - 1 \\times 10 \\times 2 = -20\\text{ J}$$"
         },
         {
-          "q": "3. Calculer la puissance instantanée $P_i(\\vec{F})$ développée par le câble lors de cette montée.",
-          "indice": "Convertissez d'abord $v = 18\\text{ km}\\cdot\\text{h}^{-1}$ en $\\text{m}\\cdot\\text{s}^{-1}$ en divisant par $3,6$, puis appliquez $P_i = F \\cdot v$.",
-          "corrige": "Conversion de la vitesse : $v = \\frac{18}{3,6} = 5\\text{ m}\\cdot\\text{s}^{-1}$.<br>Puissance instantanée :<br>$$P_i(\\vec{F}) = \\vec{F} \\cdot \\vec{v} = F \\cdot v = 300 \\times 5 = 1500\\text{ W} = 1,5\\text{ kW}$$"
+          "q": "2. Calculer la somme algébrique $W$ de ces travaux.",
+          "indice": "Additionnez algébriquement $W_{A\\to B}(\\vec{F})$ et $W_{A\\to B}(\\vec{P})$.",
+          "corrige": "La somme algébrique des travaux vaut :<br>$$W = W_{A\\to B}(\\vec{F}) + W_{A\\to B}(\\vec{P}) = 24 - 20 = +4\\text{ J}$$"
         }
       ]
     },
     {
       "niveau": "Excellence",
-      "titre": "Exercice 3 : Treuil motorisé en rotation et levage d'une charge",
-      "enonce": "Un treuil est constitué d'un tambour cylindrique homogène de rayon $r = 20\\text{ cm} = 0,2\\text{ m}$, mobile autour d'un axe horizontal fixe $(\\Delta)$. Un moteur applique au tambour un couple moteur de moment constant $\\mathcal{M}_m$. Un câble inextensible, de masse négligeable, s'enroule sans glisser sur le tambour et soulève verticalement à <strong>vitesse constante</strong> une charge $(S)$ de masse $m = 100\\text{ kg}$. Les frottements sur l'axe $(\\Delta)$ créent un couple résistant de moment constant $\\mathcal{M}_f = -20\\text{ N}\\cdot\\text{m}$. Le tambour tourne à la vitesse de rotation constante $N = 30\\text{ tr}\\cdot\\text{min}^{-1}$. On donne $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$ et $\\pi \\approx 3,14$.",
+      "titre": "Exercice 12 : Travail de frottements de coefficient k",
+      "enonce": "<strong>Données :</strong><br>• Masse du solide $(S)$ : $m = 2\\text{ kg}$<br>• Angle d'inclinaison du plan : $\\alpha = 30^\\circ$ ($\\sin 30^\\circ = 0,5$ ; $\\cos 30^\\circ \\approx 0,866$)<br>• Coefficient de frottement : $k = \\tan\\varphi = 0,2$<br>• Distance parcourue en montée : $AB = d = 1,2\\text{ m}$<br>• Force motrice parallèle au plan : $F = 13,5\\text{ N}$<br>• Intensité de la pesanteur : $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$<br><br>Un solide $(S)$ de masse $m = 2\\text{ kg}$ monte un plan incliné d'un angle $\\alpha = 30^\\circ$ par rapport au plan horizontal sous l'action d'une force motrice $\\vec{F}$ parallèle au plan et dirigée vers le haut. Le contact entre $(S)$ et le plan incliné se fait avec des frottements de coefficient $k = 0,2$.<img src=\"exo11_coeff_k.png\" alt=\"Schéma coefficient de frottement k\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">",
       "questions": [
         {
-          "q": "1. La charge $(S)$ montant d'une hauteur $h$ en mouvement rectiligne uniforme, déterminer l'intensité $T$ de la tension du câble puis le moment $\\mathcal{M}_\\Delta(\\vec{T}')$ de la force $\\vec{T}'$ exercée par le câble sur le tambour ($T' = T$).",
-          "indice": "Appliquez le principe d'inertie à la charge $(S)$ pour trouver $T$, puis calculez $\\mathcal{M}_\\Delta(\\vec{T}') = - T' \\cdot r$ (résistant pour le tambour).",
-          "corrige": "• La charge $(S)$ est en translation rectiligne uniforme : $\\vec{P} + \\vec{T} = \\vec{0} \\Rightarrow T = P = m \\cdot g = 100 \\times 10 = 1000\\text{ N}$.<br>• Le câble étant de masse négligeable, $T' = T = 1000\\text{ N}$. La force $\\vec{T}'$ s'oppose à la rotation du tambour :<br>$$\\mathcal{M}_\\Delta(\\vec{T}') = - T' \\cdot r = - 1000 \\times 0,2 = -200\\text{ N}\\cdot\\text{m}$$"
+          "q": "1. Calculer les travaux de toutes les forces ($\\vec{F}$, $\\vec{P}$ et $\\vec{R}$) appliquées sur le corps solide $(S)$ pour un déplacement de $AB = d = 1,2\\text{ m}$.",
+          "indice": "Décomposez $\\vec{R} = \\vec{R}_N + \\vec{R}_T$. Utilisez l'équilibre suivant la normale ($R_N = P_N = mg\\cos\\alpha$) et le coefficient de frottement $k = \\tan\\varphi = \\frac{R_T}{R_N}$ pour exprimer $R_T = k \\cdot m g \\cos\\alpha$.",
+          "corrige": "<img src=\"exo11_coeff_k.png\" alt=\"Décomposition de R et angle phi\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">• <strong>Travail de $\\vec{F}$ :</strong><br>$$W_{A\\to B}(\\vec{F}) = F \\cdot AB \\cdot \\cos(0^\\circ) = F \\cdot d = 13,5 \\times 1,2 = +16,2\\text{ J}$$<br>• <strong>Travail du poids $\\vec{P}$ (montée) :</strong><br>$$W_{A\\to B}(\\vec{P}) = - m g h = - m g d \\sin(\\alpha) = - 2 \\times 10 \\times 1,2 \\times \\sin(30^\\circ) = -12\\text{ J}$$<br>• <strong>Travail de la réaction $\\vec{R}$ :</strong><br>On décompose $\\vec{R} = \\vec{R}_T + \\vec{R}_N$. Comme $\\vec{R}_N \\perp \\overrightarrow{AB}$, on a $W_{A\\to B}(\\vec{R}_N) = 0\\text{ J}$ et :<br>$$W_{A\\to B}(\\vec{R}) = W_{A\\to B}(\\vec{R}_T) = - R_T \\cdot d \\quad (1)$$<br>Or le coefficient de frottement est $k = \\tan\\varphi = \\frac{R_T}{R_N} \\Rightarrow R_T = k \\cdot R_N$.<br>Par projection sur la normale au plan incliné : $R_N = P_N = m g \\cos(\\alpha)$, d'où $R_T = k \\cdot m g \\cos(\\alpha)$.<br>En remplaçant dans $(1)$ :<br>$$W_{A\\to B}(\\vec{R}) = - k \\cdot m \\cdot g \\cdot \\cos(\\alpha) \\cdot d = - 0,2 \\times 2 \\times 10 \\times \\cos(30^\\circ) \\times 1,2 \\approx -4,2\\text{ J}$$",
+          "img_corrige": "plan_incline.png"
         },
         {
-          "q": "2. En appliquant le théorème des moments au tambour en rotation uniforme, déterminer le moment du couple moteur $\\mathcal{M}_m$, puis calculer le travail moteur $W_m$ lorsque le tambour effectue $n = 5$ tours.",
-          "indice": "En rotation uniforme : $\\mathcal{M}_m + \\mathcal{M}_\\Delta(\\vec{T}') + \\mathcal{M}_f = 0$. Puis $W_m = \\mathcal{M}_m \\cdot \\Delta\\theta$ avec $\\Delta\\theta = 2\\pi n$.",
-          "corrige": "• Rotation uniforme du tambour : $\\sum \\mathcal{M}_\\Delta = 0 \\Rightarrow \\mathcal{M}_m + \\mathcal{M}_\\Delta(\\vec{T}') + \\mathcal{M}_f = 0$.<br>$$\\mathcal{M}_m = - (-200) - (-20) = +220\\text{ N}\\cdot\\text{m}$$<br>• Pour $n = 5$ tours, l'angle de rotation est $\\Delta\\theta = 2\\pi n = 10\\pi \\approx 31,4\\text{ rad}$.<br>$$W_m = \\mathcal{M}_m \\cdot \\Delta\\theta = 220 \\times 31,4 = 6908\\text{ J}$$"
-        },
-        {
-          "q": "3. Calculer la puissance mécanique $P_m$ fournie par le moteur ainsi que le rendement mécanique $\\eta = \\frac{W_{\\text{utile}}}{W_m} = \\frac{|W(\\vec{P})|}{W_m}$ du treuil.",
-          "indice": "Calculez $\\omega = \\frac{2\\pi N}{60}$, puis $P_m = \\mathcal{M}_m \\cdot \\omega$. Notez que $h = r \\cdot \\Delta\\theta$.",
-          "corrige": "• Vitesse angulaire : $\\omega = \\frac{2\\pi N}{60} = \\frac{2\\pi \\times 30}{60} = \\pi \\approx 3,14\\text{ rad}\\cdot\\text{s}^{-1}$.<br>• Puissance du moteur : $$P_m = \\mathcal{M}_m \\cdot \\omega = 220 \\times 3,14 = 690,8\\text{ W}$$<br>• Travail utile (élévation de la charge de $h = r \\Delta\\theta = 0,2 \\times 31,4 = 6,28\\text{ m}$) :<br>$W_{\\text{utile}} = m g h = 1000 \\times 6,28 = 6280\\text{ J}$.<br>• Rendement du treuil : $$\\eta = \\frac{6280}{6908} = \\frac{200}{220} \\approx 0,909 \\quad (\\text{soit } 90,9\\%)$$"
+          "q": "2. Calculer la somme algébrique $W$ des travaux de toutes les forces. Que peut-on en déduire sur la nature du mouvement de $(S)$ ?",
+          "indice": "Calculez $W = W_{A\\to B}(\\vec{P}) + W_{A\\to B}(\\vec{F}) + W_{A\\to B}(\\vec{R})$ et concluez à l'aide du principe d'inertie.",
+          "corrige": "Calcul de la somme algébrique des travaux :<br>$$W = W_{A\\to B}(\\vec{P}) + W_{A\\to B}(\\vec{F}) + W_{A\\to B}(\\vec{R}) = -12 + 16,2 - 4,2 = 0\\text{ J}$$<br><strong>Conclusion :</strong> La somme des travaux des forces extérieures est nulle ($W = 0\\text{ J}$), les forces se compensent ($\\sum \\vec{F}_{\\text{ext}} = \\vec{0}$) : le mouvement du solide $(S)$ est donc <strong>rectiligne uniforme</strong> (vitesse constante)."
         }
-      ]
+      ],
+      "img_enonce": "exo11_coeff_k.png"
+    },
+    {
+      "niveau": "Excellence",
+      "titre": "Exercice 13 : Travail du poids et de la tension d'un pendule simple",
+      "enonce": "<strong>Données :</strong><br>• Masse de la bille : $m = 100\\text{ g} = 0,1\\text{ kg}$<br>• Longueur du fil inextensible : $L = 1\\text{ m}$<br>• Élongation angulaire maximale : $\\theta_0 = 40^\\circ$ ($\\cos 40^\\circ \\approx 0,766$)<br>• Intensité de la pesanteur : $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$<br><br>Un pendule est constitué d'une bille de masse $m = 100\\text{ g}$, attachée à l'extrémité d'un fil de longueur $L = 1\\text{ m}$ et de masse négligeable, dont l'autre extrémité $O$ est accrochée à un support fixe. Le pendule oscille dans un plan vertical avec une élongation maximale $\\theta_0 = 40^\\circ$ entre la position initiale $A$, la position d'équilibre $B$ (verticale) et la position extrême $C$ située au même niveau horizontal que $A$.<img src=\"pendule_simple.png\" alt=\"Schéma du pendule simple A, B, C\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">",
+      "questions": [
+        {
+          "q": "1. Calculer le travail du poids lorsque la bille passe de la position $A$ à la position $B$, puis de la position $B$ à la position $C$. En déduire le travail du poids entre les positions $A$ et $C$.",
+          "indice": "Exprimez la hauteur $h = HB = OB - OH = L(1 - \\cos\\theta_0)$. De $A$ vers $B$ la bille descend ($+mgh$), et de $B$ vers $C$ elle remonte ($-mgh$).",
+          "corrige": "<img src=\"pendule_simple.png\" alt=\"Géométrie du pendule h = L(1 - cos theta0)\" style=\"display:block; max-width:480px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">• <strong>De $A$ vers $B$ (descente) :</strong> $W_{A\\to B}(\\vec{P}) = + m \\cdot g \\cdot h$.<br>D'après la géométrie du pendule : $h = HB = OB - OH = L - L\\cos\\theta_0 = L(1 - \\cos\\theta_0)$.<br>$$W_{A\\to B}(\\vec{P}) = m \\cdot g \\cdot L \\cdot (1 - \\cos\\theta_0) = 0,1 \\times 10 \\times 1 \\times (1 - \\cos 40^\\circ) \\approx +0,23\\text{ J}$$<br>• <strong>De $B$ vers $C$ (montée au même niveau que $A$) :</strong><br>$$W_{B\\to C}(\\vec{P}) = - m \\cdot g \\cdot h = - m \\cdot g \\cdot L \\cdot (1 - \\cos\\theta_0) \\approx -0,23\\text{ J}$$<br>• <strong>De $A$ vers $C$ :</strong><br>$$W_{A\\to C}(\\vec{P}) = W_{A\\to B}(\\vec{P}) + W_{B\\to C}(\\vec{P}) = 0,23 - 0,23 = 0\\text{ J}$$<br><em>Remarque :</em> Les points $A$ et $C$ étant sur le même plan horizontal ($z_A = z_C$), le travail du poids entre $A$ et $C$ est nul.",
+          "img_corrige": "pendule_simple.png"
+        },
+        {
+          "q": "2. Déterminer le travail de la tension du fil $\\vec{T}$ au cours de ce déplacement. Peut-on appliquer la relation $W_{A\\to C}(\\vec{T}) = \\vec{T} \\cdot \\overrightarrow{AC}$ dans ce cas ? Justifier.",
+          "indice": "Analysez l'angle entre $\\vec{T}$ (portée par le rayon) et le vecteur vitesse $\\vec{v}$ (tangent au cercle), et vérifiez si le vecteur $\\vec{T}$ reste constant en direction.",
+          "corrige": "• <strong>Travail de la tension $\\vec{T}$ :</strong> En tout point de la trajectoire circulaire, le vecteur tension $\\vec{T}$ est perpendiculaire au vecteur vitesse instantanée $\\vec{v}$ (porté par la tangente au cercle).<br>Sa puissance instantanée est donc nulle à chaque instant :<br>$$P(\\vec{T}) = \\vec{T} \\cdot \\vec{v} = T \\cdot v \\cdot \\cos\\left(\\frac{\\pi}{2}\\right) = 0\\text{ W} \\implies W_{A\\to C}(\\vec{T}) = 0\\text{ J}$$<br>• <strong>Justification :</strong> Au cours du déplacement circulaire de la bille, la direction (et l'intensité) du vecteur $\\vec{T}$ varie à chaque instant. La force $\\vec{T}$ <strong>n'est donc pas une force constante</strong> et la trajectoire n'est pas rectiligne : par conséquent, on <strong>ne peut pas</strong> appliquer la formule $W_{A\\to C}(\\vec{T}) = \\vec{T} \\cdot \\overrightarrow{AC}$."
+        }
+      ],
+      "img_enonce": "pendule_simple.png"
     }
   ]
 }
