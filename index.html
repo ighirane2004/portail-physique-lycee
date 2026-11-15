@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portail Physique-Chimie — Pr. IGHIRANE ABDELLATIF</title>
-  <script>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_BhQFdDLluK9nwVbvhPLpoKc1kGYyFOAQ9_QGtD-9NHcL2ioE-_omFdmWhA_RAbARd4KiXnNr2COrfDVQK5jU7GG901oPSxKQp-s7_X2u46ieKU3xiFtROMnYYFDdjvlKDf4dSublSpByKpwbild4ROkC-gLNEid6pfZ1YbPJSFCYSQ3cMKP--_Lt0-HTldzWuV7QOz-iTG6i3PAAxrcQN3dBlMdgIa1sSpdU_4VVtM_XWy3xIJHdqom2AZNFe8Sc0bmMGyvxGNk9fxkDbcUewllffo3ufxEptt_z-Ujqa4U5TLLHoxweN5cSs0oshkP" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBM05qUTFPR1UzTURZMFlqYzJOR1V4TURBd05qWXdOVGc1WVRFeE1HWm1NakEwWVRRMk5qYzVZV1F3WldJellXWVNDeElIRUxERThwek1BeGdCJmZpbGVuYW1lPWluZGV4Lmh0bWwmb3BpPTEwMzEzNTA1MA"/><script>
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -514,9 +514,118 @@
       color: var(--text-muted);
     }
     footer strong { color: var(--gold); }
+
+    /* Écran de verrouillage par Code d'Accès */
+    .lock-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lock-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--accent);
+      border-radius: 18px;
+      padding: 34px 30px;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    }
+    .lock-icon {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .lock-card h2 {
+      color: var(--accent);
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+    .lock-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+    .lock-input {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 10px;
+      border: 1.5px solid #475569;
+      background: var(--bg-main);
+      color: var(--text-main);
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+      transition: 0.2s;
+    }
+    .lock-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+    }
+    .lock-btn {
+      width: 100%;
+      padding: 13px;
+      border-radius: 10px;
+      border: none;
+      background: var(--accent);
+      color: #0f172a;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .lock-btn:hover {
+      background: #7dd3fc;
+    }
+    .lock-error {
+      color: #f87171;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 12px;
+      display: none;
+    }
+    .btn-logout {
+      background: rgba(220, 38, 38, 0.15);
+      color: #fca5a5;
+      border: 1px solid rgba(220, 38, 38, 0.4);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-logout:hover {
+      background: rgba(220, 38, 38, 0.3);
+      color: #ffffff;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- ÉCRAN DE VERROUILLAGE PAR CODE D'ACCÈS -->
+  <div id="lockOverlay" class="lock-overlay">
+    <div class="lock-card">
+      <div class="lock-icon">🔒</div>
+      <h2>Accès Réservé aux Élèves</h2>
+      <div style="margin: 8px 0 14px 0;">
+        <span class="prof-badge">👨‍🏫 Pr. IGHIRANE ABDELLATIF</span>
+      </div>
+      <p>Veuillez saisir le code d'accès fourni en classe pour accéder aux cours, QCM et exercices corrigés.</p>
+      <input type="password" id="accessCodeInput" class="lock-input" placeholder="Code d'accès classe..." autocomplete="off" onkeydown="if(event.key==='Enter') checkAccessCode()">
+      <button class="lock-btn" onclick="checkAccessCode()">🔓 Déverrouiller le Portail</button>
+      <div id="lockError" class="lock-error">❌ Code d'accès incorrect. Veuillez vérifier auprès de votre professeur.</div>
+    </div>
+  </div>
+
 
   <main>
     <!-- BARRE SUPÉRIEURE : TITRE, SIGNATURE & 3 MENUS DÉROULANTS (NIVEAU -> MATIÈRE/THÈME -> CHAPITRE) -->
@@ -529,6 +638,7 @@
           </h1>
           <p id="chapterSubtitle">Sélectionnez votre niveau, la matière et le chapitre à réviser</p>
         </div>
+        <button class="btn-logout" onclick="lockPortal()" title="Verrouiller la session">🔒 Verrouiller</button>
       </div>
 
       <div class="selectors-grid">
@@ -1662,7 +1772,57 @@
       renderQuestion();
     }
 
-    document.addEventListener('DOMContentLoaded', onLevelChange);
+
+    // =========================================================================
+    // CONFIGURATION DES CODES D'ACCÈS ÉLÈVES (Modifiables à volonté)
+    // =========================================================================
+    const ACCESS_CODES = {
+      "IGHIRANE2026": "ALL",   // Code général (ouvre tous les niveaux)
+      "ELARAKI": "ALL",        // Code établissement (ouvre tous les niveaux)
+      "TC2026": "TC",          // Code spécifique Tronc Commun
+      "1BAC2026": "1BAC",      // Code spécifique 1ère Bac
+      "2BAC2026": "2BAC"       // Code spécifique 2ème Bac (+ Nationaux)
+    };
+    const STORAGE_KEY = "portail_pc_ighirane_auth_v1";
+
+    function checkAccessCode() {
+      const input = document.getElementById('accessCodeInput').value.trim().toUpperCase();
+      const errBox = document.getElementById('lockError');
+      if (ACCESS_CODES[input]) {
+        localStorage.setItem(STORAGE_KEY, input);
+        errBox.style.display = 'none';
+        unlockPortal(ACCESS_CODES[input]);
+      } else {
+        errBox.style.display = 'block';
+      }
+    }
+
+    function unlockPortal(allowedLevel) {
+      document.getElementById('lockOverlay').style.display = 'none';
+      const lvlSelect = document.getElementById('levelSelect');
+      if (allowedLevel && allowedLevel !== "ALL") {
+        lvlSelect.value = allowedLevel;
+      }
+      onLevelChange();
+    }
+
+    function lockPortal() {
+      localStorage.removeItem(STORAGE_KEY);
+      document.getElementById('accessCodeInput').value = '';
+      document.getElementById('lockOverlay').style.display = 'flex';
+      clearInterval(timerInterval);
+    }
+
+    function initPortalAuth() {
+      const savedCode = localStorage.getItem(STORAGE_KEY);
+      if (savedCode && ACCESS_CODES[savedCode]) {
+        unlockPortal(ACCESS_CODES[savedCode]);
+      } else {
+        document.getElementById('lockOverlay').style.display = 'flex';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initPortalAuth);
   </script>
 </body>
 </html>
