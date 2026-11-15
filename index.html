@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portail Physique-Chimie — Pr. IGHIRANE ABDELLATIF</title>
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=wpdnT-LFNMlksf0rKTb7ugUk4stj2OtRHd00aFabpmXQgz_FQqTW-9Dy3x-ZRUy50K8FV6M0g0pAdsZVSvKEDVSAF4sqv24Kn7b_0raItZshY-LRfp-tJGMbpZR2V2KSI-KSxEIZuaqNn0A0uo--1B2Pp9LfzT8EbRSGydVup2zWXUb9kQlPEelQgcPTd-ryAb--qM3Jqw1FPN4dzS9UyXO958tsSTFR_stWqTLhimmm759t71j4odpAhf6ttkuqFYxOThPo2jc718wDVWNvnLDkfz0dAi354jsYEzcqfJsVkqveS-t7LroZIf2zIF7l" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jb250cmlidXRpb24udXNlcmNvbnRlbnQuZ29vZ2xlLmNvbS9kb3dubG9hZD9jPUNneGlZWEprWDNOMGIzSmhaMlVTVUJJTmNtVnpjRzl1YzJWZlpHRjBZUm9fQ2pBeVpEYzJZbUkwT1RFeE9XUmlaRE5sTURBd05qWXdOVFpoWXprM1lXWXpaakEwWVRRMU5qYzNNekl3WlROaVltTVNDeElIRUxERThwek1BeGdCJmZpbGVuYW1lPWluZGV4Lmh0bWwmb3BpPTEwMzEzNTA1MA"/><script>
+  <script>
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -57,23 +57,22 @@
     /* Barre supérieure */
     .top-bar {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
       gap: 14px;
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      padding: 16px 24px;
+      padding: 18px 24px;
       border-radius: 14px;
       border: 1px solid var(--border);
       border-left: 5px solid var(--accent);
       margin-bottom: 18px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.35);
     }
-    .brand-group {
+    .top-bar-header {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
     .brand h1 {
       font-size: 1.35rem;
@@ -99,32 +98,79 @@
       text-transform: uppercase;
       box-shadow: 0 2px 8px rgba(251, 191, 36, 0.12);
     }
-    .brand p { font-size: 0.9rem; color: var(--text-muted); }
-    .selectors { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .brand p { font-size: 0.92rem; color: var(--text-muted); }
+
+    /* Grille des 3 sélecteurs (Niveau -> Matière/Thème -> Chapitre) */
+    .selectors-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr 2.2fr auto;
+      gap: 10px;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 980px) {
+      .selectors-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .selectors-grid { grid-template-columns: 1fr; }
+    }
+    .select-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .select-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
     select, .btn-upload {
       background: var(--bg-main);
       color: var(--text-main);
       border: 1.5px solid #475569;
-      padding: 9px 14px;
+      padding: 9px 12px;
       border-radius: 10px;
       font-size: 0.9rem;
       font-weight: 600;
       cursor: pointer;
       transition: 0.2s;
+      width: 100%;
     }
     select:focus { outline: none; border-color: var(--accent); }
+    .btn-upload {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      margin-top: 18px;
+      white-space: nowrap;
+    }
+    @media (max-width: 980px) {
+      .btn-upload { margin-top: 0; }
+    }
     .btn-upload:hover { border-color: var(--accent); background: var(--bg-hover); }
 
-    /* Alerte de diagnostic si un fichier JSON ou image a un nom différent sur GitHub */
-    .diag-banner {
-      background: rgba(245, 158, 11, 0.12);
-      border: 1.5px dashed var(--warning);
-      border-radius: 12px;
-      padding: 14px 20px;
-      margin-bottom: 16px;
-      font-size: 0.92rem;
-      color: #fde68a;
+    /* Bannière Chapitre en préparation */
+    .prep-banner {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1.5px dashed var(--accent);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin-bottom: 18px;
+      text-align: center;
       display: none;
+    }
+    .prep-banner h3 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .prep-banner p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
     }
 
     /* Barre des 3 Onglets principaux */
@@ -473,129 +519,666 @@
 <body>
 
   <main>
-    <!-- BARRE SUPÉRIEURE : TITRE, SIGNATURE PROFESSEUR, NIVEAU & CHAPITRE -->
+    <!-- BARRE SUPÉRIEURE : TITRE, SIGNATURE & 3 MENUS DÉROULANTS (NIVEAU -> MATIÈRE/THÈME -> CHAPITRE) -->
     <div class="top-bar">
-      <div class="brand-group">
+      <div class="top-bar-header">
         <div class="brand">
           <h1>
             <span>Portail Physique-Chimie — Lycée Maroc</span>
             <span class="prof-badge">👨‍🏫 Pr. IGHIRANE ABDELLATIF</span>
           </h1>
-          <p id="chapterSubtitle">Sélectionnez un chapitre dans le menu déroulant</p>
+          <p id="chapterSubtitle">Sélectionnez votre niveau, la matière et le chapitre à réviser</p>
         </div>
       </div>
-      <div class="selectors">
-        <select id="levelSelect" onchange="onLevelChange()">
-          <option value="TC">Tronc Commun (TC)</option>
-          <option value="1BAC" selected>1ère Bac Sciences</option>
-          <option value="2BAC">2ème Bac Sciences</option>
-        </select>
-        <select id="chapterSelect" onchange="onChapterChange()"></select>
+
+      <div class="selectors-grid">
+        <div class="select-group">
+          <span class="select-label">1. Niveau / Espace</span>
+          <select id="levelSelect" onchange="onLevelChange()">
+            <option value="TC">Tronc Commun Sciences (TC)</option>
+            <option value="1BAC" selected>1ère Bac (SM & S.Exp)</option>
+            <option value="2BAC">2ème Bac (SM & PC)</option>
+            <option value="NATIONAUX">🏆 Examens Nationaux 2Bac (Par Thèmes)</option>
+          </select>
+        </div>
+
+        <div class="select-group">
+          <span class="select-label">2. Matière ou Thème National</span>
+          <select id="subjectSelect" onchange="onSubjectChange()"></select>
+        </div>
+
+        <div class="select-group">
+          <span class="select-label">3. Chapitre ou Dossier Thématique</span>
+          <select id="chapterSelect" onchange="onChapterChange()"></select>
+        </div>
+
         <label class="btn-upload">
-          📂 Charger un JSON local
+          📂 Charger un JSON
           <input type="file" id="jsonFileInput" accept=".json" style="display:none" onchange="loadCustomJson(event)">
         </label>
       </div>
     </div>
 
-    <div id="diagBanner" class="diag-banner"></div>
+    <!-- BANNIÈRE D'ÉTAT (Affichée si le chapitre choisi est encore en cours de rédaction) -->
+    <div id="prepBanner" class="prep-banner"></div>
 
     <!-- BARRE DES 3 ONGLETS PRINCIPAUX -->
-    <div class="tabs-bar">
-      <button class="tab-btn active" onclick="switchTab('cours', this)">📖 1. Fiche de Cours & Pièges</button>
-      <button class="tab-btn" onclick="switchTab('qcm', this)">⚡ 2. QCM Interactif (35s)</button>
-      <button class="tab-btn" onclick="switchTab('exercices', this)">✍️ 3. Exercices Gradués</button>
+    <div id="mainContentArea">
+      <div class="tabs-bar">
+        <button class="tab-btn active" onclick="switchTab('cours', this)">📖 1. Fiche de Cours & Pièges</button>
+        <button class="tab-btn" onclick="switchTab('qcm', this)">⚡ 2. QCM Interactif (35s)</button>
+        <button class="tab-btn" onclick="switchTab('exercices', this)">✍️ 3. Exercices Gradués</button>
+      </div>
+
+      <!-- ==================== ONGLET 1 : COURS PLEINE LARGEUR ==================== -->
+      <section id="tab-cours" class="tab-section active">
+        <div id="courseSubTabs" class="sub-tabs-bar"></div>
+        <div id="courseStack" class="course-stack"></div>
+        <div id="pitfallsContainer" class="pitfalls-box">
+          <h3>⚠️ Les 3 Erreurs Classiques à Éviter absolument en Contrôle & au Bac</h3>
+          <ul id="pitfallsList" class="pitfalls-list"></ul>
+        </div>
+      </section>
+
+      <!-- ==================== ONGLET 2 : QCM ==================== -->
+      <section id="tab-qcm" class="tab-section">
+        <div class="qcm-header-controls">
+          <div class="filters">
+            <button id="btnAll" class="btn-filter active" onclick="setQcmFilter('Tous', this)">Tous</button>
+            <button id="btnSoutien" class="btn-filter" onclick="setQcmFilter('Soutien', this)">Soutien</button>
+            <button id="btnStandard" class="btn-filter" onclick="setQcmFilter('Standard', this)">Standard</button>
+            <button id="btnExcellence" class="btn-filter" onclick="setQcmFilter('Excellence', this)">Excellence</button>
+          </div>
+          <div style="display:flex; gap:14px; align-items:center; font-weight:600;">
+            <span id="progressText">Question 0 / 0</span>
+            <span id="levelBadge" class="badge badge-Soutien">-</span>
+            <span id="scoreText" style="color:var(--accent);">Score : 0</span>
+          </div>
+        </div>
+
+        <div class="timer-bar-container">
+          <div id="timerBar" class="timer-bar"></div>
+        </div>
+
+        <div id="quizCard" class="qcm-card">
+          <div id="qcmLayout" class="qcm-layout">
+            <div id="imgBox" class="img-container" style="display:none;">
+              <img id="qImg" alt="Schéma"
+                   onload="onImageLoadSuccess();"
+                   onerror="handleImageFallback(this);">
+              <div id="imgMissingMsg" class="img-missing-msg"></div>
+            </div>
+            <div>
+              <div id="catText" class="cat-label">Sous-thème</div>
+              <div id="qText" class="question-text">Chargement du chapitre...</div>
+              <div id="optionsBox" class="options-list"></div>
+              <div id="expBox" class="exp-box"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-bar">
+          <button class="btn-nav secondary" onclick="prevQuestion()">◀ Question Précédente</button>
+          <button class="btn-nav" onclick="nextQuestion()">Question Suivante ▶</button>
+        </div>
+      </section>
+
+      <!-- ==================== ONGLET 3 : EXERCICES (3 ONGLETS DE NIVEAU PLEINE PAGE) ==================== -->
+      <section id="tab-exercices" class="tab-section">
+        <div class="sub-tabs-bar">
+          <button id="exoBtnSoutien" class="sub-tab-btn active-Soutien" onclick="selectExerciseLevel('Soutien')">🟢 Niveau Soutien</button>
+          <button id="exoBtnStandard" class="sub-tab-btn" onclick="selectExerciseLevel('Standard')">🔵 Niveau Standard</button>
+          <button id="exoBtnExcellence" class="sub-tab-btn" onclick="selectExerciseLevel('Excellence')">🟣 Niveau Excellence</button>
+        </div>
+        <div id="exoFullContainer" class="exo-full-container"></div>
+      </section>
     </div>
-
-    <!-- ==================== ONGLET 1 : COURS PLEINE LARGEUR ==================== -->
-    <section id="tab-cours" class="tab-section active">
-      <div id="courseSubTabs" class="sub-tabs-bar"></div>
-      <div id="courseStack" class="course-stack"></div>
-      <div id="pitfallsContainer" class="pitfalls-box">
-        <h3>⚠️ Les 3 Erreurs Classiques à Éviter absolument en Contrôle</h3>
-        <ul id="pitfallsList" class="pitfalls-list"></ul>
-      </div>
-    </section>
-
-    <!-- ==================== ONGLET 2 : QCM ==================== -->
-    <section id="tab-qcm" class="tab-section">
-      <div class="qcm-header-controls">
-        <div class="filters">
-          <button id="btnAll" class="btn-filter active" onclick="setQcmFilter('Tous', this)">Tous</button>
-          <button id="btnSoutien" class="btn-filter" onclick="setQcmFilter('Soutien', this)">Soutien</button>
-          <button id="btnStandard" class="btn-filter" onclick="setQcmFilter('Standard', this)">Standard</button>
-          <button id="btnExcellence" class="btn-filter" onclick="setQcmFilter('Excellence', this)">Excellence</button>
-        </div>
-        <div style="display:flex; gap:14px; align-items:center; font-weight:600;">
-          <span id="progressText">Question 0 / 0</span>
-          <span id="levelBadge" class="badge badge-Soutien">-</span>
-          <span id="scoreText" style="color:var(--accent);">Score : 0</span>
-        </div>
-      </div>
-
-      <div class="timer-bar-container">
-        <div id="timerBar" class="timer-bar"></div>
-      </div>
-
-      <div id="quizCard" class="qcm-card">
-        <div id="qcmLayout" class="qcm-layout">
-          <div id="imgBox" class="img-container" style="display:none;">
-            <img id="qImg" alt="Schéma"
-                 onload="onImageLoadSuccess();"
-                 onerror="handleImageFallback(this);">
-            <div id="imgMissingMsg" class="img-missing-msg"></div>
-          </div>
-          <div>
-            <div id="catText" class="cat-label">Sous-thème</div>
-            <div id="qText" class="question-text">Chargement du chapitre...</div>
-            <div id="optionsBox" class="options-list"></div>
-            <div id="expBox" class="exp-box"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="nav-bar">
-        <button class="btn-nav secondary" onclick="prevQuestion()">◀ Question Précédente</button>
-        <button class="btn-nav" onclick="nextQuestion()">Question Suivante ▶</button>
-      </div>
-    </section>
-
-    <!-- ==================== ONGLET 3 : EXERCICES (3 ONGLETS DE NIVEAU PLEINE PAGE) ==================== -->
-    <section id="tab-exercices" class="tab-section">
-      <div class="sub-tabs-bar">
-        <button id="exoBtnSoutien" class="sub-tab-btn active-Soutien" onclick="selectExerciseLevel('Soutien')">🟢 Niveau Soutien</button>
-        <button id="exoBtnStandard" class="sub-tab-btn" onclick="selectExerciseLevel('Standard')">🔵 Niveau Standard</button>
-        <button id="exoBtnExcellence" class="sub-tab-btn" onclick="selectExerciseLevel('Excellence')">🟣 Niveau Excellence</button>
-      </div>
-      <div id="exoFullContainer" class="exo-full-container"></div>
-    </section>
   </main>
 
   <footer>
-    <span>📚 Plateforme Interactive de Révision & Remédiation — Physique-Chimie (TC • 1ère Bac • 2ème Bac)</span>
+    <span>📚 Plateforme Interactive de Révision & Remédiation — Physique-Chimie (TC • 1ère Bac SM/S.Exp • 2ème Bac SM/PC • Nationaux)</span>
     <span>Conception & Réalisation : <strong>Pr. IGHIRANE ABDELLATIF</strong></span>
   </footer>
 
   <script>
     // =========================================================================
-    // MOTEUR 100% PUR : Aucune question codée en dur dans index.html !
-    // Tous les chapitres sont chargés dynamiquement depuis les fichiers .json
+    // SQUELETTE COMPLET DU PROGRAMME MAROCAIN (TC, 1BAC SM/SEXP, 2BAC SM/PC, NATIONAUX)
+    // Compatible à la fois avec l'organisation en sous-dossiers (ex: 1bac/physique/)
+    // et avec les fichiers déposés à la racine du dépôt GitHub !
     // =========================================================================
-    const chaptersCatalog = {
-      "1BAC": [
-        { file: "1bac_travail_puissance.json", altFiles: ["1 bac_Travail et puissance.json", "1bac_travail_puissance (1).json"], title: "Ch. 1 : Travail et puissance d'une force" },
-        { file: "1bac_tec.json", altFiles: ["1bac_tec (1).json", "qcm_tec_smartreview.json"], title: "Ch. 2 : Travail et Énergie Cinétique" }
-      ],
-      "2BAC": [
-        { file: "2bac_nucleaire.json", altFiles: [], title: "Noyaux, Masse et Énergie" },
-        { file: "2bac_ondes.json", altFiles: [], title: "Ondes Mécaniques et Lumineuses" }
-      ],
-      "TC": [
-        { file: "qcm_monde_mediterraneen_15_18_ar.json", altFiles: ["tc_histoire_ar.json"], title: "العالم المتوسطي في القرنين 15م و 18م" }
-      ]
-    };
+    const SUBJECT_LABELS = {
+  "TC": [
+    {
+      "id": "PHYSIQUE",
+      "label": "⚛️ Physique (TC)"
+    },
+    {
+      "id": "CHIMIE",
+      "label": "🧪 Chimie (TC)"
+    }
+  ],
+  "1BAC": [
+    {
+      "id": "PHYSIQUE",
+      "label": "⚛️ Physique (1Bac SM & S.Exp)"
+    },
+    {
+      "id": "CHIMIE",
+      "label": "🧪 Chimie (1Bac SM & S.Exp)"
+    }
+  ],
+  "2BAC": [
+    {
+      "id": "PHYSIQUE",
+      "label": "⚛️ Physique (2Bac SM & PC)"
+    },
+    {
+      "id": "CHIMIE",
+      "label": "🧪 Chimie (2Bac SM & PC)"
+    }
+  ],
+  "NATIONAUX": [
+    {
+      "id": "ONDES_NUC",
+      "label": "🌊☢️ Thème 1 : Ondes & Nucléaire"
+    },
+    {
+      "id": "ELECTRICITE",
+      "label": "⚡ Thème 2 : Électricité (RC, RL, RLC, Modulation)"
+    },
+    {
+      "id": "MECANIQUE",
+      "label": "🚀 Thème 3 : Mécanique (Newton, Chute, Projectile, Oscillateurs)"
+    },
+    {
+      "id": "CHIMIE_NAT",
+      "label": "🧪 Thème 4 : Chimie (Cinétique, Acide-Base, Piles, Esters)"
+    }
+  ]
+};
+    const CURRICULUM_CATALOG = {
+  "TC": {
+    "PHYSIQUE": [
+      {
+        "file": "tc/physique/tc_gravitation.json",
+        "rootFile": "tc_gravitation.json",
+        "title": "Méc. 1 : La gravitation universelle"
+      },
+      {
+        "file": "tc/physique/tc_actions_mecaniques.json",
+        "rootFile": "tc_actions_mecaniques.json",
+        "title": "Méc. 2 : Exemples d'actions mécaniques"
+      },
+      {
+        "file": "tc/physique/tc_mouvement.json",
+        "rootFile": "tc_mouvement.json",
+        "title": "Méc. 3 : Le mouvement (Relativité, Vitesse, Nature)"
+      },
+      {
+        "file": "tc/physique/tc_principe_inertie.json",
+        "rootFile": "tc_principe_inertie.json",
+        "title": "Méc. 4 : Le principe d'inertie"
+      },
+      {
+        "file": "tc/physique/tc_equilibre_2_forces.json",
+        "rootFile": "tc_equilibre_2_forces.json",
+        "title": "Méc. 5 : Équilibre d'un corps sous l'action de 2 forces (Tension d'un ressort, Poussée d'Archimède)"
+      },
+      {
+        "file": "tc/physique/tc_equilibre_3_forces.json",
+        "rootFile": "tc_equilibre_3_forces.json",
+        "title": "Méc. 6 : Équilibre d'un solide soumis à 3 forces non parallèles"
+      },
+      {
+        "file": "tc/physique/tc_equilibre_rotation.json",
+        "rootFile": "tc_equilibre_rotation.json",
+        "title": "Méc. 7 : Équilibre d'un solide en rotation autour d'un axe fixe (Théorème des moments)"
+      },
+      {
+        "file": "tc/physique/tc_courant_continu.json",
+        "rootFile": "tc_courant_continu.json",
+        "title": "Élec. 1 : Le courant électrique continu"
+      },
+      {
+        "file": "tc/physique/tc_tension_electrique.json",
+        "rootFile": "tc_tension_electrique.json",
+        "title": "Élec. 2 : La tension électrique"
+      },
+      {
+        "file": "tc/physique/tc_association_conducteurs.json",
+        "rootFile": "tc_association_conducteurs.json",
+        "title": "Élec. 3 : Association des conducteurs ohmiques"
+      },
+      {
+        "file": "tc/physique/tc_caracteristiques_dipoles.json",
+        "rootFile": "tc_caracteristiques_dipoles.json",
+        "title": "Élec. 4 : Caractéristiques de quelques dipôles passifs"
+      },
+      {
+        "file": "tc/physique/tc_dipole_actif.json",
+        "rootFile": "tc_dipole_actif.json",
+        "title": "Élec. 5 : Caractéristique d'un dipôle actif (Point de fonctionnement)"
+      },
+      {
+        "file": "tc/physique/tc_transistor_ampli.json",
+        "rootFile": "tc_transistor_ampli.json",
+        "title": "Élec. 6 : Le transistor et l'amplificateur opérationnel"
+      }
+    ],
+    "CHIMIE": [
+      {
+        "file": "tc/chimie/tc_especes_chimiques.json",
+        "rootFile": "tc_especes_chimiques.json",
+        "title": "Ch. 1 : Les espèces chimiques"
+      },
+      {
+        "file": "tc/chimie/tc_extraction_separation.json",
+        "rootFile": "tc_extraction_separation.json",
+        "title": "Ch. 2 : Extraction, séparation et identification d'espèces chimiques"
+      },
+      {
+        "file": "tc/chimie/tc_synthese_especes.json",
+        "rootFile": "tc_synthese_especes.json",
+        "title": "Ch. 3 : Synthèse d'espèces chimiques"
+      },
+      {
+        "file": "tc/chimie/tc_modele_atome.json",
+        "rootFile": "tc_modele_atome.json",
+        "title": "Ch. 4 : Le modèle de l'atome"
+      },
+      {
+        "file": "tc/chimie/tc_geometrie_molecules.json",
+        "rootFile": "tc_geometrie_molecules.json",
+        "title": "Ch. 5 : La géométrie de quelques molécules (Lewis & Cram)"
+      },
+      {
+        "file": "tc/chimie/tc_classification_periodique.json",
+        "rootFile": "tc_classification_periodique.json",
+        "title": "Ch. 6 : Classification périodique des éléments chimiques"
+      },
+      {
+        "file": "tc/chimie/tc_mole_quantite_matiere.json",
+        "rootFile": "tc_mole_quantite_matiere.json",
+        "title": "Ch. 7 : La mole — Quantité de matière"
+      },
+      {
+        "file": "tc/chimie/tc_concentration_molaire.json",
+        "rootFile": "tc_concentration_molaire.json",
+        "title": "Ch. 8 : La concentration molaire des solutions électrolytiques"
+      },
+      {
+        "file": "tc/chimie/tc_tableau_avancement.json",
+        "rootFile": "tc_tableau_avancement.json",
+        "title": "Ch. 9 : Modélisation des transformations chimiques — Bilan de matière"
+      }
+    ]
+  },
+  "1BAC": {
+    "PHYSIQUE": [
+      {
+        "file": "1bac/physique/1bac_rotation.json",
+        "rootFile": "1bac_rotation.json",
+        "title": "Méc. 1 : Mouvement de rotation d'un solide indéformable autour d'un axe fixe"
+      },
+      {
+        "file": "1bac/physique/1bac_travail_puissance.json",
+        "rootFile": "1bac_travail_puissance.json",
+        "title": "Méc. 2 : Travail et puissance d'une force ✅"
+      },
+      {
+        "file": "1bac/physique/1bac_tec.json",
+        "rootFile": "1bac_tec.json",
+        "title": "Méc. 3 : Travail et énergie cinétique (TEC) ✅"
+      },
+      {
+        "file": "1bac/physique/1bac_epp_em.json",
+        "rootFile": "1bac_epp_em.json",
+        "title": "Méc. 4 : Travail et énergie potentielle de pesanteur — Énergie mécanique"
+      },
+      {
+        "file": "1bac/physique/1bac_energie_interne.json",
+        "rootFile": "1bac_energie_interne.json",
+        "title": "Méc. 5 : Travail et énergie interne (SM) — Transfert thermique (Calorimétrie)"
+      },
+      {
+        "file": "1bac/physique/1bac_champ_electrostatique.json",
+        "rootFile": "1bac_champ_electrostatique.json",
+        "title": "Élec. 1 : Champ électrostatique (Loi de Coulomb)"
+      },
+      {
+        "file": "1bac/physique/1bac_epe.json",
+        "rootFile": "1bac_epe.json",
+        "title": "Élec. 2 : Énergie potentielle d'une charge électrique dans un champ uniforme"
+      },
+      {
+        "file": "1bac/physique/1bac_bilan_circuit.json",
+        "rootFile": "1bac_bilan_circuit.json",
+        "title": "Élec. 3 : Transfert de l'énergie dans un circuit électrique — Puissance et Loi de Pouillet"
+      },
+      {
+        "file": "1bac/physique/1bac_champ_magnetique.json",
+        "rootFile": "1bac_champ_magnetique.json",
+        "title": "Mag. 1 : Le champ magnétique"
+      },
+      {
+        "file": "1bac/physique/1bac_champ_courant.json",
+        "rootFile": "1bac_champ_courant.json",
+        "title": "Mag. 2 : Champ magnétique créé par un courant électrique (Fil, Bobine, Solénoïde)"
+      },
+      {
+        "file": "1bac/physique/1bac_forces_laplace.json",
+        "rootFile": "1bac_forces_laplace.json",
+        "title": "Mag. 3 : Les forces électromagnétiques — Loi de Laplace"
+      },
+      {
+        "file": "1bac/physique/1bac_visibilite_objet.json",
+        "rootFile": "1bac_visibilite_objet.json",
+        "title": "Opt. 1 : Conditions de visibilité d'un objet — Miroir plan"
+      },
+      {
+        "file": "1bac/physique/1bac_lentilles_minces.json",
+        "rootFile": "1bac_lentilles_minces.json",
+        "title": "Opt. 2 : Les images formées par une lentille mince convergente"
+      },
+      {
+        "file": "1bac/physique/1bac_instruments_optiques.json",
+        "rootFile": "1bac_instruments_optiques.json",
+        "title": "Opt. 3 : Quelques instruments d'optique (Loupe, Œil, Microscope - SM)"
+      }
+    ],
+    "CHIMIE": [
+      {
+        "file": "1bac/chimie/1bac_grandeurs_physiques.json",
+        "rootFile": "1bac_grandeurs_physiques.json",
+        "title": "Ch. 1 : Importance de la mesure en chimie — Grandeurs liées à la quantité de matière (Masse, Volume, Gaz parfaits)"
+      },
+      {
+        "file": "1bac/chimie/1bac_concentration_solutions.json",
+        "rootFile": "1bac_concentration_solutions.json",
+        "title": "Ch. 2 : Concentration et solutions électrolytiques (Dissolution, Solvatation)"
+      },
+      {
+        "file": "1bac/chimie/1bac_suivi_transformation.json",
+        "rootFile": "1bac_suivi_transformation.json",
+        "title": "Ch. 3 : Suivi d'une transformation chimique — Bilan de matière"
+      },
+      {
+        "file": "1bac/chimie/1bac_conductimetrie.json",
+        "rootFile": "1bac_conductimetrie.json",
+        "title": "Ch. 4 : Mesure des quantités de matière en solution par conductimétrie (G, σ, λ)"
+      },
+      {
+        "file": "1bac/chimie/1bac_acide_base.json",
+        "rootFile": "1bac_acide_base.json",
+        "title": "Ch. 5 : Les réactions acido-basiques (Théorie de Brönsted)"
+      },
+      {
+        "file": "1bac/chimie/1bac_oxydo_reduction.json",
+        "rootFile": "1bac_oxydo_reduction.json",
+        "title": "Ch. 6 : Les réactions d'oxydo-réduction"
+      },
+      {
+        "file": "1bac/chimie/1bac_dosages_directs.json",
+        "rootFile": "1bac_dosages_directs.json",
+        "title": "Ch. 7 : Dosages (ou titrages) directs en solution"
+      },
+      {
+        "file": "1bac/chimie/1bac_chimie_organique_squelette.json",
+        "rootFile": "1bac_chimie_organique_squelette.json",
+        "title": "Ch. 8 : Expansion de la chimie organique — Squelettes carbonés et Nomenclature"
+      },
+      {
+        "file": "1bac/chimie/1bac_groupes_caracteristiques.json",
+        "rootFile": "1bac_groupes_caracteristiques.json",
+        "title": "Ch. 9 : Les groupes caractéristiques en chimie organique et réactivité"
+      }
+    ]
+  },
+  "2BAC": {
+    "PHYSIQUE": [
+      {
+        "file": "2bac/physique/2bac_ondes_mecaniques.json",
+        "rootFile": "2bac_ondes_mecaniques.json",
+        "title": "Ondes 1 : Ondes mécaniques progressives"
+      },
+      {
+        "file": "2bac/physique/2bac_ondes_periodiques.json",
+        "rootFile": "2bac_ondes_periodiques.json",
+        "title": "Ondes 2 : Ondes mécaniques progressives périodiques"
+      },
+      {
+        "file": "2bac/physique/2bac_ondes_lumineuses.json",
+        "rootFile": "2bac_ondes_lumineuses.json",
+        "title": "Ondes 3 : Propagation d'une onde lumineuse (Diffraction & Dispersion)"
+      },
+      {
+        "file": "2bac/physique/2bac_decroissance_radioactive.json",
+        "rootFile": "2bac_decroissance_radioactive.json",
+        "title": "Nuc. 1 : Décroissance radioactive"
+      },
+      {
+        "file": "2bac/physique/2bac_nucleaire.json",
+        "rootFile": "2bac_nucleaire.json",
+        "title": "Nuc. 2 : Noyaux, masse et énergie"
+      },
+      {
+        "file": "2bac/physique/2bac_dipole_rc.json",
+        "rootFile": "2bac_dipole_rc.json",
+        "title": "Élec. 1 : Le dipôle RC"
+      },
+      {
+        "file": "2bac/physique/2bac_dipole_rl.json",
+        "rootFile": "2bac_dipole_rl.json",
+        "title": "Élec. 2 : Le dipôle RL"
+      },
+      {
+        "file": "2bac/physique/2bac_oscillations_rlc.json",
+        "rootFile": "2bac_oscillations_rlc.json",
+        "title": "Élec. 3 : Oscillations libres dans un circuit RLC série"
+      },
+      {
+        "file": "2bac/physique/2bac_rlc_force.json",
+        "rootFile": "2bac_rlc_force.json",
+        "title": "Élec. 4 : Circuit RLC série en régime sinusoïdal forcé (SM & PC)"
+      },
+      {
+        "file": "2bac/physique/2bac_modulation_amplitude.json",
+        "rootFile": "2bac_modulation_amplitude.json",
+        "title": "Élec. 5 : Ondes électromagnétiques — Modulation d'amplitude (SM & PC)"
+      },
+      {
+        "file": "2bac/physique/2bac_lois_newton.json",
+        "rootFile": "2bac_lois_newton.json",
+        "title": "Méc. 1 : Les lois de Newton"
+      },
+      {
+        "file": "2bac/physique/2bac_chute_verticale.json",
+        "rootFile": "2bac_chute_verticale.json",
+        "title": "Méc. 2 : Chute verticale d'un solide (Libre & avec frottement fluide)"
+      },
+      {
+        "file": "2bac/physique/2bac_mouvements_plans.json",
+        "rootFile": "2bac_mouvements_plans.json",
+        "title": "Méc. 3 : Mouvements plans (Projectile dans g, Particule chargée dans E et B - SM/PC)"
+      },
+      {
+        "file": "2bac/physique/2bac_satellites_planetes.json",
+        "rootFile": "2bac_satellites_planetes.json",
+        "title": "Méc. 4 : Satellites artificiels et planètes (Lois de Kepler)"
+      },
+      {
+        "file": "2bac/physique/2bac_rotation_axe_fixe.json",
+        "rootFile": "2bac_rotation_axe_fixe.json",
+        "title": "Méc. 5 : Mouvement de rotation d'un solide autour d'un axe fixe (RFD en rotation)"
+      },
+      {
+        "file": "2bac/physique/2bac_systemes_oscillants.json",
+        "rootFile": "2bac_systemes_oscillants.json",
+        "title": "Méc. 6 : Systèmes mécaniques oscillants (Pendule élastique, Torsion, Pesant)"
+      },
+      {
+        "file": "2bac/physique/2bac_aspects_energetiques.json",
+        "rootFile": "2bac_aspects_energetiques.json",
+        "title": "Méc. 7 : Aspects énergétiques des oscillations mécaniques"
+      },
+      {
+        "file": "2bac/physique/2bac_atome_mecanique_newton.json",
+        "rootFile": "2bac_atome_mecanique_newton.json",
+        "title": "Méc. 8 : L'atome et la mécanique de Newton (Quanta d'énergie)"
+      }
+    ],
+    "CHIMIE": [
+      {
+        "file": "2bac/chimie/2bac_transformations_lentes_rapides.json",
+        "rootFile": "2bac_transformations_lentes_rapides.json",
+        "title": "Ch. 1 : Transformations lentes et transformations rapides — Facteurs cinétiques"
+      },
+      {
+        "file": "2bac/chimie/2bac_suivi_temporel.json",
+        "rootFile": "2bac_suivi_temporel.json",
+        "title": "Ch. 2 : Suivi temporel d'une transformation chimique — Vitesse de réaction et t₁/₂"
+      },
+      {
+        "file": "2bac/chimie/2bac_deux_sens.json",
+        "rootFile": "2bac_deux_sens.json",
+        "title": "Ch. 3 : Transformations chimiques s'effectuant dans les 2 sens (pH et taux d'avancement τ)"
+      },
+      {
+        "file": "2bac/chimie/2bac_equilibre_chimique.json",
+        "rootFile": "2bac_equilibre_chimique.json",
+        "title": "Ch. 4 : État d'équilibre d'un système chimique (Quotient de réaction Qr et constante K)"
+      },
+      {
+        "file": "2bac/chimie/2bac_acide_base_ka_pka.json",
+        "rootFile": "2bac_acide_base_ka_pka.json",
+        "title": "Ch. 5 : Transformations liées à des réactions acide-base (Ke, Ka, pKa, Diagrammes)"
+      },
+      {
+        "file": "2bac/chimie/2bac_dosage_acido_basique.json",
+        "rootFile": "2bac_dosage_acido_basique.json",
+        "title": "Ch. 6 : Dosage acido-basique (Suivi pH-métrique et indicateurs colorés)"
+      },
+      {
+        "file": "2bac/chimie/2bac_evolution_spontanee.json",
+        "rootFile": "2bac_evolution_spontanee.json",
+        "title": "Ch. 7 : Évolution spontanée d'un système chimique (Critère d'évolution Qr,i vs K)"
+      },
+      {
+        "file": "2bac/chimie/2bac_piles.json",
+        "rootFile": "2bac_piles.json",
+        "title": "Ch. 8 : Transformations spontanées dans les piles et production d'énergie (Q = I·Δt = n(e⁻)·F)"
+      },
+      {
+        "file": "2bac/chimie/2bac_electrolyse.json",
+        "rootFile": "2bac_electrolyse.json",
+        "title": "Ch. 9 : Transformations forcées — L'électrolyse (SM & PC)"
+      },
+      {
+        "file": "2bac/chimie/2bac_esterification_hydrolyse.json",
+        "rootFile": "2bac_esterification_hydrolyse.json",
+        "title": "Ch. 10 : Réactions d'estérification et d'hydrolyse"
+      },
+      {
+        "file": "2bac/chimie/2bac_controle_evolution.json",
+        "rootFile": "2bac_controle_evolution.json",
+        "title": "Ch. 11 : Contrôle de l'évolution d'un système chimique (Anhydride d'acide, Saponification, Catalyse)"
+      }
+    ]
+  },
+  "NATIONAUX": {
+    "ONDES_NUC": [
+      {
+        "file": "2bac/nationaux/nat_ondes_ultrasons_lumiere.json",
+        "rootFile": "nat_ondes_ultrasons_lumiere.json",
+        "title": "Thème 1 : Annales Nationaux — Ondes Mécaniques, Ultrasons & Diffraction (PC & SM)"
+      },
+      {
+        "file": "2bac/nationaux/nat_nucleaire_datation_energie.json",
+        "rootFile": "nat_nucleaire_datation_energie.json",
+        "title": "Thème 2 : Annales Nationaux — Radioactivité, Datation & Bilans Énergétiques (PC & SM)"
+      },
+      {
+        "file": "2bac/nationaux/nat_synthese_ondes_nucleaire.json",
+        "rootFile": "nat_synthese_ondes_nucleaire.json",
+        "title": "Thème 3 : Problèmes de Synthèse — Ondes & Physique Nucléaire (SM)"
+      }
+    ],
+    "ELECTRICITE": [
+      {
+        "file": "2bac/nationaux/nat_elec_dipole_rc.json",
+        "rootFile": "nat_elec_dipole_rc.json",
+        "title": "Thème 1 : Annales Nationaux — Étude du Dipôle RC (Charge, Décharge & Énergie)"
+      },
+      {
+        "file": "2bac/nationaux/nat_elec_dipole_rl.json",
+        "rootFile": "nat_elec_dipole_rl.json",
+        "title": "Thème 2 : Annales Nationaux — Étude du Dipôle RL & Bobine réelle"
+      },
+      {
+        "file": "2bac/nationaux/nat_elec_rlc_libre_entretien.json",
+        "rootFile": "nat_elec_rlc_libre_entretien.json",
+        "title": "Thème 3 : Annales Nationaux — Oscillations Libres & Entretien dans un circuit RLC"
+      },
+      {
+        "file": "2bac/nationaux/nat_elec_rlc_force_modulation.json",
+        "rootFile": "nat_elec_rlc_force_modulation.json",
+        "title": "Thème 4 : Annales Nationaux — RLC Forcé & Modulation / Démodulation d'Amplitude (PC & SM)"
+      }
+    ],
+    "MECANIQUE": [
+      {
+        "file": "2bac/nationaux/nat_meca_plan_incline_poulie.json",
+        "rootFile": "nat_meca_plan_incline_poulie.json",
+        "title": "Thème 1 : Annales Nationaux — Lois de Newton sur Plan Horizontal/Incliné & Rotation"
+      },
+      {
+        "file": "2bac/nationaux/nat_meca_chute_verticale.json",
+        "rootFile": "nat_meca_chute_verticale.json",
+        "title": "Thème 2 : Annales Nationaux — Chute Verticale avec Frottement Fluide & Libre"
+      },
+      {
+        "file": "2bac/nationaux/nat_meca_projectiles_champs.json",
+        "rootFile": "nat_meca_projectiles_champs.json",
+        "title": "Thème 3 : Annales Nationaux — Mouvements Plans (Projectiles, Champ E & Champ B)"
+      },
+      {
+        "file": "2bac/nationaux/nat_meca_satellites_kepler.json",
+        "rootFile": "nat_meca_satellites_kepler.json",
+        "title": "Thème 4 : Annales Nationaux — Satellites, Planètes & Lois de Kepler"
+      },
+      {
+        "file": "2bac/nationaux/nat_meca_oscillateurs_energie.json",
+        "rootFile": "nat_meca_oscillateurs_energie.json",
+        "title": "Thème 5 : Annales Nationaux — Oscillateurs Mécaniques (Élastique, Torsion, Pesant) & Énergie"
+      }
+    ],
+    "CHIMIE_NAT": [
+      {
+        "file": "2bac/nationaux/nat_chimie_cinetique.json",
+        "rootFile": "nat_chimie_cinetique.json",
+        "title": "Thème 1 : Annales Nationaux — Suivi Temporel, Vitesse Volumique & Temps de demi-réaction"
+      },
+      {
+        "file": "2bac/nationaux/nat_chimie_acide_base_dosage.json",
+        "rootFile": "nat_chimie_acide_base_dosage.json",
+        "title": "Thème 2 : Annales Nationaux — Équilibres Acido-Basiques, Ka/pKa & Dosages pH-métriques"
+      },
+      {
+        "file": "2bac/nationaux/nat_chimie_piles_electrolyse.json",
+        "rootFile": "nat_chimie_piles_electrolyse.json",
+        "title": "Thème 3 : Annales Nationaux — Piles Électrochimiques & Électrolyse (PC & SM)"
+      },
+      {
+        "file": "2bac/nationaux/nat_chimie_esterification_controle.json",
+        "rootFile": "nat_chimie_esterification_controle.json",
+        "title": "Thème 4 : Annales Nationaux — Estérification, Hydrolyse, Anhydrides & Saponification"
+      }
+    ]
+  }
+};
 
     let currentChapter = { meta: {}, cours: [], erreurs_a_eviter: [], qcm: [], exercices: [] };
+    let currentFolderPrefix = "";
     let allQuestions = [];
     let filteredQuestions = [];
     let currentIndex = 0;
@@ -617,12 +1200,32 @@
 
     function onLevelChange() {
       const lvl = document.getElementById('levelSelect').value;
+      const subSelect = document.getElementById('subjectSelect');
+      subSelect.innerHTML = '';
+      (SUBJECT_LABELS[lvl] || []).forEach(sub => {
+        const opt = document.createElement('option');
+        opt.value = sub.id;
+        opt.textContent = sub.label;
+        subSelect.appendChild(opt);
+      });
+      onSubjectChange();
+    }
+
+    function onSubjectChange() {
+      const lvl = document.getElementById('levelSelect').value;
+      const sub = document.getElementById('subjectSelect').value;
       const chapSelect = document.getElementById('chapterSelect');
       chapSelect.innerHTML = '';
-      (chaptersCatalog[lvl] || []).forEach(ch => {
+
+      const list = (CURRICULUM_CATALOG[lvl] && CURRICULUM_CATALOG[lvl][sub]) ? CURRICULUM_CATALOG[lvl][sub] : [];
+      list.forEach((ch, idx) => {
         const opt = document.createElement('option');
         opt.value = ch.file;
         opt.textContent = ch.title;
+        // Par défaut en 1BAC Physique, sélectionner directement Méc. 2 (Travail et puissance) qui est complet
+        if (lvl === '1BAC' && sub === 'PHYSIQUE' && ch.rootFile === '1bac_travail_puissance.json') {
+          opt.selected = true;
+        }
         chapSelect.appendChild(opt);
       });
       onChapterChange();
@@ -630,32 +1233,74 @@
 
     async function onChapterChange() {
       const lvl = document.getElementById('levelSelect').value;
+      const sub = document.getElementById('subjectSelect').value;
       const selectedFile = document.getElementById('chapterSelect').value;
       if (!selectedFile) return;
 
-      const entry = (chaptersCatalog[lvl] || []).find(c => c.file === selectedFile) || { file: selectedFile, altFiles: [] };
-      const candidates = [entry.file, ...(entry.altFiles || [])];
-      const diag = document.getElementById('diagBanner');
+      const list = (CURRICULUM_CATALOG[lvl] && CURRICULUM_CATALOG[lvl][sub]) ? CURRICULUM_CATALOG[lvl][sub] : [];
+      const entry = list.find(c => c.file === selectedFile) || { file: selectedFile, rootFile: selectedFile.split('/').pop(), title: selectedFile };
+
+      const folderPath = entry.file.includes('/') ? entry.file.substring(0, entry.file.lastIndexOf('/') + 1) : '';
+      const candidates = [entry.file, entry.rootFile];
+      const prepBanner = document.getElementById('prepBanner');
+      const mainArea = document.getElementById('mainContentArea');
 
       for (const candidate of candidates) {
+        if (!candidate) continue;
         try {
           const response = await fetch(candidate);
           if (response.ok) {
             const parsed = await response.json();
-            diag.style.display = 'none';
+            // Vérifie si le fichier JSON est déjà alimenté ou si c'est une coquille du squelette
+            if (parsed.status === "en_preparation" || ((!parsed.cours || parsed.cours.length === 0) && (!parsed.qcm || parsed.qcm.length === 0))) {
+              showPreparationState(entry, folderPath);
+              return;
+            }
+            currentFolderPrefix = candidate.includes('/') ? candidate.substring(0, candidate.lastIndexOf('/') + 1) : folderPath;
+            prepBanner.style.display = 'none';
+            mainArea.style.display = 'block';
             applyLoadedData(parsed);
             return;
           }
         } catch (err) {}
       }
 
-      // Si aucun fichier JSON n'a pu être chargé (ex: non uploadé sur GitHub ou ouvert en local file://)
-      diag.style.display = 'block';
+      showPreparationState(entry, folderPath);
+    }
+
+    function showPreparationState(entry, folderPath) {
+      const prepBanner = document.getElementById('prepBanner');
+      const mainArea = document.getElementById('mainContentArea');
+      document.getElementById('chapterSubtitle').textContent = entry.title;
+      prepBanner.style.display = 'block';
+      mainArea.style.display = 'none';
+      clearInterval(timerInterval);
+
       if (window.location.protocol === 'file:') {
-        diag.innerHTML = `💡 <strong>Mode local détecté :</strong> Cliquez sur le bouton <strong>« 📂 Charger un JSON local »</strong> en haut à droite et sélectionnez <code>${selectedFile}</code>.`;
+        prepBanner.innerHTML = `
+          <h3>💻 Mode Test Local sur PC (file://)</h3>
+          <p>Pour tester un chapitre en local sans serveur, cliquez sur le bouton <strong>« 📂 Charger un JSON »</strong> en haut à droite et sélectionnez votre fichier (ex: <code>${entry.rootFile}</code>).</p>
+        `;
       } else {
-        diag.innerHTML = `⚠️ <strong>Fichier JSON introuvable sur GitHub :</strong> Le moteur cherche le fichier <code>${selectedFile}</code> dans votre dépôt GitHub. Vérifiez que vous l'avez bien uploadé avec ce nom exact (ou utilisez le bouton « 📂 Charger un JSON local »).`;
+        prepBanner.innerHTML = `
+          <h3>🚧 Chapitre programmé : « ${entry.title} »</h3>
+          <p style="margin-bottom:8px;">Ce chapitre fait partie du squelette officiel (SM / PC) et sera mis en ligne prochainement par <strong>Pr. IGHIRANE ABDELLATIF</strong>.</p>
+          <p style="font-size:0.84rem; color:#64748b;">Emplacement prévu sur GitHub : <code>${entry.file}</code> (ou à la racine : <code>${entry.rootFile}</code>)</p>
+        `;
       }
+    }
+
+    // Réécrit automatiquement les balises <img src="nom.png"> dans les exercices pour chercher dans le sous-dossier PUIS à la racine
+    function resolveExerciseImagesHtml(htmlStr) {
+      if (!htmlStr || !currentFolderPrefix) return htmlStr;
+      return htmlStr.replace(/<img\s+([^>]*?)src="([^"/]+)"([^>]*)>/gi, (match, pre, srcName, post) => {
+        const subPath = currentFolderPrefix + srcName;
+        // Ajoute un repli automatique vers la racine si l'image est encore à la racine du dépôt GitHub
+        if (match.includes('onerror=')) {
+          return `<img ${pre}src="${subPath}" data-root="${srcName}" ${post}>`;
+        }
+        return `<img ${pre}src="${subPath}" onerror="if(!this.dataset.r){this.dataset.r='1';this.src='${srcName}';}else{this.style.display='none';}"${post}>`;
+      });
     }
 
     function applyLoadedData(parsed) {
@@ -689,7 +1334,6 @@
       document.getElementById('btnExcellence').textContent = `Excellence (${cExcellence})`;
     }
 
-    // Gestion intelligente des images et diagnostic si le nom sur GitHub diffère
     function onImageLoadSuccess() {
       const qImg = document.getElementById('qImg');
       const msg = document.getElementById('imgMissingMsg');
@@ -708,22 +1352,22 @@
       }
       const base = orig.replace(/\.png$/i, '');
       const candidates = [
+        orig,
+        currentFolderPrefix + orig + '.png',
         orig + '.png',
+        currentFolderPrefix + base + '.PNG',
         base + '.PNG',
-        orig.charAt(0).toUpperCase() + orig.slice(1),
-        'images/' + orig,
-        base + ' (1).png'
+        'images/' + orig
       ];
       let step = parseInt(imgEl.dataset.retryStep || '0', 10);
       if (step < candidates.length) {
         imgEl.dataset.retryStep = String(step + 1);
         imgEl.src = candidates[step];
       } else {
-        // Affiche un encadré clair indiquant quel nom exact de fichier image est attendu sur GitHub
         imgEl.style.display = 'none';
         const msg = document.getElementById('imgMissingMsg');
         msg.style.display = 'block';
-        msg.innerHTML = `🖼️ <strong>Schéma introuvable (${orig}) :</strong><br>Vérifiez sur votre dépôt GitHub que l'image s'appelle exactement <code>${orig}</code> (tout en minuscules, à côté de <code>index.html</code>).`;
+        msg.innerHTML = `🖼️ <strong>Schéma introuvable (${orig}) :</strong><br>Placez l'image <code>${orig}</code> dans <code>${currentFolderPrefix || 'la racine'}</code> sur GitHub.`;
         document.getElementById('imgBox').style.display = 'block';
         document.getElementById('qcmLayout').classList.add('has-image');
       }
@@ -816,6 +1460,9 @@
       ['Soutien', 'Standard', 'Excellence'].forEach(lvl => {
         const btn = document.getElementById('exoBtn' + lvl);
         if (btn) {
+          const count = (currentChapter.exercices || []).filter(e => e.niveau === lvl).length;
+          const icon = lvl === 'Soutien' ? '🟢' : (lvl === 'Standard' ? '🔵' : '🟣');
+          btn.textContent = `${icon} Niveau ${lvl} (${count})`;
           btn.className = 'sub-tab-btn' + (lvl === level ? ' active-' + lvl : '');
         }
       });
@@ -843,7 +1490,7 @@
                 <button class="btn-small" onclick="toggleBox('${solId}')">✅ Afficher le corrigé détaillé</button>
               </div>
               <div id="${hintId}" class="reveal-box reveal-hint"><strong>Indice :</strong> ${qItem.indice}</div>
-              <div id="${solId}" class="reveal-box reveal-sol"><strong>Corrigé :</strong><br>${qItem.corrige}</div>
+              <div id="${solId}" class="reveal-box reveal-sol"><strong>Corrigé :</strong><br>${resolveExerciseImagesHtml(qItem.corrige)}</div>
             </div>
           `;
         });
@@ -853,7 +1500,7 @@
             <h3 style="font-size:1.22rem; color:var(--accent);">${ex.titre}</h3>
             <span class="badge badge-${ex.niveau}">${ex.niveau}${exos.length > 1 ? ' (' + (exIdx + 1) + '/' + exos.length + ')' : ''}</span>
           </div>
-          <div class="exo-context">${ex.enonce}</div>
+          <div class="exo-context">${resolveExerciseImagesHtml(ex.enonce)}</div>
           <div>${qHtml}</div>
         `;
         exoContainer.appendChild(card);
@@ -923,7 +1570,7 @@
       if (item.img_q && item.img_q.trim() !== "") {
         const cleanName = item.img_q.trim();
         qImg.dataset.orig = cleanName;
-        qImg.src = cleanName;
+        qImg.src = currentFolderPrefix ? (currentFolderPrefix + cleanName) : cleanName;
       } else {
         qImg.dataset.orig = '';
         qImg.removeAttribute('src');
@@ -999,7 +1646,8 @@
       reader.onload = function(e) {
         try {
           const parsed = JSON.parse(e.target.result);
-          document.getElementById('diagBanner').style.display = 'none';
+          document.getElementById('prepBanner').style.display = 'none';
+          document.getElementById('mainContentArea').style.display = 'block';
           applyLoadedData(parsed);
         } catch (err) {
           alert("Erreur de lecture du fichier JSON.");
