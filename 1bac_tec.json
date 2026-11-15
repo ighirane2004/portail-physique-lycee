@@ -1,0 +1,412 @@
+{
+  "meta": {
+    "niveau_lycee": "1ère Bac Sciences",
+    "titre": "Travail et Énergie Cinétique"
+  },
+  "cours": [
+    {
+      "titre": "1. Travail d'une force constante",
+      "resume": "Le travail d'une force constante $\\vec{F}$ lors d'un déplacement rectiligne de $A$ vers $B$ est égal au produit scalaire de $\\vec{F}$ par $\\overrightarrow{AB}$.",
+      "formule": "$$W_{AB}(\\vec{F}) = \\vec{F} \\cdot \\overrightarrow{AB} = F \\cdot AB \\cdot \\cos(\\alpha)$$",
+      "unites": "$W$ en Joules ($\\text{J}$), $F$ en Newtons ($\\text{N}$), $AB$ en mètres ($\\text{m}$)."
+    },
+    {
+      "titre": "2. Travail du Poids dans le champ de pesanteur",
+      "resume": "Le travail du poids $\\vec{P}$ ne dépend pas du chemin suivi, mais uniquement de la dénivellation entre le point de départ $A$ et d'arrivée $B$.",
+      "formule": "$$W_{AB}(\\vec{P}) = m \\cdot g \\cdot (z_A - z_B) = \\pm m \\cdot g \\cdot h$$",
+      "unites": "Moteur ($+mgh$) à la descente ; Résistant ($-mgh$) à la montée."
+    },
+    {
+      "titre": "3. Énergie Cinétique (Translation & Rotation)",
+      "resume": "Tout corps en mouvement possède une énergie cinétique toujours positive ou nulle liée à sa vitesse.",
+      "formule": "$$E_c(\\text{trans}) = \\frac{1}{2} m v^2 \\quad | \\quad E_c(\\text{rot}) = \\frac{1}{2} J_\\Delta \\omega^2$$",
+      "unites": "$m$ en $\\text{kg}$, $v$ en $\\text{m}\\cdot\\text{s}^{-1}$ ($1\\text{ m/s} = 3,6\\text{ km/h}$), $J_\\Delta$ en $\\text{kg}\\cdot\\text{m}^2$, $\\omega$ en $\\text{rad}\\cdot\\text{s}^{-1}$."
+    },
+    {
+      "titre": "4. Théorème de l'Énergie Cinétique (TEC)",
+      "resume": "Dans un référentiel galiléen, la variation de l'énergie cinétique entre deux instants $t_A$ et $t_B$ égale la somme algébrique des travaux des forces extérieures.",
+      "formule": "$$\\Delta E_c = E_c(B) - E_c(A) = \\sum W_{AB}(\\vec{F}_{\\text{ext}})$$",
+      "unites": "Permet de déterminer une vitesse $v_B$ ou une intensité de frottement $f$."
+    },
+    {
+      "titre": "5. Travail d'un couple et Puissance",
+      "resume": "Pour un solide en rotation soumis à un moment constant $\\mathcal{M}_\\Delta$, le travail dépend de l'angle de rotation $\\Delta \\theta$.",
+      "formule": "$$W = \\mathcal{M}_\\Delta \\cdot \\Delta \\theta \\quad | \\quad P_m = \\frac{W}{\\Delta t}$$",
+      "unites": "$\\mathcal{M}_\\Delta$ en $\\text{N}\\cdot\\text{m}$, $\\Delta \\theta$ en $\\text{rad}$, Puissance $P$ en Watts ($\\text{W}$)."
+    },
+    {
+      "titre": "6. Dénivellation sur plan incliné et pendule",
+      "resume": "Deux relations géométriques indispensables pour exprimer la hauteur $h$ dans le travail du poids :",
+      "formule": "$$h_{\\text{plan}} = AB \\sin(\\alpha) \\quad | \\quad h_{\\text{pendule}} = L(1 - \\cos\\theta_0)$$",
+      "unites": "Attention à ne jamais confondre $\\sin(\\alpha)$ et $\\cos(\\alpha)$ sur le plan incliné."
+    }
+  ],
+  "erreurs_a_eviter": [
+    "<strong>Piège N°1 (Trigonométrie) :</strong> Écrire $h = AB \\cos(\\alpha)$ au lieu de $h = AB \\sin(\\alpha)$ sur un plan incliné, ou oublier que le travail du poids est négatif lors d'une montée.",
+    "<strong>Piège N°2 (Carré et Racine) :</strong> Oublier la racine carrée finale en isolant la vitesse dans le TEC : écrire $v_B = \\frac{2 E_c(B)}{m}$ au lieu de $v_B = \\sqrt{\\frac{2 E_c(B)}{m}}$.",
+    "<strong>Piège N°3 (Conversions SI) :</strong> Laisser la vitesse en $\\text{km}\\cdot\\text{h}^{-1}$ au lieu de diviser par $3,6$ pour obtenir des $\\text{m}\\cdot\\text{s}^{-1}$, ou laisser la masse en grammes."
+  ],
+  "qcm": [
+    {
+      "q": "Quelle est l'unité du travail d'une force et de l'énergie cinétique dans le Système International (SI) ?",
+      "r": "Le Joule ($\\text{J}$)",
+      "choix": [
+        "Le Watt ($\\text{W}$)",
+        "Le Newton ($\\text{N}$)",
+        "Le Newton par mètre ($\\text{N}\\cdot\\text{m}^{-1}$)"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Le travail et l'énergie cinétique s'expriment en Joules ($\\text{J}$). Le Watt ($\\text{W}$) est l'unité de la puissance et le Newton ($\\text{N}$) celle de la force.",
+      "cat": "Unités et Grandeurs",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Quelle est l'expression de l'énergie cinétique $E_c$ d'un solide de masse $m$ en mouvement de translation à la vitesse $v$ ?",
+      "r": "$E_c = \\frac{1}{2} m \\cdot v^2$",
+      "choix": [
+        "$E_c = m \\cdot v^2$",
+        "$E_c = \\frac{1}{2} m \\cdot v$",
+        "$E_c = \\frac{1}{2} m^2 \\cdot v$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "En translation, l'énergie cinétique vaut $E_c = \\frac{1}{2} m \\cdot v^2$, avec $m$ en $\\text{kg}$ et $v$ en $\\text{m}\\cdot\\text{s}^{-1}$.",
+      "cat": "Énergie cinétique",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Sur le schéma de la poulie en rotation autour de l'axe fixe $(\\Delta)$, quelle est l'expression de son énergie cinétique $E_c$ ?",
+      "r": "$E_c = \\frac{1}{2} J_\\Delta \\cdot \\omega^2$",
+      "choix": [
+        "$E_c = \\frac{1}{2} J_\\Delta \\cdot \\omega$",
+        "$E_c = J_\\Delta \\cdot \\omega^2$",
+        "$E_c = \\frac{1}{2} m \\cdot \\omega^2$"
+      ],
+      "img_q": "poulie_rotation.png",
+      "img_r": "",
+      "exp": "En rotation autour d'un axe fixe, le moment d'inertie $J_\\Delta$ (en $\\text{kg}\\cdot\\text{m}^2$) remplace la masse $m$ et la vitesse angulaire $\\omega$ (en $\\text{rad}\\cdot\\text{s}^{-1}$) remplace $v$.",
+      "cat": "Rotation",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Sur le schéma du plan incliné, comment qualifie-t-on le travail de la force de frottement $\\vec{f}$ opposée au déplacement de $A$ vers $B$ ?",
+      "r": "Un travail résistant ($W_{AB}(\\vec{f}) = - f \\cdot AB < 0$)",
+      "choix": [
+        "Un travail moteur ($W_{AB}(\\vec{f}) = + f \\cdot AB > 0$)",
+        "Un travail nul ($W_{AB}(\\vec{f}) = 0$)",
+        "Un travail indépendant de la distance $AB$"
+      ],
+      "img_q": "plan_incline.png",
+      "img_r": "",
+      "exp": "La force de frottement $\\vec{f}$ est de sens opposé au déplacement $\\overrightarrow{AB}$ ($\\alpha = 180^\\circ, \\cos(180^\\circ) = -1$), son travail est donc résistant et vaut $-f \\cdot AB$.",
+      "cat": "Travail d'une force",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Sur le schéma du pendule simple, que vaut le travail de la tension du fil $W_{AB}(\\vec{T})$ lors du mouvement circulaire de $A$ vers $B$ ?",
+      "r": "$W_{AB}(\\vec{T}) = 0\\text{ J}$",
+      "choix": [
+        "$W_{AB}(\\vec{T}) = T \\cdot L$",
+        "$W_{AB}(\\vec{T}) = - T \\cdot L(1 - \\cos\\theta_0)$",
+        "$W_{AB}(\\vec{T}) = m \\cdot g \\cdot L$"
+      ],
+      "img_q": "pendule_simple.png",
+      "img_r": "",
+      "exp": "La tension du fil $\\vec{T}$ est portée par le rayon, donc à chaque instant perpendiculaire au vecteur déplacement élémentaire tangent au cercle : son travail est nul.",
+      "cat": "Pendule simple",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Par lecture graphique directe sur la courbe $E_c = f(x)$, que vaut la variation d'énergie cinétique $\\Delta E_c$ entre $x_A = 0\\text{ m}$ et $x_B = 4\\text{ m}$ ?",
+      "r": "$\\Delta E_c = +12\\text{ J}$",
+      "choix": [
+        "$\\Delta E_c = +16\\text{ J}$",
+        "$\\Delta E_c = +4\\text{ J}$",
+        "$\\Delta E_c = +20\\text{ J}$"
+      ],
+      "img_q": "courbe_ec.png",
+      "img_r": "",
+      "exp": "On lit $E_c(A) = 4\\text{ J}$ en $x=0$ et $E_c(B) = 16\\text{ J}$ en $x=4\\text{ m}$. La variation vaut donc $\\Delta E_c = E_c(B) - E_c(A) = 16 - 4 = 12\\text{ J}$.",
+      "cat": "Exploitation graphique",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "D'après le schéma du plan incliné d'un angle $\\alpha$, quelle est l'expression du travail du poids $W_{AB}(\\vec{P})$ lors de la descente de $A$ vers $B$ ?",
+      "r": "$W_{AB}(\\vec{P}) = + m \\cdot g \\cdot AB \\cdot \\sin(\\alpha)$",
+      "choix": [
+        "$W_{AB}(\\vec{P}) = + m \\cdot g \\cdot AB \\cdot \\cos(\\alpha)$",
+        "$W_{AB}(\\vec{P}) = - m \\cdot g \\cdot AB \\cdot \\sin(\\alpha)$",
+        "$W_{AB}(\\vec{P}) = m \\cdot g \\cdot AB$"
+      ],
+      "img_q": "plan_incline.png",
+      "img_r": "",
+      "exp": "À la descente, le travail du poids est moteur ($>0$) et la hauteur descendue est le côté opposé à l'angle $\\alpha$ : $h = z_A - z_B = AB \\cdot \\sin(\\alpha)$.",
+      "cat": "Travail du poids",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Sur le schéma du pendule simple de longueur $L$ lâché d'un angle $\\theta_0$, quelle est l'expression du travail du poids $W_{AB}(\\vec{P})$ entre $A$ et $B$ ?",
+      "r": "$W_{AB}(\\vec{P}) = m \\cdot g \\cdot L (1 - \\cos\\theta_0)$",
+      "choix": [
+        "$W_{AB}(\\vec{P}) = m \\cdot g \\cdot L (1 - \\sin\\theta_0)$",
+        "$W_{AB}(\\vec{P}) = m \\cdot g \\cdot L \\cos\\theta_0$",
+        "$W_{AB}(\\vec{P}) = - m \\cdot g \\cdot L (1 - \\cos\\theta_0)$"
+      ],
+      "img_q": "pendule_simple.png",
+      "img_r": "",
+      "exp": "D'après le triangle rectangle $OHA$, la longueur $OH$ vaut $L\\cos\\theta_0$. La hauteur descendue est donc $h = OB - OH = L - L\\cos\\theta_0 = L(1 - \\cos\\theta_0)$.",
+      "cat": "Pendule simple",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Un solide de masse $m = 4\\text{ kg}$ se déplace en translation à la vitesse $v = 5\\text{ m}\\cdot\\text{s}^{-1}$. Que vaut son énergie cinétique $E_c$ ?",
+      "r": "$50\\text{ J}$",
+      "choix": [
+        "$100\\text{ J}$",
+        "$10\\text{ J}$",
+        "$20\\text{ J}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Calcul mental : $E_c = \\frac{1}{2} \\times m \\times v^2 = \\frac{1}{2} \\times 4 \\times 5^2 = 2 \\times 25 = 50\\text{ J}$.",
+      "cat": "Énergie cinétique",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Comment passe-t-on d'une vitesse exprimée en $\\text{km}\\cdot\\text{h}^{-1}$ à une vitesse en $\\text{m}\\cdot\\text{s}^{-1}$ ?",
+      "r": "On divise la valeur par $3,6$",
+      "choix": [
+        "On multiplie la valeur par $3,6$",
+        "On divise la valeur par $60$",
+        "On multiplie la valeur par $10^{-3}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Comme $1\\text{ km} = 1000\\text{ m}$ et $1\\text{ h} = 3600\\text{ s}$, on a $1\\text{ m}\\cdot\\text{s}^{-1} = 3,6\\text{ km}\\cdot\\text{h}^{-1}$. On divise donc par $3,6$ (ex: $36\\text{ km}\\cdot\\text{h}^{-1} = 10\\text{ m}\\cdot\\text{s}^{-1}$).",
+      "cat": "Unités et Grandeurs",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Si la vitesse d'une voiture en translation est multipliée par $3$ ($v' = 3v$), par combien est multipliée son énergie cinétique $E_c$ ?",
+      "r": "Elle est multipliée par $9$",
+      "choix": [
+        "Elle est multipliée par $3$",
+        "Elle est multipliée par $6$",
+        "Elle est multipliée par $\\sqrt{3}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "L'énergie cinétique est proportionnelle au carré de la vitesse : $E_c' = \\frac{1}{2} m (3v)^2 = 9 \\times \\left(\\frac{1}{2} m v^2\\right) = 9 E_c$.",
+      "cat": "Énergie cinétique",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Quelle relation traduit correctement le théorème de l'énergie cinétique (TEC) appliqué au solide sur le plan incliné entre $A$ et $B$ ?",
+      "r": "$E_c(B) - E_c(A) = W_{AB}(\\vec{P}) + W_{AB}(\\vec{R})$",
+      "choix": [
+        "$E_c(A) - E_c(B) = W_{AB}(\\vec{P}) + W_{AB}(\\vec{R})$",
+        "$E_c(B) + E_c(A) = W_{AB}(\\vec{P}) - W_{AB}(\\vec{R})$",
+        "$\\Delta E_c = \\vec{P} + \\vec{R}$"
+      ],
+      "img_q": "plan_incline.png",
+      "img_r": "",
+      "exp": "Dans un référentiel galiléen, la variation de l'énergie cinétique $E_c(B) - E_c(A)$ est égale à la somme algébrique des travaux des forces extérieures appliquées au solide.",
+      "cat": "Théorème de l'Énergie Cinétique",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Sur le schéma de la poulie de rayon $r = 0,2\\text{ m}$, le solide $(S)$ descend d'une hauteur $h = 1\\text{ m}$ sans glissement du fil. De quel angle $\\Delta \\theta$ la poulie a-t-elle tourné ?",
+      "r": "$\\Delta \\theta = 5\\text{ rad}$",
+      "choix": [
+        "$\\Delta \\theta = 0,2\\text{ rad}$",
+        "$\\Delta \\theta = 2\\text{ rad}$",
+        "$\\Delta \\theta = 10\\text{ rad}$"
+      ],
+      "img_q": "poulie_rotation.png",
+      "img_r": "",
+      "exp": "Le fil étant inextensible et ne glissant pas sur la gorge de la poulie, $h = r \\cdot \\Delta \\theta \\Rightarrow \\Delta \\theta = \\frac{h}{r} = \\frac{1}{0,2} = 5\\text{ rad}$.",
+      "cat": "Rotation",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Sur le montage de la poulie, si la tension du fil vaut $T' = 10\\text{ N}$ et le rayon vaut $r = 0,2\\text{ m}$, que vaut le travail de $\\vec{T}'$ lorsque la poulie tourne de $\\Delta \\theta = 5\\text{ rad}$ ?",
+      "r": "$W(\\vec{T}') = +10\\text{ J}$",
+      "choix": [
+        "$W(\\vec{T}') = +50\\text{ J}$",
+        "$W(\\vec{T}') = +2\\text{ J}$",
+        "$W(\\vec{T}') = 0\\text{ J}$"
+      ],
+      "img_q": "poulie_rotation.png",
+      "img_r": "",
+      "exp": "Le moment de $\\vec{T}'$ est $\\mathcal{M}_\\Delta(\\vec{T}') = T' \\cdot r = 10 \\times 0,2 = 2\\text{ N}\\cdot\\text{m}$. Son travail vaut $W = \\mathcal{M}_\\Delta \\cdot \\Delta \\theta = 2 \\times 5 = 10\\text{ J}$ (ou directement $T' \\cdot h = 10 \\times 1 = 10\\text{ J}$).",
+      "cat": "Rotation",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Un moteur développe un travail $W = 600\\text{ J}$ pendant une durée $\\Delta t = 2\\text{ s}$. Quelle est sa puissance moyenne $P_m$ ?",
+      "r": "$300\\text{ W}$",
+      "choix": [
+        "$1200\\text{ W}$",
+        "$30\\text{ W}$",
+        "$600\\text{ W}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "La puissance moyenne est le quotient du travail par la durée : $P_m = \\frac{W}{\\Delta t} = \\frac{600}{2} = 300\\text{ W}$.",
+      "cat": "Puissance mécanique",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Sur le plan incliné supposé sans frottement ($\\vec{f} = \\vec{0}$), le solide part de $A$ sans vitesse ($v_A = 0$) d'une hauteur $h = 5\\text{ m}$ ($g = 10\\text{ N}\\cdot\\text{kg}^{-1}$). Quelle est sa vitesse $v_B$ en $B$ ?",
+      "r": "$10\\text{ m}\\cdot\\text{s}^{-1}$",
+      "choix": [
+        "$100\\text{ m}\\cdot\\text{s}^{-1}$",
+        "$5\\text{ m}\\cdot\\text{s}^{-1}$",
+        "$50\\text{ m}\\cdot\\text{s}^{-1}$"
+      ],
+      "img_q": "plan_incline.png",
+      "img_r": "",
+      "exp": "D'après le TEC (avec $W(\\vec{R}) = 0$ et $E_c(A) = 0$) : $\\frac{1}{2} m v_B^2 = m g h \\Rightarrow v_B = \\sqrt{2 g h} = \\sqrt{2 \\times 10 \\times 5} = \\sqrt{100} = 10\\text{ m}\\cdot\\text{s}^{-1}$.",
+      "cat": "Théorème de l'Énergie Cinétique",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "Sur le plan incliné avec frottement ($AB = 5\\text{ m}$), le travail du poids est $W_{AB}(\\vec{P}) = 40\\text{ J}$ et l'énergie cinétique passe de $E_c(A) = 0$ à $E_c(B) = 30\\text{ J}$. Que vaut l'intensité $f$ du frottement ?",
+      "r": "$f = 2\\text{ N}$",
+      "choix": [
+        "$f = 10\\text{ N}$",
+        "$f = 14\\text{ N}$",
+        "$f = 6\\text{ N}$"
+      ],
+      "img_q": "plan_incline.png",
+      "img_r": "",
+      "exp": "TEC : $\\Delta E_c = W_{AB}(\\vec{P}) - f \\cdot AB \\Rightarrow 30 = 40 - 5 f \\Rightarrow 5 f = 10 \\Rightarrow f = \\frac{10}{5} = 2\\text{ N}$.",
+      "cat": "Théorème de l'Énergie Cinétique",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "La bille du pendule simple ($L = 1,6\\text{ m}$, $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$) est lâchée sans vitesse en $A$ avec $\\cos\\theta_0 = 0,5$. Quelle est sa vitesse $v_B$ au passage par la verticale en $B$ ?",
+      "r": "$v_B = 4\\text{ m}\\cdot\\text{s}^{-1}$",
+      "choix": [
+        "$v_B = 16\\text{ m}\\cdot\\text{s}^{-1}$",
+        "$v_B = 8\\text{ m}\\cdot\\text{s}^{-1}$",
+        "$v_B = 2\\text{ m}\\cdot\\text{s}^{-1}$"
+      ],
+      "img_q": "pendule_simple.png",
+      "img_r": "",
+      "exp": "La hauteur descendue est $h = L(1 - \\cos\\theta_0) = 1,6 \\times (1 - 0,5) = 0,8\\text{ m}$. Par le TEC : $v_B = \\sqrt{2 g h} = \\sqrt{2 \\times 10 \\times 0,8} = \\sqrt{16} = 4\\text{ m}\\cdot\\text{s}^{-1}$.",
+      "cat": "Pendule simple",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "Un solide se déplace sans frottement sur un axe horizontal $Ox$ sous l'action d'une force horizontale constante $\\vec{F}$ de même sens que le mouvement. D'après le graphe $E_c = f(x)$, que vaut l'intensité $F$ ?",
+      "r": "$F = 3\\text{ N}$",
+      "choix": [
+        "$F = 4\\text{ N}$",
+        "$F = 12\\text{ N}$",
+        "$F = 16\\text{ N}$"
+      ],
+      "img_q": "courbe_ec.png",
+      "img_r": "",
+      "exp": "D'après le TEC : $E_c(x) - E_c(0) = F \\cdot x \\Rightarrow E_c(x) = E_c(0) + F \\cdot x$. L'intensité $F$ est le coefficient directeur de la droite : $F = \\frac{16 - 4}{4 - 0} = \\frac{12}{4} = 3\\text{ N}$.",
+      "cat": "Exploitation graphique",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "Sur le montage de la poulie ($J_\\Delta = 0,04\\text{ kg}\\cdot\\text{m}^2, r = 0,1\\text{ m}$), lorsque la vitesse linéaire du solide $(S)$ vaut $v = 2\\text{ m}\\cdot\\text{s}^{-1}$, que vaut l'énergie cinétique $E_c(\\text{poulie})$ ?",
+      "r": "$E_c(\\text{poulie}) = 8\\text{ J}$",
+      "choix": [
+        "$E_c(\\text{poulie}) = 0,08\\text{ J}$",
+        "$E_c(\\text{poulie}) = 4\\text{ J}$",
+        "$E_c(\\text{poulie}) = 20\\text{ J}$"
+      ],
+      "img_q": "poulie_rotation.png",
+      "img_r": "",
+      "exp": "La vitesse angulaire est $\\omega = \\frac{v}{r} = \\frac{2}{0,1} = 20\\text{ rad}\\cdot\\text{s}^{-1}$. Donc $E_c(\\text{poulie}) = \\frac{1}{2} J_\\Delta \\omega^2 = \\frac{1}{2} \\times 0,04 \\times 20^2 = 0,02 \\times 400 = 8\\text{ J}$.",
+      "cat": "Rotation",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "",
+      "r": "",
+      "choix": [],
+      "img_q": "",
+      "img_r": "",
+      "exp": "",
+      "cat": "Métadonnées Pédagogiques Invisibles",
+      "niveau": "Professeur",
+      "erreurs_typiques": "1. Confusion sur plan_incline.png entre \\sin(\\alpha) et \\cos(\\alpha) pour exprimer la dénivellation h = AB \\sin(\\alpha), et sur pendule_simple.png en écrivant h = L \\cos\\theta_0 au lieu de L(1 - \\cos\\theta_0). 2. Oubli d'élever la vitesse au carré dans E_c = \\frac{1}{2} m v^2 ou oubli de la racine carrée finale lors de l'extraction de v_B à partir du TEC. 3. Sur poulie_rotation.png, confusion entre le travail de la tension sur le solide W(\\vec{T}) = -T \\cdot h (résistant) et sur la poulie W(\\vec{T}') = +T' \\cdot r \\cdot \\Delta \\theta (moteur).",
+      "solution_classe": "1. Projeter plan_incline.png et pendule_simple.png au TBI et faire repérer au marqueur fluo le triangle rectangle : sur le plan incliné, h est le côté opposé (donc \\sin\\alpha) ; sur le pendule, L\\cos\\theta_0 est le côté adjacent OH, qu'il faut soustraire au rayon total OB = L. 2. Lors de l'exploitation de courbe_ec.png, faire écrire l'équation théorique du TEC (E_c = E_c(0) + F \\cdot x) juste au-dessus de l'équation mathématique de la droite (y = b + a \\cdot x) pour identifier la pente a = F. 3. Pour le système {Poulie + Solide}, appliquer le TEC séparément à chaque sous-système en entourant les forces extérieures de chacun.",
+      "animation_python": "Script Python interactif (Matplotlib avec curseurs pour la masse m, l'angle d'inclinaison \\alpha et le frottement f) simulant la descente du solide sur le plan incliné et traçant en direct la droite E_c = f(x) ainsi que les barres énergétiques E_c(B), W(\\vec{P}) et W(\\vec{f})."
+    }
+  ],
+  "exercices": [
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 1 : Applications directes du cours",
+      "enonce": "Un chariot de masse $m = 2\\text{ kg}$ descend un plan incliné lisse de longueur $AB = 4\\text{ m}$ faisant un angle $\\alpha = 30^\\circ$ avec l'horizontale ($\\sin 30^\\circ = 0,5$). Il part du point $A$ sans vitesse initiale ($v_A = 0$). On prend $g = 10\\text{ N}\\cdot\\text{kg}^{-1}$.",
+      "questions": [
+        {
+          "q": "1. Calculer l'énergie cinétique $E_c(A)$ du chariot au départ.",
+          "indice": "Utilisez la formule $E_c(A) = \\frac{1}{2} m v_A^2$ en sachant que le chariot part du repos.",
+          "corrige": "Comme $v_A = 0\\text{ m}\\cdot\\text{s}^{-1}$, on a directement $E_c(A) = 0\\text{ J}$."
+        },
+        {
+          "q": "2. Calculer le travail du poids $W_{AB}(\\vec{P})$ et le travail de la réaction du plan $W_{AB}(\\vec{R})$.",
+          "indice": "Le plan est lisse (sans frottement), donc $\\vec{R} \\perp \\overrightarrow{AB}$. Pour le poids, $h = AB \\sin\\alpha$.",
+          "corrige": "$W_{AB}(\\vec{R}) = 0\\text{ J}$ car $\\vec{R} \\perp \\overrightarrow{AB}$.<br>$W_{AB}(\\vec{P}) = m g AB \\sin\\alpha = 2 \\times 10 \\times 4 \\times 0,5 = +40\\text{ J}$."
+        },
+        {
+          "q": "3. En appliquant le TEC entre $A$ et $B$, déduire $E_c(B)$ puis la vitesse $v_B$.",
+          "indice": "$\\Delta E_c = E_c(B) - E_c(A) = W_{AB}(\\vec{P}) + W_{AB}(\\vec{R})$, puis $v_B = \\sqrt{\\frac{2 E_c(B)}{m}}$.",
+          "corrige": "$E_c(B) - 0 = 40 + 0 \\Rightarrow E_c(B) = 40\\text{ J}$.<br>D'où $v_B = \\sqrt{\\frac{2 \\times 40}{2}} = \\sqrt{40} \\approx 6,32\\text{ m}\\cdot\\text{s}^{-1}$."
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 2 : Plan incliné avec frottements",
+      "enonce": "Un skieur de masse $m = 60\\text{ kg}$ glisse sur une piste rectiligne inclinée d'un angle $\\alpha$ ($\\sin\\alpha = 0,2$) de longueur $AB = 50\\text{ m}$. Sa vitesse passe de $v_A = 0$ à $v_B = 10\\text{ m}\\cdot\\text{s}^{-1}$. Les frottements équivalent à une force constante $\\vec{f}$ opposée au mouvement ($g = 10\\text{ N}\\cdot\\text{kg}^{-1}$).",
+      "questions": [
+        {
+          "q": "1. Calculer la variation d'énergie cinétique $\\Delta E_c$ entre $A$ et $B$.",
+          "indice": "Calculez $\\frac{1}{2} m v_B^2 - \\frac{1}{2} m v_A^2$.",
+          "corrige": "$\\Delta E_c = \\frac{1}{2} \\times 60 \\times 10^2 - 0 = 30 \\times 100 = 3000\\text{ J}$."
+        },
+        {
+          "q": "2. Calculer le travail du poids $W_{AB}(\\vec{P})$ lors de cette descente.",
+          "indice": "Calculez d'abord la dénivellation $h = AB \\sin\\alpha = 50 \\times 0,2$.",
+          "corrige": "$h = 50 \\times 0,2 = 10\\text{ m}$. Donc $W_{AB}(\\vec{P}) = m g h = 60 \\times 10 \\times 10 = 6000\\text{ J}$."
+        },
+        {
+          "q": "3. Par application du TEC, déterminer le travail $W_{AB}(\\vec{f})$ puis l'intensité $f$ des frottements.",
+          "indice": "$\\Delta E_c = W_{AB}(\\vec{P}) + W_{AB}(\\vec{f})$ avec $W_{AB}(\\vec{f}) = - f \\cdot AB$.",
+          "corrige": "$3000 = 6000 + W_{AB}(\\vec{f}) \\Rightarrow W_{AB}(\\vec{f}) = -3000\\text{ J}$.<br>Comme $W_{AB}(\\vec{f}) = -f \\cdot AB$, on a $f = \\frac{3000}{50} = 60\\text{ N}$."
+        }
+      ]
+    },
+    {
+      "niveau": "Excellence",
+      "titre": "Exercice 3 : Système couplé {Poulie + Solide}",
+      "enonce": "Une poulie homogène de rayon $r = 10\\text{ cm} = 0,1\\text{ m}$ et de moment d'inertie $J_\\Delta = 0,02\\text{ kg}\\cdot\\text{m}^2$ peut tourner sans frottement autour de son axe $(\\Delta)$. Un fil inextensible enroulé sur sa gorge soutient un solide $(S)$ de masse $m = 0,8\\text{ kg}$. On lâche le système sans vitesse initiale et $(S)$ descend de $h = 1\\text{ m}$ ($g = 10\\text{ N}\\cdot\\text{kg}^{-1}$).",
+      "questions": [
+        {
+          "q": "1. Exprimer l'énergie cinétique totale du système {Poulie + Solide} en fonction de $m, J_\\Delta, r$ et de la vitesse linéaire $v$ du solide.",
+          "indice": "Le fil ne glisse pas, donc $\\omega = \\frac{v}{r}$. Additionnez $E_c(\\text{solide})$ et $E_c(\\text{poulie})$.",
+          "corrige": "$E_c = \\frac{1}{2} m v^2 + \\frac{1}{2} J_\\Delta \\omega^2 = \\frac{1}{2} \\left(m + \\frac{J_\\Delta}{r^2}\\right) v^2$."
+        },
+        {
+          "q": "2. Calculer la valeur numérique du terme équivalent de masse $M_{\\text{éq}} = m + \\frac{J_\\Delta}{r^2}$.",
+          "indice": "Remplacez $r^2 = (0,1)^2 = 0,01\\text{ m}^2$.",
+          "corrige": "$\\frac{J_\\Delta}{r^2} = \\frac{0,02}{0,01} = 2\\text{ kg}$. Donc $M_{\\text{éq}} = 0,8 + 2 = 2,8\\text{ kg}$."
+        },
+        {
+          "q": "3. En appliquant le TEC au système global (les travaux internes des tensions du fil se compensent : $W(\\vec{T}) + W(\\vec{T}') = 0$), calculer $v$ après $h = 1\\text{ m}$.",
+          "indice": "$\\frac{1}{2} M_{\\text{éq}} v^2 = m g h$.",
+          "corrige": "$\\frac{1}{2} (2,8) v^2 = 0,8 \\times 10 \\times 1 = 8\\text{ J} \\Rightarrow 1,4 v^2 = 8 \\Rightarrow v = \\sqrt{\\frac{8}{1,4}} \\approx 2,39\\text{ m}\\cdot\\text{s}^{-1}$."
+        }
+      ]
+    }
+  ]
+}

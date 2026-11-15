@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portail Physique-Chimie — Pr. IGHIRANE ABDELLATIF</title>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    :root {
+      --bg-main: #0f172a;
+      --bg-card: #1e293b;
+      --bg-hover: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --gold: #fbbf24;
+      --soutien: #22c55e;
+      --standard: #3b82f6;
+      --excellence: #a855f7;
+      --warning: #f59e0b;
+      --correct: #16a34a;
+      --wrong: #dc2626;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      overflow-x: hidden;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    body {
+      padding: 16px 1cm;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      body { padding: 12px 14px; }
+    }
+
+    main { flex: 1; }
+
+    /* Barre supérieure */
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      padding: 16px 24px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      margin-bottom: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+    .brand-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand h1 {
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .prof-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(251, 191, 36, 0.14);
+      color: var(--gold);
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      padding: 4px 13px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(251, 191, 36, 0.12);
+    }
+    .brand p { font-size: 0.9rem; color: var(--text-muted); }
+    .selectors { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    select, .btn-upload {
+      background: var(--bg-main);
+      color: var(--text-main);
+      border: 1.5px solid #475569;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    select:focus { outline: none; border-color: var(--accent); }
+    .btn-upload:hover { border-color: var(--accent); background: var(--bg-hover); }
+
+    /* Barre des 3 Onglets principaux */
+    .tabs-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 640px) {
+      .tabs-bar { grid-template-columns: 1fr; }
+    }
+    .tab-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1.5px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .tab-btn:hover { background: var(--bg-hover); color: var(--text-main); }
+    .tab-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+    }
+
+    .tab-section { display: none; }
+    .tab-section.active { display: block; }
+
+    /* Sous-onglets (Cours et Exercices) */
+    .sub-tabs-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      background: var(--bg-card);
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .sub-tab-btn {
+      background: var(--bg-main);
+      color: var(--text-muted);
+      border: 1.5px solid #475569;
+      padding: 9px 18px;
+      border-radius: 20px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sub-tab-btn:hover { color: var(--text-main); border-color: var(--accent); }
+    .sub-tab-btn.active {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+    .sub-tab-btn.active-Soutien {
+      background: var(--soutien);
+      color: #0f172a;
+      border-color: var(--soutien);
+      font-weight: 700;
+    }
+    .sub-tab-btn.active-Standard {
+      background: var(--standard);
+      color: #ffffff;
+      border-color: var(--standard);
+      font-weight: 700;
+    }
+    .sub-tab-btn.active-Excellence {
+      background: var(--excellence);
+      color: #ffffff;
+      border-color: var(--excellence);
+      font-weight: 700;
+    }
+
+    /* ONGLET 1 : FICHE DE COURS PLEINE LARGEUR */
+    .course-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+    .course-card {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--accent);
+      border-radius: 14px;
+      padding: 24px 28px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .course-card h3 {
+      color: var(--accent);
+      font-size: 1.22rem;
+      margin-bottom: 10px;
+    }
+    .course-card p {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+    .formula-box {
+      background: var(--bg-main);
+      border: 1px solid #475569;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 14px 0;
+      text-align: center;
+      font-size: 1.18rem;
+      overflow: visible;
+    }
+    .units-note {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .pitfalls-box {
+      width: 100%;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1.5px solid var(--warning);
+      border-radius: 14px;
+      padding: 24px 28px;
+    }
+    .pitfalls-box h3 {
+      color: #fbbf24;
+      margin-bottom: 14px;
+      font-size: 1.18rem;
+    }
+    .pitfalls-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pitfalls-list li {
+      background: rgba(15, 23, 42, 0.75);
+      padding: 14px 18px;
+      border-radius: 10px;
+      border-left: 4px solid var(--warning);
+      font-size: 1rem;
+    }
+
+    /* ONGLET 2 : QCM INTERACTIF */
+    .qcm-header-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-filter {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid #475569;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-filter.active {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+    .badge {
+      padding: 5px 14px;
+      border-radius: 12px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-Soutien { background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid #22c55e; }
+    .badge-Standard { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+    .badge-Excellence { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid #a855f7; }
+
+    .timer-bar-container {
+      width: 100%;
+      height: 7px;
+      background: #334155;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .timer-bar { height: 100%; background: var(--accent); width: 100%; transition: width 1s linear; }
+
+    .qcm-card {
+      width: 100%;
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 26px 30px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      margin-bottom: 16px;
+    }
+    .qcm-layout { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
+    @media (min-width: 820px) {
+      .qcm-layout.has-image { grid-template-columns: 5fr 7fr; }
+      .options-list { display: grid !important; grid-template-columns: repeat(2, 1fr); }
+    }
+    .img-container { text-align: center; background: #ffffff; padding: 12px; border-radius: 12px; }
+    .img-container img { max-width: 100%; max-height: 320px; object-fit: contain; }
+    .cat-label { font-size: 0.86rem; color: var(--accent); margin-bottom: 6px; font-weight: 700; text-transform: uppercase; }
+    .question-text { font-size: 1.22rem; font-weight: 600; margin-bottom: 18px; }
+    .options-list { display: flex; flex-direction: column; gap: 12px; }
+    .option-btn {
+      background: var(--bg-main);
+      color: var(--text-main);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 15px 18px;
+      text-align: start;
+      font-size: 1.03rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .option-btn:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--accent); }
+    .option-btn.correct { background: rgba(22, 163, 74, 0.25); border-color: #22c55e; color: #dcfce7; }
+    .option-btn.wrong { background: rgba(220, 38, 38, 0.25); border-color: #ef4444; color: #fee2e2; }
+    .exp-box {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.12);
+      border-left: 4px solid var(--accent);
+      font-size: 1rem;
+      display: none;
+    }
+    .nav-bar { display: flex; justify-content: space-between; gap: 14px; }
+    .btn-nav {
+      flex: 1;
+      padding: 13px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      background: var(--accent);
+      color: #0f172a;
+    }
+    .btn-nav.secondary { background: #334155; color: var(--text-main); }
+
+    /* ONGLET 3 : EXERCICE PLEINE PAGE */
+    .exo-full-container { width: 100%; }
+    .exo-card {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+    }
+    .exo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .exo-context {
+      background: var(--bg-main);
+      padding: 20px 24px;
+      border-radius: 12px;
+      font-size: 1.08rem;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--accent);
+      line-height: 1.75;
+    }
+    .sub-q {
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .sub-q:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .sub-q-text { font-weight: 600; margin-bottom: 12px; font-size: 1.08rem; }
+    .sub-q-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-small {
+      background: var(--bg-main);
+      color: var(--text-main);
+      border: 1px solid #475569;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-small:hover { border-color: var(--accent); color: var(--accent); }
+    .reveal-box { display: none; margin-top: 12px; padding: 14px 18px; border-radius: 10px; font-size: 1rem; }
+    .reveal-hint { background: rgba(245, 158, 11, 0.12); border-left: 4px solid var(--warning); color: #fef3c7; }
+    .reveal-sol { background: rgba(34, 197, 94, 0.12); border-left: 4px solid var(--soutien); color: #dcfce7; }
+
+    .empty-banner {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1.5px dashed var(--accent);
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .rtl { direction: rtl; text-align: right; }
+
+    /* Pied de page académique */
+    footer {
+      margin-top: 32px;
+      padding: 16px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    footer strong { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- BARRE SUPÉRIEURE : TITRE, SIGNATURE PROFESSEUR, NIVEAU & CHAPITRE -->
+    <div class="top-bar">
+      <div class="brand-group">
+        <div class="brand">
+          <h1>
+            <span>Portail Physique-Chimie — Lycée Maroc</span>
+            <span class="prof-badge">👨‍🏫 Pr. IGHIRANE ABDELLATIF</span>
+          </h1>
+          <p id="chapterSubtitle">Sélectionnez un chapitre ou chargez un fichier .json</p>
+        </div>
+      </div>
+      <div class="selectors">
+        <select id="levelSelect" onchange="onLevelChange()">
+          <option value="TC">Tronc Commun (TC)</option>
+          <option value="1BAC" selected>1ère Bac Sciences</option>
+          <option value="2BAC">2ème Bac Sciences</option>
+        </select>
+        <select id="chapterSelect" onchange="onChapterChange()"></select>
+        <label class="btn-upload">
+          📂 Charger un fichier Chapitre (.json)
+          <input type="file" id="jsonFileInput" accept=".json" style="display:none" onchange="loadCustomJson(event)">
+        </label>
+      </div>
+    </div>
+
+    <div id="localNotice" class="empty-banner" style="display:none;">
+      <h3 style="color:var(--accent); margin-bottom:6px;">Mode test local sur PC détecté (file://)</h3>
+      <p>Cliquez sur le bouton <strong>« 📂 Charger un fichier Chapitre (.json) »</strong> en haut à droite et sélectionnez <code>1bac_tec.json</code> pour afficher le chapitre !</p>
+    </div>
+
+    <!-- BARRE DES 3 ONGLETS PRINCIPAUX -->
+    <div class="tabs-bar">
+      <button class="tab-btn active" onclick="switchTab('cours', this)">📖 1. Fiche de Cours & Pièges</button>
+      <button class="tab-btn" onclick="switchTab('qcm', this)">⚡ 2. QCM Interactif (35s)</button>
+      <button class="tab-btn" onclick="switchTab('exercices', this)">✍️ 3. Exercices Gradués</button>
+    </div>
+
+    <!-- ==================== ONGLET 1 : COURS PLEINE LARGEUR ==================== -->
+    <section id="tab-cours" class="tab-section active">
+      <div id="courseSubTabs" class="sub-tabs-bar"></div>
+      <div id="courseStack" class="course-stack"></div>
+      <div id="pitfallsContainer" class="pitfalls-box">
+        <h3>⚠️ Les 3 Erreurs Classiques à Éviter absolument en Contrôle</h3>
+        <ul id="pitfallsList" class="pitfalls-list"></ul>
+      </div>
+    </section>
+
+    <!-- ==================== ONGLET 2 : QCM ==================== -->
+    <section id="tab-qcm" class="tab-section">
+      <div class="qcm-header-controls">
+        <div class="filters">
+          <button id="btnAll" class="btn-filter active" onclick="setQcmFilter('Tous', this)">Tous</button>
+          <button id="btnSoutien" class="btn-filter" onclick="setQcmFilter('Soutien', this)">Soutien</button>
+          <button id="btnStandard" class="btn-filter" onclick="setQcmFilter('Standard', this)">Standard</button>
+          <button id="btnExcellence" class="btn-filter" onclick="setQcmFilter('Excellence', this)">Excellence</button>
+        </div>
+        <div style="display:flex; gap:14px; align-items:center; font-weight:600;">
+          <span id="progressText">Question 0 / 0</span>
+          <span id="levelBadge" class="badge badge-Soutien">-</span>
+          <span id="scoreText" style="color:var(--accent);">Score : 0</span>
+        </div>
+      </div>
+
+      <div class="timer-bar-container">
+        <div id="timerBar" class="timer-bar"></div>
+      </div>
+
+      <div id="quizCard" class="qcm-card">
+        <div id="qcmLayout" class="qcm-layout">
+          <div id="imgBox" class="img-container" style="display:none;">
+            <img id="qImg" src="" alt="Schéma"
+                 onload="document.getElementById('imgBox').style.display='block'; document.getElementById('qcmLayout').classList.add('has-image');"
+                 onerror="handleImageFallback(this);">
+          </div>
+          <div>
+            <div id="catText" class="cat-label">Sous-thème</div>
+            <div id="qText" class="question-text">Veuillez charger un fichier chapitre (.json)...</div>
+            <div id="optionsBox" class="options-list"></div>
+            <div id="expBox" class="exp-box"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <button class="btn-nav secondary" onclick="prevQuestion()">◀ Question Précédente</button>
+        <button class="btn-nav" onclick="nextQuestion()">Question Suivante ▶</button>
+      </div>
+    </section>
+
+    <!-- ==================== ONGLET 3 : EXERCICES (3 ONGLETS DE NIVEAU PLEINE PAGE) ==================== -->
+    <section id="tab-exercices" class="tab-section">
+      <div class="sub-tabs-bar">
+        <button id="exoBtnSoutien" class="sub-tab-btn active-Soutien" onclick="selectExerciseLevel('Soutien')">🟢 Niveau Soutien</button>
+        <button id="exoBtnStandard" class="sub-tab-btn" onclick="selectExerciseLevel('Standard')">🔵 Niveau Standard</button>
+        <button id="exoBtnExcellence" class="sub-tab-btn" onclick="selectExerciseLevel('Excellence')">🟣 Niveau Excellence</button>
+      </div>
+      <div id="exoFullContainer" class="exo-full-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>📚 Plateforme Interactive de Révision & Remédiation — Physique-Chimie (TC • 1ère Bac • 2ème Bac)</span>
+    <span>Conception & Réalisation : <strong>Pr. IGHIRANE ABDELLATIF</strong></span>
+  </footer>
+
+  <script>
+    const chaptersCatalog = {
+      "1BAC": [
+        { file: "1bac_tec.json", title: "Ch. 2 : Travail et Énergie Cinétique" }
+      ],
+      "2BAC": [
+        { file: "2bac_nucleaire.json", title: "Noyaux, Masse et Énergie" },
+        { file: "2bac_ondes.json", title: "Ondes Mécaniques et Lumineuses" }
+      ],
+      "TC": [
+        { file: "tc_histoire_ar.json", title: "العالم المتوسطي في القرنين 15م و 18م" }
+      ]
+    };
+
+    let currentChapter = { meta: {}, cours: [], erreurs_a_eviter: [], qcm: [], exercices: [] };
+    let allQuestions = [];
+    let filteredQuestions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let timerInterval = null;
+    let timeLeft = 35;
+    let currentCourseView = 'all';
+    let currentExoLevel = 'Soutien';
+
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+      if (tabId === 'qcm') startTimer();
+      else clearInterval(timerInterval);
+      if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+    }
+
+    function onLevelChange() {
+      const lvl = document.getElementById('levelSelect').value;
+      const chapSelect = document.getElementById('chapterSelect');
+      chapSelect.innerHTML = '';
+      (chaptersCatalog[lvl] || []).forEach(ch => {
+        const opt = document.createElement('option');
+        opt.value = ch.file;
+        opt.textContent = ch.title;
+        chapSelect.appendChild(opt);
+      });
+      onChapterChange();
+    }
+
+    async function onChapterChange() {
+      const fileName = document.getElementById('chapterSelect').value;
+      if (!fileName) return;
+      try {
+        const response = await fetch(fileName);
+        if (!response.ok) throw new Error("Non accessible en local");
+        const parsed = await response.json();
+        document.getElementById('localNotice').style.display = 'none';
+        applyLoadedData(parsed);
+      } catch (err) {
+        document.getElementById('localNotice').style.display = 'block';
+      }
+    }
+
+    function applyLoadedData(parsed) {
+      if (Array.isArray(parsed)) {
+        currentChapter = { meta: { niveau_lycee: "", titre: "QCM SmartReview" }, cours: [], erreurs_a_eviter: [], qcm: parsed, exercices: [] };
+        allQuestions = parsed.filter(item => item.q && item.q.trim() !== "");
+        const metaItem = parsed.find(item => item.niveau === "Professeur");
+        if (metaItem && metaItem.erreurs_typiques) {
+          currentChapter.erreurs_a_eviter = [metaItem.erreurs_typiques];
+        }
+      } else if (parsed.qcm) {
+        currentChapter = parsed;
+        allQuestions = (parsed.qcm || []).filter(item => item.q && item.q.trim() !== "");
+      }
+      filteredQuestions = [...allQuestions];
+      currentIndex = 0;
+      score = 0;
+      currentCourseView = 0;
+      currentExoLevel = 'Soutien';
+      updateFilterCounts();
+      renderAll();
+    }
+
+    function updateFilterCounts() {
+      const cSoutien = allQuestions.filter(q => q.niveau === 'Soutien').length;
+      const cStandard = allQuestions.filter(q => q.niveau === 'Standard').length;
+      const cExcellence = allQuestions.filter(q => q.niveau === 'Excellence').length;
+      document.getElementById('btnAll').textContent = `Tous (${allQuestions.length})`;
+      document.getElementById('btnSoutien').textContent = `Soutien (${cSoutien})`;
+      document.getElementById('btnStandard').textContent = `Standard (${cStandard})`;
+      document.getElementById('btnExcellence').textContent = `Excellence (${cExcellence})`;
+    }
+
+    function handleImageFallback(imgEl) {
+      if (!imgEl.dataset.retried && imgEl.src && !imgEl.src.endsWith('.png.png')) {
+        imgEl.dataset.retried = "1";
+        imgEl.src = imgEl.getAttribute('src') + '.png';
+      } else {
+        document.getElementById('imgBox').style.display = 'none';
+        document.getElementById('qcmLayout').classList.remove('has-image');
+      }
+    }
+
+    function selectCourseSection(viewIndex) {
+      currentCourseView = viewIndex;
+      renderCourseSection();
+    }
+
+    function renderCourseSection() {
+      if (currentChapter.meta && currentChapter.meta.titre) {
+        document.getElementById('chapterSubtitle').textContent = `${currentChapter.meta.niveau_lycee || ''} • ${currentChapter.meta.titre}`;
+      }
+
+      const coursList = currentChapter.cours || [];
+      const subTabs = document.getElementById('courseSubTabs');
+      subTabs.innerHTML = '';
+
+      if (coursList.length > 0) {
+        subTabs.style.display = 'flex';
+        coursList.forEach((c, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'sub-tab-btn' + (currentCourseView === idx ? ' active' : '');
+          btn.textContent = c.titre;
+          btn.onclick = () => selectCourseSection(idx);
+          subTabs.appendChild(btn);
+        });
+
+        const btnPieges = document.createElement('button');
+        btnPieges.className = 'sub-tab-btn' + (currentCourseView === 'pieges' ? ' active' : '');
+        btnPieges.textContent = '⚠️ Pièges à éviter';
+        btnPieges.onclick = () => selectCourseSection('pieges');
+        subTabs.appendChild(btnPieges);
+
+        const btnAll = document.createElement('button');
+        btnAll.className = 'sub-tab-btn' + (currentCourseView === 'all' ? ' active' : '');
+        btnAll.textContent = '📑 Tout afficher';
+        btnAll.onclick = () => selectCourseSection('all');
+        subTabs.appendChild(btnAll);
+      } else {
+        subTabs.style.display = 'none';
+      }
+
+      const courseStack = document.getElementById('courseStack');
+      const pitfallsContainer = document.getElementById('pitfallsContainer');
+      courseStack.innerHTML = '';
+
+      if (currentCourseView === 'pieges') {
+        courseStack.style.display = 'none';
+        pitfallsContainer.style.display = 'block';
+      } else if (currentCourseView === 'all') {
+        courseStack.style.display = 'flex';
+        pitfallsContainer.style.display = 'block';
+        coursList.forEach(c => {
+          courseStack.appendChild(buildCourseCard(c));
+        });
+      } else {
+        courseStack.style.display = 'flex';
+        pitfallsContainer.style.display = 'none';
+        const c = coursList[currentCourseView];
+        if (c) courseStack.appendChild(buildCourseCard(c));
+      }
+
+      const pitfallsList = document.getElementById('pitfallsList');
+      pitfallsList.innerHTML = '';
+      (currentChapter.erreurs_a_eviter || []).forEach(err => {
+        const li = document.createElement('li');
+        li.innerHTML = err;
+        pitfallsList.appendChild(li);
+      });
+
+      if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+    }
+
+    function buildCourseCard(c) {
+      const card = document.createElement('div');
+      card.className = 'course-card';
+      card.innerHTML = `
+        <h3>${c.titre}</h3>
+        <p>${c.resume}</p>
+        <div class="formula-box">${c.formule}</div>
+        <div class="units-note">📌 <strong>Unités & Remarques :</strong> ${c.unites}</div>
+      `;
+      return card;
+    }
+
+    function selectExerciseLevel(level) {
+      currentExoLevel = level;
+      ['Soutien', 'Standard', 'Excellence'].forEach(lvl => {
+        const btn = document.getElementById('exoBtn' + lvl);
+        if (btn) {
+          btn.className = 'sub-tab-btn' + (lvl === level ? ' active-' + lvl : '');
+        }
+      });
+      renderSelectedExercise();
+    }
+
+    function renderSelectedExercise() {
+      const exoContainer = document.getElementById('exoFullContainer');
+      exoContainer.innerHTML = '';
+      const exos = currentChapter.exercices || [];
+      const ex = exos.find(e => e.niveau === currentExoLevel) || exos[0];
+      if (!ex) return;
+
+      const card = document.createElement('div');
+      card.className = 'exo-card';
+      let qHtml = '';
+      (ex.questions || []).forEach((qItem, qIdx) => {
+        const hintId = `hint_${ex.niveau}_${qIdx}`;
+        const solId = `sol_${ex.niveau}_${qIdx}`;
+        qHtml += `
+          <div class="sub-q">
+            <div class="sub-q-text">${qItem.q}</div>
+            <div class="sub-q-actions">
+              <button class="btn-small" onclick="toggleBox('${hintId}')">💡 Voir un indice</button>
+              <button class="btn-small" onclick="toggleBox('${solId}')">✅ Afficher le corrigé détaillé</button>
+            </div>
+            <div id="${hintId}" class="reveal-box reveal-hint"><strong>Indice :</strong> ${qItem.indice}</div>
+            <div id="${solId}" class="reveal-box reveal-sol"><strong>Corrigé :</strong><br>${qItem.corrige}</div>
+          </div>
+        `;
+      });
+
+      card.innerHTML = `
+        <div class="exo-header">
+          <h3 style="font-size:1.22rem; color:var(--accent);">${ex.titre}</h3>
+          <span class="badge badge-${ex.niveau}">${ex.niveau}</span>
+        </div>
+        <div class="exo-context">${ex.enonce}</div>
+        <div>${qHtml}</div>
+      `;
+      exoContainer.appendChild(card);
+
+      if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([exoContainer]);
+    }
+
+    function toggleBox(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+      if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([el]);
+    }
+
+    function isArabic(text) { return /[\u0600-\u06FF]/.test(text); }
+
+    function setQcmFilter(level, btn) {
+      document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (level === 'Tous') {
+        filteredQuestions = allQuestions.filter(item => item.q && item.q.trim() !== "");
+      } else {
+        filteredQuestions = allQuestions.filter(item => item.q && item.niveau === level);
+      }
+      currentIndex = 0;
+      score = 0;
+      renderQuestion();
+    }
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      timeLeft = 35;
+      const bar = document.getElementById('timerBar');
+      bar.style.width = '100%';
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        bar.style.width = Math.max(0, (timeLeft / 35) * 100) + '%';
+        if (timeLeft <= 0) clearInterval(timerInterval);
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      if (filteredQuestions.length === 0) return;
+      const item = filteredQuestions[currentIndex];
+      const card = document.getElementById('quizCard');
+      const layout = document.getElementById('qcmLayout');
+
+      if (isArabic(item.q)) card.classList.add('rtl');
+      else card.classList.remove('rtl');
+
+      document.getElementById('progressText').textContent = `Question ${currentIndex + 1} / ${filteredQuestions.length}`;
+      const badge = document.getElementById('levelBadge');
+      badge.textContent = item.niveau || 'Standard';
+      badge.className = 'badge badge-' + (item.niveau || 'Standard');
+      document.getElementById('scoreText').textContent = `Score : ${score}`;
+
+      document.getElementById('catText').innerHTML = item.cat || '';
+      document.getElementById('qText').innerHTML = item.q;
+
+      const imgBox = document.getElementById('imgBox');
+      const qImg = document.getElementById('qImg');
+      delete qImg.dataset.retried;
+      if (item.img_q && item.img_q.trim() !== "") {
+        qImg.setAttribute('src', item.img_q.trim());
+      } else {
+        imgBox.style.display = 'none';
+        layout.classList.remove('has-image');
+      }
+
+      const expBox = document.getElementById('expBox');
+      expBox.style.display = 'none';
+      expBox.innerHTML = `<strong>💡 Explication :</strong> ${item.exp}`;
+
+      const choices = [item.r, ...(item.choix || [])].map(text => ({
+        text,
+        isCorrect: text === item.r
+      })).sort(() => Math.random() - 0.5);
+
+      const symbols = ['◆', '●', '▲', '■'];
+      const optionsBox = document.getElementById('optionsBox');
+      optionsBox.innerHTML = '';
+
+      choices.forEach((choice, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.dataset.correct = choice.isCorrect ? "1" : "0";
+        btn.innerHTML = `<span style="color:var(--accent);font-weight:bold;">${symbols[idx % 4]}</span> <span>${choice.text}</span>`;
+        btn.onclick = () => selectAnswer(btn, choice.isCorrect);
+        optionsBox.appendChild(btn);
+      });
+
+      if (document.getElementById('tab-qcm').classList.contains('active')) startTimer();
+      if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([card]);
+    }
+
+    function selectAnswer(selectedBtn, isCorrect) {
+      clearInterval(timerInterval);
+      const buttons = document.querySelectorAll('.option-btn');
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.dataset.correct === "1") btn.classList.add('correct');
+      });
+
+      if (isCorrect) {
+        selectedBtn.classList.add('correct');
+        score++;
+        document.getElementById('scoreText').textContent = `Score : ${score}`;
+      } else {
+        selectedBtn.classList.add('wrong');
+      }
+
+      const expBox = document.getElementById('expBox');
+      expBox.style.display = 'block';
+      if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([expBox]);
+    }
+
+    function nextQuestion() {
+      if (currentIndex < filteredQuestions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    }
+
+    function loadCustomJson(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          document.getElementById('localNotice').style.display = 'none';
+          applyLoadedData(parsed);
+        } catch (err) {
+          alert("Erreur de lecture du fichier JSON.");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function renderAll() {
+      renderCourseSection();
+      selectExerciseLevel(currentExoLevel);
+      renderQuestion();
+    }
+
+    window.onload = onLevelChange;
+  </script>
+</body>
+</html>
+
+
