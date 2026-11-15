@@ -759,38 +759,40 @@ const chaptersCatalog = {
     function renderSelectedExercise() {
       const exoContainer = document.getElementById('exoFullContainer');
       exoContainer.innerHTML = '';
-      const exos = currentChapter.exercices || [];
-      const ex = exos.find(e => e.niveau === currentExoLevel) || exos[0];
-      if (!ex) return;
+      const exos = (currentChapter.exercices || []).filter(e => e.niveau === currentExoLevel);
+      if (exos.length === 0) return;
 
-      const card = document.createElement('div');
-      card.className = 'exo-card';
-      let qHtml = '';
-      (ex.questions || []).forEach((qItem, qIdx) => {
-        const hintId = `hint_${ex.niveau}_${qIdx}`;
-        const solId = `sol_${ex.niveau}_${qIdx}`;
-        qHtml += `
-          <div class="sub-q">
-            <div class="sub-q-text">${qItem.q}</div>
-            <div class="sub-q-actions">
-              <button class="btn-small" onclick="toggleBox('${hintId}')">💡 Voir un indice</button>
-              <button class="btn-small" onclick="toggleBox('${solId}')">✅ Afficher le corrigé détaillé</button>
+      exos.forEach((ex, exIdx) => {
+        const card = document.createElement('div');
+        card.className = 'exo-card';
+        card.style.marginBottom = '22px';
+        let qHtml = '';
+        (ex.questions || []).forEach((qItem, qIdx) => {
+          const hintId = `hint_${ex.niveau}_${exIdx}_${qIdx}`;
+          const solId = `sol_${ex.niveau}_${exIdx}_${qIdx}`;
+          qHtml += `
+            <div class="sub-q">
+              <div class="sub-q-text">${qItem.q}</div>
+              <div class="sub-q-actions">
+                <button class="btn-small" onclick="toggleBox('${hintId}')">💡 Voir un indice</button>
+                <button class="btn-small" onclick="toggleBox('${solId}')">✅ Afficher le corrigé détaillé</button>
+              </div>
+              <div id="${hintId}" class="reveal-box reveal-hint"><strong>Indice :</strong> ${qItem.indice}</div>
+              <div id="${solId}" class="reveal-box reveal-sol"><strong>Corrigé :</strong><br>${qItem.corrige}</div>
             </div>
-            <div id="${hintId}" class="reveal-box reveal-hint"><strong>Indice :</strong> ${qItem.indice}</div>
-            <div id="${solId}" class="reveal-box reveal-sol"><strong>Corrigé :</strong><br>${qItem.corrige}</div>
-          </div>
-        `;
-      });
+          `;
+        });
 
-      card.innerHTML = `
-        <div class="exo-header">
-          <h3 style="font-size:1.22rem; color:var(--accent);">${ex.titre}</h3>
-          <span class="badge badge-${ex.niveau}">${ex.niveau}</span>
-        </div>
-        <div class="exo-context">${ex.enonce}</div>
-        <div>${qHtml}</div>
-      `;
-      exoContainer.appendChild(card);
+        card.innerHTML = `
+          <div class="exo-header">
+            <h3 style="font-size:1.22rem; color:var(--accent);">${ex.titre}</h3>
+            <span class="badge badge-${ex.niveau}">${ex.niveau} (${exIdx + 1}/${exos.length})</span>
+          </div>
+          <div class="exo-context">${ex.enonce}</div>
+          <div>${qHtml}</div>
+        `;
+        exoContainer.appendChild(card);
+      });
 
       if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([exoContainer]);
     }
