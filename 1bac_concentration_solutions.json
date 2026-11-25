@@ -330,67 +330,224 @@
   "exercices": [
     {
       "niveau": "Soutien",
-      "titre": "Exercice 1 : Solides ioniques et polarité moléculaire",
-      "enonce": "<strong>Données :</strong> On étudie des cristaux de chlorure de sodium ($\\text{NaCl}$), de fluorure de calcium ($\\text{CaF}_2$) et des molécules polaires comme le chlorure d'hydrogène ($\\text{HCl}$) et l'eau ($\\text{H}_2\\text{O}$).",
+      "titre": "Exercice 3 : Molécule polaire (CO₂ et HCN)",
+      "enonce": "<strong>Données :</strong><br>• L'atome d'oxygène est plus électronégatif que l'atome de carbone ; la molécule de dioxyde de carbone $\\text{CO}_2$ a une géométrie linéaire.<br>• L'atome d'azote est plus électronégatif que l'atome de carbone, lui-même plus électronégatif que l'atome d'hydrogène ; la molécule de cyanure d'hydrogène $\\text{HCN}$ a une géométrie linéaire.",
       "questions": [
         {
-          "q": "1. Quels sont les ions constitutifs du cristal de chlorure de sodium ($\\text{NaCl}$) et du fluorure de calcium ($\\text{CaF}_2$) ? Pourquoi un solide ionique est-il électriquement neutre ?",
-          "indice": "Identifiez le cation et l'anion de chaque cristal en respectant l'électroneutralité globale.",
-          "corrige": "• Le chlorure de sodium ($\\text{NaCl}$) est formé d'ions sodium $\\text{Na}^+$ et d'ions chlorure $\\text{Cl}^-$.<br>• Le fluorure de calcium ($\\text{CaF}_2$) est formé d'ions calcium $\\text{Ca}^{2+}$ et d'ions fluorure $\\text{F}^-$ (deux ions $\\text{F}^-$ pour un ion $\\text{Ca}^{2+}$).<br>Un solide ionique est électriquement neutre car la somme des charges positives des cations compense exactement la somme des charges négatives des anions."
+          "q": "1. La molécule de dioxyde de carbone $\\text{CO}_2$ est-elle dipolaire ? Justifier la réponse.",
+          "indice": "Comparez la position du barycentre des charges partielles positives $G^+$ et celle du barycentre des charges partielles négatives $G^-$ dans une molécule linéaire symétrique $\\text{O}=\\text{C}=\\text{O}$.",
+          "corrige": "<img src=\"polarite_molecules_ex3_ex4.png\" alt=\"Polarité des molécules CO2, HCN, H2S et NH3\" style=\"display:block; max-width:540px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\"><strong>Non</strong>, la molécule de dioxyde de carbone $\\text{CO}_2$ est <strong>apolaire</strong> (non dipolaire) : bien que chaque liaison $\\text{C}=\\text{O}$ soit polarisée, les deux charges partielles négatives portées par les atomes d'oxygène sont symétriques par rapport au carbone, de sorte que le barycentre des charges positives $G^+$ et le barycentre des charges négatives $G^-$ <strong>coïncident</strong> au centre de la molécule."
         },
         {
-          "q": "2. Quelles sont les trois étapes de la dissolution d'un électrolyte dans l'eau ?",
-          "indice": "Nommez dans l'ordre la séparation des ions, leur entourage par les molécules d'eau, puis leur répartition homogène.",
-          "corrige": "Les trois étapes de la dissolution d'un électrolyte dans l'eau sont :<br>1. <strong>La dissociation</strong> du cristal sous l'action des molécules d'eau polaires ;<br>2. <strong>La solvatation (ou hydratation)</strong> : chaque ion s'entoure de molécules d'eau (noté $(aq)$) ;<br>3. <strong>La dispersion</strong> des ions solvatés dans toute la solution."
+          "q": "2. Même question pour la molécule de cyanure d'hydrogène $\\text{HCN}$, sachant que l'azote est plus électronégatif que le carbone, lui-même plus électronégatif que l'hydrogène.",
+          "indice": "Observez la dissymétrie entre l'extrémité $\\text{H}$ (portant une charge partielle positive) et l'extrémité $\\text{N}$ (portant une charge partielle négative).",
+          "corrige": "<strong>Oui</strong>, la molécule $\\text{HCN}$ est <strong>dipolaire (polaire)</strong> : l'azote attire davantage les électrons que le carbone et l'hydrogène. Le barycentre des charges partielles positives $G^+$ ne coïncide pas avec le barycentre des charges partielles négatives $G^-$."
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 4 : Représentation des molécules avec charges partielles et solubilité",
+      "enonce": "<strong>Données :</strong> On considère trois molécules : le dioxyde de carbone $\\text{CO}_2$, le sulfure d'hydrogène $\\text{H}_2\\text{S}$ et l'ammoniac $\\text{NH}_3$.",
+      "questions": [
+        {
+          "q": "1. Dans ces trois molécules, les liaisons sont-elles polarisées ?",
+          "indice": "Vérifiez si les deux atomes liés par chaque liaison covalente ont la même électronégativité ou non.",
+          "corrige": "<strong>Oui</strong> : dans chacune de ces trois molécules, chaque liaison relie deux atomes d'électronégativités différentes, ce qui crée un léger déplacement du doublet liant et polarise les liaisons."
         },
         {
-          "q": "3. Pourquoi une solution aqueuse électrolytique conduit-elle le courant électrique alors que le solide ionique pur est isolant ?",
-          "indice": "Comparez la mobilité des porteurs de charges dans le cristal solide et dans la solution.",
-          "corrige": "Dans le cristal solide, les ions sont liés et immobiles (pas d'électrons libres) : le solide est isolant. Dans la solution électrolytique, les ions libérés sont <strong>mobiles</strong> (porteurs de charges) et peuvent se déplacer sous l'action d'un champ électrique."
+          "q": "2. Ces molécules sont-elles polaires ?",
+          "indice": "Examinez la géométrie de chaque molécule ($\\text{CO}_2$ linéaire, $\\text{H}_2\\text{S}$ coudée, $\\text{NH}_3$ pyramidale) et la position de $G^+$ et $G^-$.",
+          "corrige": "<img src=\"polarite_molecules_ex3_ex4.png\" alt=\"Polarité des molécules CO2, HCN, H2S et NH3\" style=\"display:block; max-width:540px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">• <strong>$\\text{CO}_2$ :</strong> <strong>Apolaire</strong>, car les barycentres $G^+$ et $G^-$ coïncident.<br>• <strong>$\\text{H}_2\\text{S}$ :</strong> <strong>Polaire</strong>, car la géométrie est coudée et $G^+$ ne coïncide pas avec $G^-$.<br>• <strong>$\\text{NH}_3$ :</strong> <strong>Polaire</strong>, car la géométrie est pyramidale et $G^+$ ne coïncide pas avec $G^-$."
+        },
+        {
+          "q": "3. Expliquer la faible solubilité du $\\text{CO}_2$ dans l'eau par rapport à celle d'autres gaz.",
+          "indice": "Reliez la polarité de la molécule à sa capacité d'interaction électrostatique avec les molécules d'eau (solvatation).",
+          "corrige": "La molécule $\\text{CO}_2$ est <strong>apolaire</strong> : elle ne présente pas de séparation nette des barycentres de charges ($G^+ \\equiv G^-$) et ne peut donc pas être fortement solvatée (entourée) par les molécules d'eau polaires. Cela explique sa solubilité relativement faible dans l'eau."
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 5 : Nom des solides ioniques et équations de dissolution",
+      "enonce": "<strong>Données :</strong> On considère les dix solides ioniques suivants : $\\text{KI}_{(s)}$, $\\text{Na}_2\\text{CO}_{3(s)}$, $\\text{Zn(NO}_3)_{2(s)}$, $\\text{Al}_2\\text{SO}_{43(s)}$ (écrit $\\text{Al}_2(\\text{SO}_4)_{3(s)}$), $\\text{NaHCO}_{3(s)}$, $\\text{NH}_4\\text{Cl}_{(s)}$, $\\text{AgNO}_{3(s)}$, $\\text{BaCl}_{2(s)}$, $\\text{CuBr}_{2(s)}$ et $\\text{K}_3\\text{PO}_{4(s)}$.",
+      "questions": [
+        {
+          "q": "1. Donner le nom de chacun de ces solides ioniques et écrire l'équation de sa dissolution dans l'eau.",
+          "indice": "Assurez-vous que la somme des charges des ions produits dans chaque équation est nulle (électroneutralité) et ajoutez l'indice $(aq)$.",
+          "corrige": "• <strong>Iodure de potassium :</strong> $\\text{KI}_{(s)} \\xrightarrow{\\text{eau}} \\text{K}^+_{(aq)} + \\text{I}^-_{(aq)}$<br>• <strong>Carbonate de sodium :</strong> $\\text{Na}_2\\text{CO}_{3(s)} \\xrightarrow{\\text{eau}} 2\\text{Na}^+_{(aq)} + \\text{CO}_{3(aq)}^{2-}$<br>• <strong>Nitrate de zinc :</strong> $\\text{Zn(NO}_3)_{2(s)} \\xrightarrow{\\text{eau}} \\text{Zn}^{2+}_{(aq)} + 2\\text{NO}_{3(aq)}^-$<br>• <strong>Sulfate d'aluminium :</strong> $\\text{Al}_2(\\text{SO}_4)_{3(s)} \\xrightarrow{\\text{eau}} 2\\text{Al}^{3+}_{(aq)} + 3\\text{SO}_{4(aq)}^{2-}$<br>• <strong>Hydrogénocarbonate de sodium :</strong> $\\text{NaHCO}_{3(s)} \\xrightarrow{\\text{eau}} \\text{Na}^+_{(aq)} + \\text{HCO}_{3(aq)}^-$<br>• <strong>Chlorure d'ammonium :</strong> $\\text{NH}_4\\text{Cl}_{(s)} \\xrightarrow{\\text{eau}} \\text{NH}_{4(aq)}^+ + \\text{Cl}^-_{(aq)}$<br>• <strong>Nitrate d'argent :</strong> $\\text{AgNO}_{3(s)} \\xrightarrow{\\text{eau}} \\text{Ag}^+_{(aq)} + \\text{NO}_{3(aq)}^-$<br>• <strong>Chlorure de baryum :</strong> $\\text{BaCl}_{2(s)} \\xrightarrow{\\text{eau}} \\text{Ba}^{2+}_{(aq)} + 2\\text{Cl}^-_{(aq)}$<br>• <strong>Bromure de cuivre II :</strong> $\\text{CuBr}_{2(s)} \\xrightarrow{\\text{eau}} \\text{Cu}^{2+}_{(aq)} + 2\\text{Br}^-_{(aq)}$<br>• <strong>Phosphate de potassium :</strong> $\\text{K}_3\\text{PO}_{4(s)} \\xrightarrow{\\text{eau}} 3\\text{K}^+_{(aq)} + \\text{PO}_{4(aq)}^{3-}$"
+        }
+      ]
+    },
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 6 : Formules des solides ioniques et des solutions correspondantes",
+      "enonce": "<strong>Données :</strong> Cations disponibles : $\\text{Na}^+$, $\\text{Fe}^{2+}$, $\\text{Fe}^{3+}$. Anions disponibles : $\\text{Cl}^-$, $\\text{SO}_4^{2-}$, $\\text{NO}_3^-$.",
+      "questions": [
+        {
+          "q": "1. Écrire les formules statistiques des corps solides ioniques qu'on peut obtenir à partir de ces ions.",
+          "indice": "Associez chaque cation à chaque anion en choisissant les indices de façon que la charge totale soit nulle.",
+          "corrige": "• Avec $\\text{Na}^+$ : $\\text{NaCl}_{(s)}$, $\\text{Na}_2\\text{SO}_{4(s)}$, $\\text{NaNO}_{3(s)}$<br>• Avec $\\text{Fe}^{2+}$ : $\\text{FeCl}_{2(s)}$, $\\text{FeSO}_{4(s)}$, $\\text{Fe(NO}_3)_{2(s)}$<br>• Avec $\\text{Fe}^{3+}$ : $\\text{FeCl}_{3(s)}$, $\\text{Fe}_2(\\text{SO}_4)_{3(s)}$, $\\text{Fe(NO}_3)_{3(s)}$"
+        },
+        {
+          "q": "2. Donner les écritures des solutions aqueuses correspondantes.",
+          "indice": "Indiquez les ions solvatés $(aq)$ avec leurs coefficients stœchiométriques.",
+          "corrige": "• $(\\text{Na}^+_{(aq)} + \\text{Cl}^-_{(aq)})$ ; $(2\\text{Na}^+_{(aq)} + \\text{SO}_{4(aq)}^{2-})$ ; $(\\text{Na}^+_{(aq)} + \\text{NO}_{3(aq)}^-)$<br>• $(\\text{Fe}^{2+}_{(aq)} + 2\\text{Cl}^-_{(aq)})$ ; $(\\text{Fe}^{2+}_{(aq)} + \\text{SO}_{4(aq)}^{2-})$ ; $(\\text{Fe}^{2+}_{(aq)} + 2\\text{NO}_{3(aq)}^-)$<br>• $(\\text{Fe}^{3+}_{(aq)} + 3\\text{Cl}^-_{(aq)})$ ; $(2\\text{Fe}^{3+}_{(aq)} + 3\\text{SO}_{4(aq)}^{2-})$ ; $(\\text{Fe}^{3+}_{(aq)} + 3\\text{NO}_{3(aq)}^-)$"
         }
       ]
     },
     {
       "niveau": "Standard",
-      "titre": "Exercice 2 : Préparation d'une solution de chlorure de plomb ($\\text{PbCl}_2$)",
-      "enonce": "<strong>Données :</strong><br>• Volume de solution préparée : $V = 100\\text{ mL} = 0,100\\text{ L}$<br>• Masse de solide ionique dissous : $m = 250\\text{ mg} = 0,250\\text{ g}$<br>• Masses molaires atomiques : $M(\\text{Pb}) = 207,2\\text{ g}\\cdot\\text{mol}^{-1}$ et $M(\\text{Cl}) = 35,5\\text{ g}\\cdot\\text{mol}^{-1}$.<br><br>On prépare un volume $V = 100\\text{ mL}$ d'une solution aqueuse de chlorure de plomb par dissolution d'une masse $m = 250\\text{ mg}$ de chlorure de plomb solide $\\text{PbCl}_2$.",
+      "titre": "Exercice 7 : Concentrations molaires des ions du carbonate de sodium",
+      "enonce": "<strong>Données :</strong> On dissout $n = 0,20\\text{ mol}$ de carbonate de sodium solide $\\text{Na}_2\\text{CO}_{3(s)}$ dans l'eau pour obtenir un volume $V = 1,0\\text{ L}$ de solution.",
       "questions": [
         {
-          "q": "1. Quel est le solvant de cette solution ? Quel est le soluté (électrolyte) ?",
-          "indice": "Le solvant est le liquide majoritaire (l'eau) ; le soluté est l'espèce dissoute.",
-          "corrige": "• Le <strong>solvant</strong> est l'eau (solution aqueuse).<br>• Le <strong>soluté (électrolyte)</strong> est le chlorure de plomb $\\text{PbCl}_2$."
+          "q": "1. Écrire l'équation de dissolution et calculer les concentrations molaires effectives $[\\text{Na}^+]$ et $[\\text{CO}_3^{2-}]$ dans la solution.",
+          "indice": "Écrivez $\\text{Na}_2\\text{CO}_{3(s)} \\to 2\\text{Na}^+_{(aq)} + \\text{CO}_{3(aq)}^{2-}$, puis utilisez $[X] = \\frac{n(X)}{V}$.",
+          "corrige": "Équation de dissolution : $\\text{Na}_2\\text{CO}_{3(s)} \\xrightarrow{\\text{eau}} 2\\text{Na}^+_{(aq)} + \\text{CO}_{3(aq)}^{2-}$.<br>• Concentration en ions carbonate : $[\\text{CO}_{3(aq)}^{2-}] = \\frac{0,20}{1,0} = 0,20\\text{ mol}\\cdot\\text{L}^{-1}$.<br>• Concentration en ions sodium : $[\\text{Na}^+_{(aq)}] = \\frac{2 \\times 0,20}{1,0} = 0,40\\text{ mol}\\cdot\\text{L}^{-1}$."
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 8 : Concentrations effectives dans trois solutions de même concentration C",
+      "enonce": "<strong>Données :</strong> On prépare trois solutions de même concentration molaire d'apport $C = 5,0 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$ en dissolvant respectivement $\\text{K}_2\\text{SO}_4$, $\\text{K}_3\\text{PO}_4$ et $\\text{Al}_2(\\text{SO}_4)_3$.",
+      "questions": [
+        {
+          "q": "1. Donner les écritures des trois solutions aqueuses.",
+          "indice": "Identifiez les ions solvatés $(aq)$ et leurs proportions pour chaque composé.",
+          "corrige": "• Sulfate de potassium : $(2\\text{K}^+_{(aq)} + \\text{SO}_{4(aq)}^{2-})$<br>• Phosphate de potassium : $(3\\text{K}^+_{(aq)} + \\text{PO}_{4(aq)}^{3-})$<br>• Sulfate d'aluminium : $(2\\text{Al}^{3+}_{(aq)} + 3\\text{SO}_{4(aq)}^{2-})$"
         },
         {
-          "q": "2. Calculer la masse molaire $M(\\text{PbCl}_2)$ puis la concentration molaire $c$ de soluté apporté.",
-          "indice": "Calculez d'abord $M(\\text{PbCl}_2) = M(\\text{Pb}) + 2M(\\text{Cl})$, puis $n = \\frac{m}{M}$ et $c = \\frac{n}{V}$.",
-          "corrige": "$$M(\\text{PbCl}_2) = 207,2 + 2 \\times 35,5 = 278,2\\text{ g}\\cdot\\text{mol}^{-1}$$<br>$$n(\\text{PbCl}_2) = \\frac{0,250}{278,2} \\approx 8,99 \\times 10^{-4}\\text{ mol}$$<br>$$c = \\frac{n}{V} = \\frac{8,99 \\times 10^{-4}}{0,100} \\approx 8,99 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$$"
+          "q": "2. Déterminer la concentration molaire effective des ions dans chaque solution.",
+          "indice": "Multipliez $C = 5,0 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$ par le coefficient stœchiométrique de chaque ion.",
+          "corrige": "• <strong>$\\text{K}_2\\text{SO}_4$ :</strong> $[\\text{SO}_{4(aq)}^{2-}] = C = 5,0 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{K}^+_{(aq)}] = 2C = 1,0 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$.<br>• <strong>$\\text{K}_3\\text{PO}_4$ :</strong> $[\\text{PO}_{4(aq)}^{3-}] = C = 5,0 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{K}^+_{(aq)}] = 3C = 1,5 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$.<br>• <strong>$\\text{Al}_2(\\text{SO}_4)_3$ :</strong> $[\\text{Al}^{3+}_{(aq)}] = 2C = 1,0 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{SO}_{4(aq)}^{2-}] = 3C = 1,5 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$."
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 9 : Solution de chlorure de sodium (NaCl)",
+      "enonce": "<strong>Données :</strong> Masse dissoute $m = 7,0\\text{ g}$ de $\\text{NaCl}_{(s)}$ dans un volume $V = 0,50\\text{ L}$. Masses molaires : $M(\\text{Na}) = 23,0\\text{ g}\\cdot\\text{mol}^{-1}$ et $M(\\text{Cl}) = 35,5\\text{ g}\\cdot\\text{mol}^{-1}$.",
+      "questions": [
+        {
+          "q": "1. Calculer la quantité de matière $n$ de $\\text{NaCl}$ dissoute, puis les concentrations molaires effectives $[\\text{Na}^+]$ et $[\\text{Cl}^-]$.",
+          "indice": "Calculez d'abord $M(\\text{NaCl}) = 23,0 + 35,5 = 58,5\\text{ g}\\cdot\\text{mol}^{-1}$, puis $n = \\frac{m}{M}$ et $[\\text{Na}^+] = [\\text{Cl}^-] = \\frac{n}{V}$.",
+          "corrige": "$$M(\\text{NaCl}) = 23,0 + 35,5 = 58,5\\text{ g}\\cdot\\text{mol}^{-1}$$<br>$$n = \\frac{7,0}{58,5} \\approx 0,12\\text{ mol}$$<br>D'après $\\text{NaCl}_{(s)} \\to \\text{Na}^+_{(aq)} + \\text{Cl}^-_{(aq)}$, on a $[\\text{Na}^+_{(aq)}] = [\\text{Cl}^-_{(aq)}] = \\frac{n}{V} = \\frac{0,12}{0,50} = 0,24\\text{ mol}\\cdot\\text{L}^{-1}$."
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 10 : Dissolution du sulfate de cuivre hydraté (CuSO₄, 5H₂O)",
+      "enonce": "<strong>Données :</strong> On dissout $m = 1,250\\text{ g}$ de sulfate de cuivre hydraté $\\text{CuSO}_4, 5\\text{H}_2\\text{O}$ dans une fiole jaugée de volume $V = 500\\text{ mL} = 0,500\\text{ L}$. Masses molaires : $M(\\text{Cu}) = 63,5\\text{ g}\\cdot\\text{mol}^{-1}$, $M(\\text{S}) = 32,0\\text{ g}\\cdot\\text{mol}^{-1}$, $M(\\text{O}) = 16,0\\text{ g}\\cdot\\text{mol}^{-1}$, $M(\\text{H}) = 1,0\\text{ g}\\cdot\\text{mol}^{-1}$.",
+      "questions": [
+        {
+          "q": "1. Calculer la masse molaire $M$ de $\\text{CuSO}_4, 5\\text{H}_2\\text{O}$ et la concentration molaire $C$ en soluté apporté.",
+          "indice": "N'oubliez pas d'ajouter la masse de $5$ molécules d'eau ($5 \\times 18,0 = 90,0\\text{ g}\\cdot\\text{mol}^{-1}$), puis appliquez $C = \\frac{m}{M \\cdot V}$.",
+          "corrige": "$$M = 63,5 + 32,0 + (4 \\times 16,0) + 5 \\times (2 \\times 1,0 + 16,0) = 159,5 + 90,0 = 249,5\\text{ g}\\cdot\\text{mol}^{-1}$$<br>$$C = \\frac{m}{M \\cdot V} = \\frac{1,250}{249,5 \\times 0,500} \\approx 1,0 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$$"
         },
         {
-          "q": "3. Écrire l'équation de dissolution de $\\text{PbCl}_2$ dans l'eau, puis en déduire les concentrations molaires effectives $[\\text{Pb}^{2+}]$ et $[\\text{Cl}^-]$.",
-          "indice": "Un cristal de $\\text{PbCl}_2$ libère un ion $\\text{Pb}^{2+}(aq)$ et deux ions $\\text{Cl}^-(aq)$. Utilisez $[X] = \\nu_X \\cdot c$.",
-          "corrige": "$$\\text{PbCl}_2(s) \\xrightarrow{\\text{eau}} \\text{Pb}^{2+}(aq) + 2\\text{Cl}^-(aq)$$<br>• $[\\text{Pb}^{2+}] = c \\approx 8,99 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Cl}^-] = 2c \\approx 1,80 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$"
+          "q": "2. Écrire l'équation de dissolution et en déduire les concentrations effectives $[\\text{Cu}^{2+}]$ et $[\\text{SO}_4^{2-}]$.",
+          "indice": "Un motif de $\\text{CuSO}_4, 5\\text{H}_2\\text{O}$ libère un ion $\\text{Cu}^{2+}_{(aq)}$ et un ion $\\text{SO}_{4(aq)}^{2-}$.",
+          "corrige": "$$\\text{CuSO}_4, 5\\text{H}_2\\text{O}_{(s)} \\xrightarrow{\\text{eau}} \\text{Cu}^{2+}_{(aq)} + \\text{SO}_{4(aq)}^{2-} + 5\\text{H}_2\\text{O}$$<br>$$[\\text{Cu}^{2+}_{(aq)}] = [\\text{SO}_{4(aq)}^{2-}] = C \\approx 1,0 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$$"
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 11 : Solution de sulfate d'aluminium (V = 2,0 L)",
+      "enonce": "<strong>Données :</strong> Masse dissoute $m = 8,55\\text{ g}$ de $\\text{Al}_2(\\text{SO}_4)_{3(s)}$ dans un volume $V = 2,0\\text{ L}$. Masses molaires : $M(\\text{Al}) = 27,0\\text{ g}\\cdot\\text{mol}^{-1}$, $M(\\text{S}) = 32,0\\text{ g}\\cdot\\text{mol}^{-1}$, $M(\\text{O}) = 16,0\\text{ g}\\cdot\\text{mol}^{-1}$.",
+      "questions": [
+        {
+          "q": "1. Calculer la quantité de matière $n$ de sulfate d'aluminium dissous.",
+          "indice": "Calculez $M(\\text{Al}_2(\\text{SO}_4)_3) = 2 \\times 27,0 + 3 \\times (32,0 + 4 \\times 16,0) = 342,0\\text{ g}\\cdot\\text{mol}^{-1}$, puis $n = \\frac{m}{M}$.",
+          "corrige": "$$M = 2 \\times 27,0 + 3 \\times [32,0 + (4 \\times 16,0)] = 54,0 + 3 \\times 96,0 = 342,0\\text{ g}\\cdot\\text{mol}^{-1}$$<br>$$n = \\frac{8,55}{342,0} = 0,025\\text{ mol}$$"
+        },
+        {
+          "q": "2. Identifier les ions présents et calculer leurs concentrations molaires effectives dans la solution.",
+          "indice": "Utilisez $\\text{Al}_2(\\text{SO}_4)_{3(s)} \\to 2\\text{Al}^{3+}_{(aq)} + 3\\text{SO}_{4(aq)}^{2-}$ et divisez chaque quantité d'ions par $V = 2,0\\text{ L}$.",
+          "corrige": "• Quantités de matière : $n(\\text{Al}^{3+}) = 2n = 0,050\\text{ mol}$ et $n(\\text{SO}_4^{2-}) = 3n = 0,075\\text{ mol}$.<br>• Concentrations effectives :<br>$$[\\text{Al}^{3+}_{(aq)}] = \\frac{0,050}{2,0} = 2,5 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$$<br>$$[\\text{SO}_{4(aq)}^{2-}] = \\frac{0,075}{2,0} = 3,75 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$$"
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 14 : Le sérum physiologique",
+      "enonce": "<strong>Données :</strong> Le sérum physiologique est une solution aqueuse de chlorure de sodium de concentration massique $C_m = 9,0\\text{ g}\\cdot\\text{L}^{-1}$. Masse molaire de $\\text{NaCl}$ : $M = 58,5\\text{ g}\\cdot\\text{mol}^{-1}$.",
+      "questions": [
+        {
+          "q": "1. Déterminer la concentration molaire $C$ en soluté apporté, puis les concentrations effectives $[\\text{Na}^+]$ et $[\\text{Cl}^-]$.",
+          "indice": "Utilisez $C = \\frac{C_m}{M}$, puis $[\\text{Na}^+] = [\\text{Cl}^-] = C$.",
+          "corrige": "• Concentration molaire d'apport : $C = \\frac{C_m}{M} = \\frac{9,0}{58,5} \\approx 0,15\\text{ mol}\\cdot\\text{L}^{-1}$.<br>• Concentrations effectives : $[\\text{Na}^+_{(aq)}] = [\\text{Cl}^-_{(aq)}] = C \\approx 0,15\\text{ mol}\\cdot\\text{L}^{-1}$."
+        },
+        {
+          "q": "2. Calculer les quantités de matière de chaque sorte d'ions dans un flacon de volume $V = 250\\text{ mL} = 0,250\\text{ L}$.",
+          "indice": "Appliquez $n = C \\cdot V$ avec $V$ en litres.",
+          "corrige": "$$n(\\text{Na}^+_{(aq)}) = n(\\text{Cl}^-_{(aq)}) = C \\cdot V = 0,154 \\times 0,250 \\approx 3,8 \\times 10^{-2}\\text{ mol} \\quad (\\approx 0,04\\text{ mol})$$"
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 15 : Étiquette d'une eau minérale gazeuse",
+      "enonce": "<strong>Données :</strong> L'étiquette d'une eau minérale gazeuse indique les teneurs en $\\text{mg}\\cdot\\text{L}^{-1}$ : $\\text{Na}^+$ ($224,00\\text{ mg}\\cdot\\text{L}^{-1}$), $\\text{K}^+$ ($26,00\\text{ mg}\\cdot\\text{L}^{-1}$), $\\text{Mg}^{2+}$ ($48,60\\text{ mg}\\cdot\\text{L}^{-1}$), $\\text{Ca}^{2+}$ ($148,84\\text{ mg}\\cdot\\text{L}^{-1}$), $\\text{HCO}_3^-$ ($890,85\\text{ mg}\\cdot\\text{L}^{-1}$), $\\text{Cl}^-$ ($280,00\\text{ mg}\\cdot\\text{L}^{-1}$), $\\text{SO}_4^{2-}$ ($14,25\\text{ mg}\\cdot\\text{L}^{-1}$), $\\text{NO}_3^-$ ($2,83\\text{ mg}\\cdot\\text{L}^{-1}$).",
+      "questions": [
+        {
+          "q": "1. De quelle concentration s'agit-il (molaire ou massique) ? À quoi est dû le dégagement gazeux à l'ouverture ?",
+          "indice": "Regardez l'unité $\\text{mg}\\cdot\\text{L}^{-1}$ et pensez aux ions hydrogénocarbonate $\\text{HCO}_3^-$.",
+          "corrige": "• L'unité $\\text{mg}\\cdot\\text{L}^{-1}$ correspond à une <strong>concentration massique</strong> $C_m$.<br>• À l'ouverture de la bouteille (baisse de pression), la transformation des ions hydrogénocarbonate $\\text{HCO}_{3(aq)}^-$ libère du dioxyde de carbone gazeux $\\text{CO}_2$."
+        },
+        {
+          "q": "2. Quels tests caractéristiques permettent d'identifier les ions chlorure $\\text{Cl}^-$ et les ions sulfate $\\text{SO}_4^{2-}$ ?",
+          "indice": "Pensez au nitrate d'argent pour $\\text{Cl}^-$ et au chlorure de baryum pour $\\text{SO}_4^{2-}$.",
+          "corrige": "• <strong>Ions chlorure $\\text{Cl}^-$ :</strong> Ajout d'une solution de nitrate d'argent ($\\text{Ag}^+ + \\text{NO}_3^-$) $\\rightarrow$ formation d'un <strong>précipité blanc</strong> de chlorure d'argent qui noircit à la lumière.<br>• <strong>Ions sulfate $\\text{SO}_4^{2-}$ :</strong> Ajout d'une solution de chlorure de baryum ($\\text{Ba}^{2+} + 2\\text{Cl}^-$) $\\rightarrow$ formation d'un <strong>précipité blanc</strong> de sulfate de baryum."
         }
       ]
     },
     {
       "niveau": "Excellence",
-      "titre": "Exercice 3 : Polarité moléculaire ($\\text{HF}$) et mélange de solutions ioniques",
-      "enonce": "<strong>Données :</strong><br>• L'atome de fluor ($Z = 9$) est plus électronégatif que l'atome d'hydrogène ($Z = 1$).<br>• On mélange un volume $V_1 = 200\\text{ mL}$ d'une solution de chlorure de sodium $\\text{NaCl}$ de concentration $c_1 = 0,20\\text{ mol}\\cdot\\text{L}^{-1}$ avec un volume $V_2 = 300\\text{ mL}$ d'une solution de chlorure de calcium $\\text{CaCl}_2$ de concentration $c_2 = 0,10\\text{ mol}\\cdot\\text{L}^{-1}$. Le volume total est $V_{\\text{tot}} = V_1 + V_2 = 500\\text{ mL} = 0,50\\text{ L}$.",
+      "titre": "Exercice 12 : Dissolution et dilution d'une solution de sulfate d'aluminium",
+      "enonce": "<strong>Données :</strong> On dissout $m = 51,3\\text{ g}$ de $\\text{Al}_2(\\text{SO}_4)_{3(s)}$ dans $V = 500\\text{ mL} = 0,500\\text{ L}$ d'eau ($M = 342\\text{ g}\\cdot\\text{mol}^{-1}$). On souhaite ensuite préparer $V' = 100\\text{ mL}$ de concentration $C' = 0,15\\text{ mol}\\cdot\\text{L}^{-1}$ par dilution.",
       "questions": [
         {
-          "q": "1. La molécule de fluorure d'hydrogène $\\text{H}-\\text{F}$ est-elle polaire ? Justifier.",
-          "indice": "Comparez l'électronégativité de $\\text{F}$ et de $\\text{H}$ et examinez la répartition des charges partielles $+\\delta e$ et $-\\delta e$.",
-          "corrige": "<strong>Oui</strong>, la molécule $\\text{H}-\\text{F}$ est polaire : le fluor étant plus électronégatif que l'hydrogène, il attire davantage le doublet liant, créant une charge partielle négative $-\\delta e$ sur $\\text{F}$ et une charge partielle positive $+\\delta e$ sur $\\text{H}$. Les barycentres des charges positives et négatives ne coïncident pas."
+          "q": "1. Rappeler les 3 étapes de la dissolution, écrire l'équation de dissolution et calculer la concentration $C$ de soluté apporté ainsi que $[\\text{Al}^{3+}]$ et $[\\text{SO}_4^{2-}]$ dans la solution mère.",
+          "indice": "Calculez $C = \\frac{51,3}{342 \\times 0,500} = 0,30\\text{ mol}\\cdot\\text{L}^{-1}$, puis $[\\text{Al}^{3+}] = 2C$ et $[\\text{SO}_4^{2-}] = 3C$.",
+          "corrige": "• <strong>3 étapes :</strong> (1) Dissociation du cristal par les molécules d'eau polaires ; (2) Solvatation/hydratation des ions ; (3) Dispersion homogène.<br>• <strong>Équation :</strong> $\\text{Al}_2(\\text{SO}_4)_{3(s)} \\xrightarrow{\\text{eau}} 2\\text{Al}^{3+}_{(aq)} + 3\\text{SO}_{4(aq)}^{2-}$.<br>• <strong>Concentrations :</strong> $C = \\frac{51,3}{342 \\times 0,500} = 0,30\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{Al}^{3+}_{(aq)}] = 2C = 0,60\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{SO}_{4(aq)}^{2-}] = 3C = 0,90\\text{ mol}\\cdot\\text{L}^{-1}$."
         },
         {
-          "q": "2. Calculer les quantités de matière d'ions $\\text{Na}^+$, $\\text{Ca}^{2+}$ et $\\text{Cl}^-$ présents dans le mélange final.",
-          "indice": "Attention : $\\text{Cl}^-$ provient à la fois de $\\text{NaCl}$ ($n_1$) et de $\\text{CaCl}_2$ ($2n_2$).",
-          "corrige": "• $n(\\text{Na}^+) = c_1 V_1 = 0,20 \\times 0,200 = 0,040\\text{ mol}$<br>• $n(\\text{Ca}^{2+}) = c_2 V_2 = 0,10 \\times 0,300 = 0,030\\text{ mol}$<br>• $n(\\text{Cl}^-) = c_1 V_1 + 2 c_2 V_2 = 0,040 + 2 \\times 0,030 = 0,100\\text{ mol}$"
+          "q": "2. Calculer le volume $V_s$ de solution mère à prélever et décrire le protocole expérimental avec la verrerie.",
+          "indice": "Utilisez la conservation de la quantité de matière : $C \\cdot V_s = C' \\cdot V'$.",
+          "corrige": "<img src=\"dilution_melange_ex12_ex13.png\" alt=\"Dilution et mélange de solutions\" style=\"display:block; max-width:540px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">$$V_s = \\frac{C' \\cdot V'}{C} = \\frac{0,15 \\times 0,100}{0,30} = 0,050\\text{ L} = 50\\text{ mL}$$<br><strong>Protocole :</strong> Prélever $50\\text{ mL}$ de solution mère à l'aide d'une pipette jaugée (munie d'une poire/propipette), l'introduire dans une fiole jaugée de $100\\text{ mL}$, ajouter de l'eau distillée aux $2/3$, agiter, compléter jusqu'au trait de jauge (bas du ménisque à hauteur des yeux), boucher et homogénéiser."
+        }
+      ]
+    },
+    {
+      "niveau": "Excellence",
+      "titre": "Exercice 13 : Mélange de chlorure de cuivre et de chlorure de sodium",
+      "enonce": "<strong>Données :</strong> On mélange $V = 750\\text{ mL} = 0,750\\text{ L}$ d'une solution de chlorure de cuivre ($\\text{Cu}^{2+}_{(aq)} + 2\\text{Cl}^-_{(aq)}$) de concentration $C = 1,0 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$ avec $V' = 250\\text{ mL} = 0,250\\text{ L}$ d'une solution de chlorure de sodium ($\\text{Na}^+_{(aq)} + \\text{Cl}^-_{(aq)}$) de concentration $C' = 5,0 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$. Volume total : $V_{\\text{tot}} = 1,00\\text{ L}$.",
+      "questions": [
+        {
+          "q": "1. Déterminer les concentrations molaires effectives des ions $\\text{Cu}^{2+}_{(aq)}$, $\\text{Na}^+_{(aq)}$ et $\\text{Cl}^-_{(aq)}$ dans le mélange final.",
+          "indice": "Divisez chaque quantité de matière d'ion par $V_{\\text{tot}} = V + V' = 1,00\\text{ L}$ ; pour $\\text{Cl}^-$, additionnez les apports des deux solutions : $n(\\text{Cl}^-) = 2CV + C'V'$.",
+          "corrige": "<img src=\"dilution_melange_ex12_ex13.png\" alt=\"Dilution et mélange de solutions\" style=\"display:block; max-width:540px; width:100%; margin:14px auto; border-radius:10px; background:#ffffff; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.25);\" onerror=\"this.style.display='none'\">• $[\\text{Cu}^{2+}_{(aq)}] = \\frac{C \\cdot V}{V + V'} = \\frac{1,0 \\times 10^{-3} \\times 0,750}{1,00} = 7,5 \\times 10^{-4}\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Na}^+_{(aq)}] = \\frac{C' \\cdot V'}{V + V'} = \\frac{5,0 \\times 10^{-2} \\times 0,250}{1,00} = 1,25 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Cl}^-_{(aq)}] = \\frac{2CV + C'V'}{V + V'} = \\frac{2 \\times 1,0 \\times 10^{-3} \\times 0,750 + 5,0 \\times 10^{-2} \\times 0,250}{1,00} = 1,4 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$"
+        }
+      ]
+    },
+    {
+      "niveau": "Excellence",
+      "titre": "Exercice 16 : Précipitation du chlorure d'argent (AgCl)",
+      "enonce": "<strong>Données :</strong> On verse $V_1 = 50\\text{ mL} = 0,050\\text{ L}$ d'une solution de nitrate d'argent ($\\text{Ag}^+_{(aq)} + \\text{NO}_{3(aq)}^-$) de concentration $C_1 = 0,50\\text{ mol}\\cdot\\text{L}^{-1}$ dans $V_2 = 100\\text{ mL} = 0,100\\text{ L}$ de solution de chlorure de potassium ($\\text{K}^+_{(aq)} + \\text{Cl}^-_{(aq)}$) de concentration $C_2 = 0,20\\text{ mol}\\cdot\\text{L}^{-1}$. Volume final : $V_f = 0,150\\text{ L}$. Masse molaire de $\\text{AgCl}_{(s)}$ : $M = 143,4\\text{ g}\\cdot\\text{mol}^{-1}$.",
+      "questions": [
+        {
+          "q": "1. Écrire l'équation de précipitation, dresser le bilan des quantités initiales et déterminer l'avancement maximal $x_{\\max}$ ainsi que les concentrations effectives finales.",
+          "indice": "Réaction : $\\text{Ag}^+_{(aq)} + \\text{Cl}^-_{(aq)} \\to \\text{AgCl}_{(s)}$. Comparez $n_i(\\text{Ag}^+) = 0,025\\text{ mol}$ et $n_i(\\text{Cl}^-) = 0,020\\text{ mol}$.",
+          "corrige": "• Quantités initiales : $n_i(\\text{Ag}^+) = C_1 V_1 = 0,50 \\times 0,050 = 0,025\\text{ mol}$ ; $n_i(\\text{Cl}^-) = C_2 V_2 = 0,20 \\times 0,100 = 0,020\\text{ mol}$.<br>• Le réactif limitant est $\\text{Cl}^-$ ($0,020 < 0,025$), donc $x_{\\max} = 0,020\\text{ mol}$.<br>• <strong>État final ($V_f = 0,150\\text{ L}$) :</strong> $[\\text{Cl}^-_f] = 0\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{Ag}^+_f] = \\frac{0,025 - 0,020}{0,150} \\approx 3,3 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{K}^+_f] = \\frac{0,020}{0,150} \\approx 0,13\\text{ mol}\\cdot\\text{L}^{-1}$ ; $[\\text{NO}_{3(f)}^-] = \\frac{0,025}{0,150} \\approx 0,17\\text{ mol}\\cdot\\text{L}^{-1}$."
         },
         {
-          "q": "3. En déduire les concentrations molaires effectives $[\\text{Na}^+]$, $[\\text{Ca}^{2+}]$ et $[\\text{Cl}^-]$ dans le mélange et vérifier l'électroneutralité.",
-          "indice": "Divisez chaque quantité de matière par $V_{\\text{tot}} = 0,50\\text{ L}$, puis vérifiez $[\\text{Na}^+] + 2[\\text{Ca}^{2+}] = [\\text{Cl}^-]$.",
-          "corrige": "• $[\\text{Na}^+] = \\frac{0,040}{0,50} = 0,080\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Ca}^{2+}] = \\frac{0,030}{0,50} = 0,060\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Cl}^-] = \\frac{0,100}{0,50} = 0,20\\text{ mol}\\cdot\\text{L}^{-1}$<br><strong>Vérification :</strong> $[\\text{Na}^+] + 2[\\text{Ca}^{2+}] = 0,080 + 2 \\times 0,060 = 0,20\\text{ mol}\\cdot\\text{L}^{-1} = [\\text{Cl}^-]$ : la solution est électriquement neutre."
+          "q": "2. Vérifier l'électroneutralité finale, calculer la masse théorique de $\\text{AgCl}$ et interpréter une masse pesée supérieure à la valeur attendue.",
+          "indice": "Calculez $m_{\\text{th}} = x_{\\max} \\cdot M(\\text{AgCl})$ et pensez au séchage incomplet ou à des ions adsorbés.",
+          "corrige": "• <strong>Électroneutralité :</strong> $[\\text{Ag}^+_f] + [\\text{K}^+_f] \\approx 0,033 + 0,133 = 0,166\\text{ mol}\\cdot\\text{L}^{-1} \\approx [\\text{NO}_{3(f)}^-] = 0,167\\text{ mol}\\cdot\\text{L}^{-1}$.<br>• <strong>Masse théorique :</strong> $m = n(\\text{AgCl}) \\cdot M = 0,020 \\times 143,4 = 2,87\\text{ g}$.<br>• <strong>Interprétation d'une masse supérieure :</strong> Le précipité n'a pas été suffisamment séché (reste d'eau/solvant) ou a retenu des espèces dissoutes/impuretés lors de la filtration."
         }
       ]
     }
