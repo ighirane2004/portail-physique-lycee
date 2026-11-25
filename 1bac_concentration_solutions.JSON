@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "niveau_lycee": "1ère Bac Sciences",
+    "titre": "Les solutions électrolytiques"
+  },
+  "cours": [
+    {
+      "titre": "1. Solides ioniques et solutions électrolytiques",
+      "resume": "Un solide ionique est un cristal électriquement neutre formé d'un empilement régulier de cations ($+$) et d'anions ($-$) liés par des interactions électrostatiques. Une solution électrolytique contient des ions libres (solvatés) qui assurent la conduction du courant électrique tout en conservant l'électroneutralité.",
+      "formule": "$$\\text{Formule statistique : } Y_q X_p \\quad | \\quad \\text{Électroneutralité : } q [Y^{p+}] = p [X^{q-}]$$",
+      "unites": "Les solides ioniques sont isolants électriques à l'état solide (ions liés), mais leurs solutions aqueuses sont conductrices."
+    },
+    {
+      "titre": "2. Électronégativité et polarité des molécules",
+      "resume": "L'électronégativité mesure la tendance d'un atome à attirer le doublet d'électrons d'une liaison covalente (elle croît de gauche à droite et de bas en haut dans le tableau périodique). Une liaison est polarisée s'il y a dissymétrie des charges ($+\\delta e$ et $-\\delta e$). Une molécule est polaire si le barycentre des charges positives ne coïncide pas avec celui des charges négatives (ex : $\\text{H}_2\\text{O}$, $\\text{HCl}$, $\\text{HF}$).",
+      "formule": "$$\\delta_{\\text{totale}} = 0 \\quad \\text{mais } G_+ \\neq G_- \\implies \\text{Molécule polaire (dipôle)}$$",
+      "unites": "La molécule d'eau $\\text{H}_2\\text{O}$ est coudée et polaire (charge partielle $-2\\delta e$ sur $\\text{O}$ et $+\\delta e$ sur chaque $\\text{H}$)."
+    },
+    {
+      "titre": "3. Les trois étapes de la dissolution d'un électrolyte dans l'eau",
+      "resume": "La dissolution d'un composé ionique ou d'un électrolyte (solide, gaz comme $\\text{HCl}$, ou liquide comme $\\text{H}_2\\text{SO}_4$) dans l'eau polaire se déroule en trois étapes : (1) Dissociation (affaiblissement des liaisons par les molécules d'eau), (2) Solvatation ou hydratation (entourage de chaque ion par des molécules d'eau, noté $(aq)$), (3) Dispersion (homogénéisation dans la solution).",
+      "formule": "$$\\text{NaCl}(s) \\xrightarrow{\\text{eau}} \\text{Na}^+(aq) + \\text{Cl}^-(aq)$$",
+      "unites": "Cas particulier du proton $\\text{H}^+$ qui s'associe à l'eau pour former l'ion oxonium $\\text{H}_3\\text{O}^+(aq)$."
+    },
+    {
+      "titre": "4. Concentration molaire d'apport $c$",
+      "resume": "La concentration molaire d'apport $c$ d'une solution est égale à la quantité de matière $n$ de soluté introduit (dissous) divisée par le volume total $V$ de la solution préparée.",
+      "formule": "$$c = \\frac{n}{V} = \\frac{m}{M \\cdot V}$$",
+      "unites": "$c$ en $\\text{mol}\\cdot\\text{L}^{-1}$ ($\\text{mol}\\cdot\\text{m}^{-3}$), $n$ en $\\text{mol}$, $V$ en litres ($\\text{L}$), $m$ en $\\text{g}$, $M$ en $\\text{g}\\cdot\\text{mol}^{-1}$."
+    },
+    {
+      "titre": "5. Concentration molaire effective des espèces en solution $[X]$",
+      "resume": "La concentration molaire effective d'une espèce chimique $X$ présente en solution, notée $[X]$, est égale à la quantité de matière $n(X)$ de cette espèce présente dans le volume $V$ de solution.",
+      "formule": "$$[X] = \\frac{n(X)}{V}$$",
+      "unites": "$[X]$ en $\\text{mol}\\cdot\\text{L}^{-1}$, $n(X)$ en $\\text{mol}$, $V$ en $\\text{L}$."
+    },
+    {
+      "titre": "6. Lien entre concentrations effectives et concentration d'apport $c$",
+      "resume": "À partir de l'équation chimique équilibrée de dissolution totale d'un électrolyte $Y_q X_p$ donnant $q\\text{ ions } Y^{p+}(aq)$ et $p\\text{ ions } X^{q-}(aq)$, chaque concentration ionique est proportionnelle à $c$ par son coefficient stœchiométrique.",
+      "formule": "$$[Y^{p+}] = q \\cdot c \\quad ; \\quad [X^{q-}] = p \\cdot c$$",
+      "unites": "Exemple pour $\\text{PbCl}_2 \\to \\text{Pb}^{2+}(aq) + 2\\text{Cl}^-(aq)$ : $[\\text{Pb}^{2+}] = c$ et $[\\text{Cl}^-] = 2c$."
+    }
+  ],
+  "erreurs_a_eviter": [
+    "<strong>Piège N°1 (Sécurité lors de la dissolution d'un acide) :</strong> Ne jamais verser l'eau dans l'acide concentré (risque de projections dangereuses dues à la réaction exothermique) : toujours verser l'acide progressivement dans l'eau.",
+    "<strong>Piège N°2 (Conversions de volume et de masse dans $c = \\frac{m}{MV}$) :</strong> Oublier de convertir le volume de $\\text{mL}$ en $\\text{L}$ ($1\\text{ mL} = 10^{-3}\\text{ L}$) ou la masse de $\\text{mg}$ en $\\text{g}$ ($1\\text{ mg} = 10^{-3}\\text{ g}$).",
+    "<strong>Piège N°3 (Coefficients stœchiométriques des ions) :</strong> Écrire $[\\text{Cl}^-] = c$ au lieu de $[\\text{Cl}^-] = 2c$ pour une solution de $\\text{PbCl}_2$, ou oublier l'indice $(aq)$ dans l'équation de dissolution."
+  ],
+  "qcm": [
+    {
+      "q": "Quelle est la formule statistique du chlorure de sodium formé d'ions $\\text{Na}^+$ et $\\text{Cl}^-$ ?",
+      "r": "$\\text{NaCl}$",
+      "choix": [
+        "$\\text{Na}^+\\text{Cl}^-$",
+        "$\\text{Na}_2\\text{Cl}$",
+        "$\\text{NaCl}_2$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "La formule statistique indique la proportion des ions sans faire apparaître leurs charges : il y a autant d'ions $\\text{Na}^+$ que d'ions $\\text{Cl}^-$, d'où $\\text{NaCl}$.",
+      "cat": "Solide ionique",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Pourquoi une solution aqueuse électrolytique conduit-elle le courant électrique ?",
+      "r": "Grâce à la présence d'ions mobiles (porteurs de charges)",
+      "choix": [
+        "Grâce à la présence d'électrons libres dans l'eau",
+        "Parce que les molécules d'eau sont neutres",
+        "Parce que le cristal reste solide au fond du bécher"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Dans une solution électrolytique, les ions solvatés sont libres de se déplacer et assurent le passage du courant électrique.",
+      "cat": "Solution électrolytique",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Comment s'appelle l'entourage d'un ion par des molécules d'eau lors de sa dissolution ?",
+      "r": "La solvatation (ou hydratation)",
+      "choix": [
+        "La précipitation",
+        "La vaporisation",
+        "La neutralisation"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Lorsqu'un ion s'entoure de molécules d'eau (solvant eau), on parle d'hydratation (cas particulier de la solvatation).",
+      "cat": "Étapes de la dissolution",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Quelle est la relation définissant la concentration molaire d'apport $c$ d'un soluté de quantité de matière $n$ dans un volume $V$ de solution ?",
+      "r": "$c = \\frac{n}{V}$",
+      "choix": [
+        "$c = n \\cdot V$",
+        "$c = \\frac{V}{n}$",
+        "$c = \\frac{m}{V}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "La concentration molaire d'apport est égale au quotient de la quantité de matière $n$ (en $\\text{mol}$) par le volume $V$ de la solution (en $\\text{L}$).",
+      "cat": "Concentration molaire",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Quelle est l'unité légale de la concentration molaire dans le système usuel des solutions ?",
+      "r": "$\\text{mol}\\cdot\\text{L}^{-1}$",
+      "choix": [
+        "$\\text{g}\\cdot\\text{L}^{-1}$",
+        "$\\text{mol}$",
+        "$\\text{g}\\cdot\\text{mol}^{-1}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "La concentration molaire s'exprime en moles par litre ($\\text{mol}\\cdot\\text{L}^{-1}$), notée aussi $\\text{mol/L}$.",
+      "cat": "Unités en chimie",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "Que signifie l'indice $(aq)$ écrit à côté de la formule d'un ion, par exemple $\\text{Cu}^{2+}(aq)$ ?",
+      "r": "L'ion est aqueux (solvaté / entouré de molécules d'eau)",
+      "choix": [
+        "L'ion est à l'état gazeux",
+        "L'ion est un cristal solide",
+        "L'ion est radioactif"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "L'indice $(aq)$ indique que l'ion est dispersé et solvaté dans une solution aqueuse.",
+      "cat": "Notation des ions",
+      "niveau": "Soutien"
+    },
+    {
+      "q": "On dissout $n = 2\\text{ mol}$ de soluté dans un volume $V = 0,5\\text{ L}$ de solution. Quelle est la concentration molaire $c$ ?",
+      "r": "$4\\text{ mol}\\cdot\\text{L}^{-1}$",
+      "choix": [
+        "$1\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$0,25\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$2,5\\text{ mol}\\cdot\\text{L}^{-1}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Calcul mental : $c = \\frac{n}{V} = \\frac{2}{0,5} = 4\\text{ mol}\\cdot\\text{L}^{-1}$.",
+      "cat": "Calcul de $c$",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Quelle est l'équation de dissolution dans l'eau du chlorure de calcium solide $\\text{CaCl}_2(s)$ ?",
+      "r": "$\\text{CaCl}_2(s) \\to \\text{Ca}^{2+}(aq) + 2\\text{Cl}^-(aq)$",
+      "choix": [
+        "$\\text{CaCl}_2(s) \\to \\text{Ca}^+(aq) + 2\\text{Cl}^-(aq)$",
+        "$\\text{CaCl}_2(s) \\to \\text{Ca}^{2+}(aq) + \\text{Cl}^{2-}(aq)$",
+        "$\\text{CaCl}_2(s) \\to 2\\text{Ca}^{2+}(aq) + \\text{Cl}^-(aq)$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Un cristal de $\\text{CaCl}_2$ libère un ion $\\text{Ca}^{2+}(aq)$ et deux ions $\\text{Cl}^-(aq)$, assurant l'électroneutralité ($+2 + 2(-1) = 0$).",
+      "cat": "Équation de dissolution",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Dans une solution aqueuse de $\\text{CaCl}_2$ de concentration $c = 0,1\\text{ mol}\\cdot\\text{L}^{-1}$, quelle est la concentration effective $[\\text{Cl}^-]$ ?",
+      "r": "$0,2\\text{ mol}\\cdot\\text{L}^{-1}$",
+      "choix": [
+        "$0,1\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$0,05\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$0,3\\text{ mol}\\cdot\\text{L}^{-1}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Comme il y a $2$ ions $\\text{Cl}^-$ par unité formule de $\\text{CaCl}_2$, $[\\text{Cl}^-] = 2c = 2 \\times 0,1 = 0,2\\text{ mol}\\cdot\\text{L}^{-1}$.",
+      "cat": "Concentrations ioniques",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Dans le tableau périodique, comment varie l'électronégativité d'un élément lorsqu'on se déplace de gauche à droite sur une même ligne ?",
+      "r": "Elle augmente",
+      "choix": [
+        "Elle diminue",
+        "Elle reste nulle",
+        "Elle devient négative"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "L'électronégativité augmente de gauche à droite dans une période et de bas en haut dans une colonne.",
+      "cat": "Électronégativité",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Pourquoi la molécule d'eau $\\text{H}_2\\text{O}$ est-elle polaire ?",
+      "r": "Parce que sa géométrie est coudée et que le barycentre des charges $+$ ne coïncide pas avec celui des charges $-$",
+      "choix": [
+        "Parce qu'elle ne contient aucune liaison covalente",
+        "Parce que les atomes d'hydrogène sont plus électronégatifs que l'oxygène",
+        "Parce qu'elle porte une charge globale négative"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "L'oxygène est plus électronégatif que l'hydrogène et la géométrie coudée empêche la coïncidence des barycentres des charges partielles $+$ et $-$.",
+      "cat": "Polarité des molécules",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Quelle précaution essentielle doit-on respecter lors de la dissolution d'un acide concentré (comme l'acide sulfurique) dans l'eau ?",
+      "r": "Verser l'acide dans l'eau progressivement, jamais l'eau dans l'acide",
+      "choix": [
+        "Verser l'eau d'un seul coup dans l'acide pur",
+        "Chauffer l'acide pur avant d'ajouter l'eau",
+        "Fermer hermétiquement le flacon pendant le mélange"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "La dissolution est exothermique : verser l'acide dans un volume d'eau plus important limite l'échauffement local et évite les projections.",
+      "cat": "Sécurité au laboratoire",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Quel est le nom de l'ion formé lorsqu'un proton $\\text{H}^+$ s'associe à une molécule d'eau $\\text{H}_2\\text{O}$ ?",
+      "r": "L'ion oxonium $\\text{H}_3\\text{O}^+$",
+      "choix": [
+        "L'ion hydroxyde $\\text{HO}^-$",
+        "L'ion chlorure $\\text{Cl}^-$",
+        "L'ion sodium $\\text{Na}^+$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Le proton $\\text{H}^+$ s'unit à $\\text{H}_2\\text{O}$ pour former l'ion oxonium $\\text{H}_3\\text{O}^+(aq)$.",
+      "cat": "Ion oxonium",
+      "niveau": "Standard"
+    },
+    {
+      "q": "Quelle est la quantité de matière $n$ de soluté présente dans $V = 250\\text{ mL}$ d'une solution de concentration $c = 0,2\\text{ mol}\\cdot\\text{L}^{-1}$ ?",
+      "r": "$0,05\\text{ mol}$",
+      "choix": [
+        "$50\\text{ mol}$",
+        "$0,5\\text{ mol}$",
+        "$0,005\\text{ mol}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Calcul mental : $V = 250\\text{ mL} = 0,25\\text{ L}$ ; $n = c \\cdot V = 0,2 \\times 0,25 = 0,05\\text{ mol}$.",
+      "cat": "Quantité de matière",
+      "niveau": "Standard"
+    },
+    {
+      "q": "On dissout $m = 6\\text{ g}$ d'un soluté de masse molaire $M = 60\\text{ g}\\cdot\\text{mol}^{-1}$ dans $V = 0,5\\text{ L}$ d'eau. Quelle est la concentration molaire $c$ ?",
+      "r": "$0,2\\text{ mol}\\cdot\\text{L}^{-1}$",
+      "choix": [
+        "$0,1\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$2\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$0,05\\text{ mol}\\cdot\\text{L}^{-1}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Calcul mental : $n = \\frac{6}{60} = 0,1\\text{ mol}$, puis $c = \\frac{0,1}{0,5} = 0,2\\text{ mol}\\cdot\\text{L}^{-1}$.",
+      "cat": "Calcul de $c$",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "Dans une solution aqueuse de sulfate d'aluminium $\\text{Al}_2(\\text{SO}_4)_3$ de concentration $c = 0,1\\text{ mol}\\cdot\\text{L}^{-1}$, que vaut $[\\text{SO}_4^{2-}]$ ?",
+      "r": "$0,3\\text{ mol}\\cdot\\text{L}^{-1}$",
+      "choix": [
+        "$0,1\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$0,2\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$0,6\\text{ mol}\\cdot\\text{L}^{-1}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "La formule $\\text{Al}_2(\\text{SO}_4)_3$ comporte $3$ ions sulfate $\\text{SO}_4^{2-}$, donc $[\\text{SO}_4^{2-}] = 3c = 3 \\times 0,1 = 0,3\\text{ mol}\\cdot\\text{L}^{-1}$.",
+      "cat": "Concentrations ioniques",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "Quelle relation traduit l'électroneutralité d'une solution aqueuse contenant uniquement des ions $\\text{Na}^+$, $\\text{Mg}^{2+}$ et $\\text{Cl}^-$ ?",
+      "r": "$[\\text{Na}^+] + 2[\\text{Mg}^{2+}] = [\\text{Cl}^-]$",
+      "choix": [
+        "$[\\text{Na}^+] + [\\text{Mg}^{2+}] = [\\text{Cl}^-]$",
+        "$2[\\text{Na}^+] + [\\text{Mg}^{2+}] = [\\text{Cl}^-]$",
+        "$[\\text{Na}^+] + 2[\\text{Mg}^{2+}] = 2[\\text{Cl}^-]$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "La somme des charges volumiques positives égale celle des charges volumiques négatives : $1\\cdot[\\text{Na}^+] + 2\\cdot[\\text{Mg}^{2+}] = 1\\cdot[\\text{Cl}^-]$.",
+      "cat": "Électroneutralité",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "On dilue $10$ fois une solution mère de concentration $c_0 = 2\\text{ mol}\\cdot\\text{L}^{-1}$. Quelle est la concentration $c$ de la solution fille ?",
+      "r": "$0,2\\text{ mol}\\cdot\\text{L}^{-1}$",
+      "choix": [
+        "$20\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$0,02\\text{ mol}\\cdot\\text{L}^{-1}$",
+        "$1,8\\text{ mol}\\cdot\\text{L}^{-1}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Calcul mental : une dilution au $1/10\\text{e}$ divise la concentration par $10$, soit $c = \\frac{2}{10} = 0,2\\text{ mol}\\cdot\\text{L}^{-1}$.",
+      "cat": "Dilution",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "Dans un volume $V = 2\\text{ L}$ d'une solution de $\\text{NaCl}$ où $[\\text{Na}^+] = 0,5\\text{ mol}\\cdot\\text{L}^{-1}$, quelle est la quantité de matière $n(\\text{Cl}^-)$ d'ions chlorure ?",
+      "r": "$1\\text{ mol}$",
+      "choix": [
+        "$0,25\\text{ mol}$",
+        "$0,5\\text{ mol}$",
+        "$2\\text{ mol}$"
+      ],
+      "img_q": "",
+      "img_r": "",
+      "exp": "Par électroneutralité, $[\\text{Cl}^-] = [\\text{Na}^+] = 0,5\\text{ mol}\\cdot\\text{L}^{-1}$, donc $n(\\text{Cl}^-) = 0,5 \\times 2 = 1\\text{ mol}$.",
+      "cat": "Quantité d'ions",
+      "niveau": "Excellence"
+    },
+    {
+      "q": "",
+      "r": "",
+      "choix": [],
+      "img_q": "",
+      "img_r": "",
+      "exp": "",
+      "cat": "Métadonnées Pédagogiques Invisibles",
+      "niveau": "Professeur",
+      "erreurs_typiques": "1. Oublier de convertir mL en L et mg en g dans c = m / (M*V). 2. Multiplier par le mauvais coefficient stœchiométrique lors du calcul des concentrations ioniques. 3. Verser l'eau dans l'acide au lieu de l'acide dans l'eau.",
+      "solution_classe": "1. Faire systématiquement écrire les conversions d'unités avant le calcul. 2. Toujours écrire l'équation de dissolution équilibrée avant d'écrire [ion] = k*c. 3. Rappeler la règle de sécurité au laboratoire (acide dans l'eau).",
+      "animation_python": "Simulation interactive montrant la dissociation d'un cristal ionique NaCl dans l'eau polaire (molécules d'eau orientant leurs pôles vers Na+ et Cl-) et le suivi des concentrations [Na+] et [Cl-] en fonction du volume d'eau."
+    }
+  ],
+  "exercices": [
+    {
+      "niveau": "Soutien",
+      "titre": "Exercice 1 : Solides ioniques et polarité moléculaire",
+      "enonce": "<strong>Données :</strong> On étudie des cristaux de chlorure de sodium ($\\text{NaCl}$), de fluorure de calcium ($\\text{CaF}_2$) et des molécules polaires comme le chlorure d'hydrogène ($\\text{HCl}$) et l'eau ($\\text{H}_2\\text{O}$).",
+      "questions": [
+        {
+          "q": "1. Quels sont les ions constitutifs du cristal de chlorure de sodium ($\\text{NaCl}$) et du fluorure de calcium ($\\text{CaF}_2$) ? Pourquoi un solide ionique est-il électriquement neutre ?",
+          "indice": "Identifiez le cation et l'anion de chaque cristal en respectant l'électroneutralité globale.",
+          "corrige": "• Le chlorure de sodium ($\\text{NaCl}$) est formé d'ions sodium $\\text{Na}^+$ et d'ions chlorure $\\text{Cl}^-$.<br>• Le fluorure de calcium ($\\text{CaF}_2$) est formé d'ions calcium $\\text{Ca}^{2+}$ et d'ions fluorure $\\text{F}^-$ (deux ions $\\text{F}^-$ pour un ion $\\text{Ca}^{2+}$).<br>Un solide ionique est électriquement neutre car la somme des charges positives des cations compense exactement la somme des charges négatives des anions."
+        },
+        {
+          "q": "2. Quelles sont les trois étapes de la dissolution d'un électrolyte dans l'eau ?",
+          "indice": "Nommez dans l'ordre la séparation des ions, leur entourage par les molécules d'eau, puis leur répartition homogène.",
+          "corrige": "Les trois étapes de la dissolution d'un électrolyte dans l'eau sont :<br>1. <strong>La dissociation</strong> du cristal sous l'action des molécules d'eau polaires ;<br>2. <strong>La solvatation (ou hydratation)</strong> : chaque ion s'entoure de molécules d'eau (noté $(aq)$) ;<br>3. <strong>La dispersion</strong> des ions solvatés dans toute la solution."
+        },
+        {
+          "q": "3. Pourquoi une solution aqueuse électrolytique conduit-elle le courant électrique alors que le solide ionique pur est isolant ?",
+          "indice": "Comparez la mobilité des porteurs de charges dans le cristal solide et dans la solution.",
+          "corrige": "Dans le cristal solide, les ions sont liés et immobiles (pas d'électrons libres) : le solide est isolant. Dans la solution électrolytique, les ions libérés sont <strong>mobiles</strong> (porteurs de charges) et peuvent se déplacer sous l'action d'un champ électrique."
+        }
+      ]
+    },
+    {
+      "niveau": "Standard",
+      "titre": "Exercice 2 : Préparation d'une solution de chlorure de plomb ($\\text{PbCl}_2$)",
+      "enonce": "<strong>Données :</strong><br>• Volume de solution préparée : $V = 100\\text{ mL} = 0,100\\text{ L}$<br>• Masse de solide ionique dissous : $m = 250\\text{ mg} = 0,250\\text{ g}$<br>• Masses molaires atomiques : $M(\\text{Pb}) = 207,2\\text{ g}\\cdot\\text{mol}^{-1}$ et $M(\\text{Cl}) = 35,5\\text{ g}\\cdot\\text{mol}^{-1}$.<br><br>On prépare un volume $V = 100\\text{ mL}$ d'une solution aqueuse de chlorure de plomb par dissolution d'une masse $m = 250\\text{ mg}$ de chlorure de plomb solide $\\text{PbCl}_2$.",
+      "questions": [
+        {
+          "q": "1. Quel est le solvant de cette solution ? Quel est le soluté (électrolyte) ?",
+          "indice": "Le solvant est le liquide majoritaire (l'eau) ; le soluté est l'espèce dissoute.",
+          "corrige": "• Le <strong>solvant</strong> est l'eau (solution aqueuse).<br>• Le <strong>soluté (électrolyte)</strong> est le chlorure de plomb $\\text{PbCl}_2$."
+        },
+        {
+          "q": "2. Calculer la masse molaire $M(\\text{PbCl}_2)$ puis la concentration molaire $c$ de soluté apporté.",
+          "indice": "Calculez d'abord $M(\\text{PbCl}_2) = M(\\text{Pb}) + 2M(\\text{Cl})$, puis $n = \\frac{m}{M}$ et $c = \\frac{n}{V}$.",
+          "corrige": "$$M(\\text{PbCl}_2) = 207,2 + 2 \\times 35,5 = 278,2\\text{ g}\\cdot\\text{mol}^{-1}$$<br>$$n(\\text{PbCl}_2) = \\frac{0,250}{278,2} \\approx 8,99 \\times 10^{-4}\\text{ mol}$$<br>$$c = \\frac{n}{V} = \\frac{8,99 \\times 10^{-4}}{0,100} \\approx 8,99 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$$"
+        },
+        {
+          "q": "3. Écrire l'équation de dissolution de $\\text{PbCl}_2$ dans l'eau, puis en déduire les concentrations molaires effectives $[\\text{Pb}^{2+}]$ et $[\\text{Cl}^-]$.",
+          "indice": "Un cristal de $\\text{PbCl}_2$ libère un ion $\\text{Pb}^{2+}(aq)$ et deux ions $\\text{Cl}^-(aq)$. Utilisez $[X] = \\nu_X \\cdot c$.",
+          "corrige": "$$\\text{PbCl}_2(s) \\xrightarrow{\\text{eau}} \\text{Pb}^{2+}(aq) + 2\\text{Cl}^-(aq)$$<br>• $[\\text{Pb}^{2+}] = c \\approx 8,99 \\times 10^{-3}\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Cl}^-] = 2c \\approx 1,80 \\times 10^{-2}\\text{ mol}\\cdot\\text{L}^{-1}$"
+        }
+      ]
+    },
+    {
+      "niveau": "Excellence",
+      "titre": "Exercice 3 : Polarité moléculaire ($\\text{HF}$) et mélange de solutions ioniques",
+      "enonce": "<strong>Données :</strong><br>• L'atome de fluor ($Z = 9$) est plus électronégatif que l'atome d'hydrogène ($Z = 1$).<br>• On mélange un volume $V_1 = 200\\text{ mL}$ d'une solution de chlorure de sodium $\\text{NaCl}$ de concentration $c_1 = 0,20\\text{ mol}\\cdot\\text{L}^{-1}$ avec un volume $V_2 = 300\\text{ mL}$ d'une solution de chlorure de calcium $\\text{CaCl}_2$ de concentration $c_2 = 0,10\\text{ mol}\\cdot\\text{L}^{-1}$. Le volume total est $V_{\\text{tot}} = V_1 + V_2 = 500\\text{ mL} = 0,50\\text{ L}$.",
+      "questions": [
+        {
+          "q": "1. La molécule de fluorure d'hydrogène $\\text{H}-\\text{F}$ est-elle polaire ? Justifier.",
+          "indice": "Comparez l'électronégativité de $\\text{F}$ et de $\\text{H}$ et examinez la répartition des charges partielles $+\\delta e$ et $-\\delta e$.",
+          "corrige": "<strong>Oui</strong>, la molécule $\\text{H}-\\text{F}$ est polaire : le fluor étant plus électronégatif que l'hydrogène, il attire davantage le doublet liant, créant une charge partielle négative $-\\delta e$ sur $\\text{F}$ et une charge partielle positive $+\\delta e$ sur $\\text{H}$. Les barycentres des charges positives et négatives ne coïncident pas."
+        },
+        {
+          "q": "2. Calculer les quantités de matière d'ions $\\text{Na}^+$, $\\text{Ca}^{2+}$ et $\\text{Cl}^-$ présents dans le mélange final.",
+          "indice": "Attention : $\\text{Cl}^-$ provient à la fois de $\\text{NaCl}$ ($n_1$) et de $\\text{CaCl}_2$ ($2n_2$).",
+          "corrige": "• $n(\\text{Na}^+) = c_1 V_1 = 0,20 \\times 0,200 = 0,040\\text{ mol}$<br>• $n(\\text{Ca}^{2+}) = c_2 V_2 = 0,10 \\times 0,300 = 0,030\\text{ mol}$<br>• $n(\\text{Cl}^-) = c_1 V_1 + 2 c_2 V_2 = 0,040 + 2 \\times 0,030 = 0,100\\text{ mol}$"
+        },
+        {
+          "q": "3. En déduire les concentrations molaires effectives $[\\text{Na}^+]$, $[\\text{Ca}^{2+}]$ et $[\\text{Cl}^-]$ dans le mélange et vérifier l'électroneutralité.",
+          "indice": "Divisez chaque quantité de matière par $V_{\\text{tot}} = 0,50\\text{ L}$, puis vérifiez $[\\text{Na}^+] + 2[\\text{Ca}^{2+}] = [\\text{Cl}^-]$.",
+          "corrige": "• $[\\text{Na}^+] = \\frac{0,040}{0,50} = 0,080\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Ca}^{2+}] = \\frac{0,030}{0,50} = 0,060\\text{ mol}\\cdot\\text{L}^{-1}$<br>• $[\\text{Cl}^-] = \\frac{0,100}{0,50} = 0,20\\text{ mol}\\cdot\\text{L}^{-1}$<br><strong>Vérification :</strong> $[\\text{Na}^+] + 2[\\text{Ca}^{2+}] = 0,080 + 2 \\times 0,060 = 0,20\\text{ mol}\\cdot\\text{L}^{-1} = [\\text{Cl}^-]$ : la solution est électriquement neutre."
+        }
+      ]
+    }
+  ]
+}
